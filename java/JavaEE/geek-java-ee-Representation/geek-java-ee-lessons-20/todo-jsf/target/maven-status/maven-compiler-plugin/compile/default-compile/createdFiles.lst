@@ -1,0 +1,13 @@
+persist\ToDoCategoryRepository.class
+service\ToDoServiceLocal.class
+controller\ToDoCategoryConverter.class
+service\CartService.class
+persist\ToDoRepository.class
+service\ToDoServiceImpl.class
+controller\TodoController.class
+persist\ToDo.class
+persist\ToDoCategory.class
+service\ToDoServiceRemote.class
+service\ToDoRepr.class
+controller\ToDoCategoryController.class
+controller\CartController.class

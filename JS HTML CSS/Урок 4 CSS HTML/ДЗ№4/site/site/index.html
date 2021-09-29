@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сайт студента GeekBrains</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class = "content">
+    <?php
+        include "menu.php" ;
+    ?>
+
+        <h1>Сайт студента GeekBrains</h1>
+
+        <div class = "center">
+        <img src="img/photo_sulla.jpg">
+            <div class = "box_text">
+                <p>Hi. <b>Меня зовут Сулла</b>. Это мой первый сайт.<p>
+                <p>В его создании мне помог IT-портал <a href="https://geekbrains.ru/">GeekBrains</a></p>
+                <p>На этом сайте можно сыграть в игры, которые я написал:</p>
+                <a href="index.php">Главная</a>
+                <a href="puzzle.php">Загадки</a>
+                <a href="guess.php">Угадайка</a>
+                <a href="#">Генератор пароля</a>
+            </div>
+        </div>
+    </div>
+
+<div class = "footer">
+    Copyright &copy; <?php echo date("Y");?> SPQR
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+function GetAnsw(x){
+		do {
+		var i = parseInt(Math.random()*x.length-1);
+	for(var a=0;a<=2;a++) {
+		var usAnsw = prompt ("как переводится словo "+ x[i][0]);
+		if (usAnsw=="q"){
+			x.splice(0,x.length);
+			break;
+			}
+		else if (usAnsw=="w"&&x.length==1) {
+			answInc.push(x[i][0]);
+			x.splice(i,1);
+			alert ("слово пропущенно");
+			break;
+			} 
+		else if (usAnsw=="w"&&x.length>1) {
+			answInc.push(x[i][0]);
+			x.splice(i,1);
+			alert ("слово пропущенно");
+			alert ("следующее слово");
+			break;
+			} 
+		
+		else if (a==2) {
+			alert ("Не верно, следующее слово");
+			answInc.push(x[i][0]);
+			x.splice(i,1);
+			break;
+			}
+		else if (usAnsw==x[i][1]) {
+			alert ("Верно");
+			answCor.push(x[i][0]);
+			x.splice(i,1);
+			break;
+			} else {
+			alert("Нет, еще "+(2-a)+" поптыки, слово "+x[i][0]);
+			}
+		}
+	}
+	while (x.length!=0);
+}
+var words = [
+	["Parcel ","посылка"],
+	["commit ","совершить"],
+	/*[" establish ","установить"],
+	[" proceeds ","доходы"],
+	[" tie ","галстук"],
+	[" decent ","порядочный"],
+	[" bound ","связанный"],*/
+];
+var words2 = [
+	["insult ","оскорблять"],
+	["hardened ","закаленный"],
+	/*["to establish","установить"],
+	["proceeds","доходы"],
+	["tie","галстук"],
+	["decent","порядочный"],
+	["bound","связанный"],*/
+];
+var answCor = ["Отвечено верно:<br>"];
+var answInc = ["<br>Отвечено неверно:<br>"];
+
+alert ("для выхода нажмите q");
+alert ("для того чтобы пропустить слово нажмите w");
+
+GetAnsw(words);
+alert ("Следующее задание");
+GetAnsw(words2);
+document.write (answCor);
+document.write (answInc);
+</script>

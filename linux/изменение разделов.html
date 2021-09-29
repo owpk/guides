@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>Трансляция -&gt; <a href="https://youtu.be/edn7nGhMliA" target="_blank">https://youtu.be/edn7nGhMliA</a><br>
+.<br>
+<strong>Обратите внимание на добавившиеся методички в разделе "материалы"</strong><br>
+Работа с LVM:<br>
+Хорошо описана <strong><a href="https://habr.com/ru/post/67283/" target="_blank">здесь</a></strong> и  <strong><a href="http://xgu.ru/wiki/LVM#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D0.BD.D0.B8.D0.B5_.D0.B3.D1.80.D1.83.D0.BF.D0.BF.D1.8B_.D1.82.D0.BE.D0.BC.D0.BE.D0.B2" target="_blank">здесь</a></strong> <br>
+Про rm : <strong><a href="http://lurkmore.to/Rm_-rf" target="_blank">ссылка</a></strong><br>
+<strong><a href="https://zalinux.ru/?p=299" target="_blank">Опасные команды ждя линукса</a></strong><br>
+<strong>.</strong><br>
+<em>Общие команды</em><br>
+<code>fdisk -l</code> - список всех устройств<br>
+<code>fdisk /dev/sda</code> - заходим в утилиту fdisk диска sda. Далее в интерфейсе fdisk n = создать новый раздел (+1G), d = удалить.<br><br>
+<strong><a href="https://habr.com/ru/company/ruvds/blog/325522/" target="_blank">О скриптах Bash подробнее здесь</a></strong><br>
+<code>for ((i = 0; i &lt; 1200; i++)); do touch ./dir/file_$i; done</code> - создать 1200 файлов с именем file_$i<br>
+<code>for i in 1 2 3; do cat ./dir/file_$i; done</code> - открыть для чтения файлы из списка i<br>
+<code>cat file{1, 2, 3}</code> - открыть для чтения 3 файла<br>
+<code>sudo chmod -R 777 /media/user/papka</code> - дать полный доступ до директории. О правах подробнее <strong><a href="https://help.ubuntu.ru/wiki/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B0%D0%B2%D0%B0_unix" target="_blank">ЗДЕСЬ</a></strong>(таблица)<br>
+•<br>
+<code>mkfs.ext4 /dev/sda1</code> - создать ФС на разделе<br>
+<code>tune2fs -l /dev/sda1</code> - просмотр суперблока ФС<br>
+•<br>
+<code>mkdir /mnt/hello</code>- создем точку монтирования<br>
+<code>mount /dev/sdc1 /mnt/hello</code> - монтируем раздел<br>
+<code>df -h</code> - просмотр смонтированных устройств<br>
+•<br>
+<em>Увеличение ФС</em><br>
+<code>1</code>. <code>fdisk /dev/sda</code>- удаляем раздел командой d  и создаем новый с увеличенным размером (+3G)<br>
+<code>2</code>. Выходим с сохранением w и при необходимости даем понять системе, что раздел изменился - командой partrobe.<br>
+Можно самостоятельно проверить, поняла ли система, в каталоге <code>cat /proc/partitions</code><br>
+<code>3</code>. <code>resize2fs /dev/sda1</code> - переоперделяем размер ФС. <br>
+<code>e2fsck -f /dev/sda1</code> - проверка диска (при необходимости)<br>
+•<br>
+<em>Уменьшение ФС</em><br>
+<code>1</code>. <code>unmount /mnt/hello</code>- размонтируем раздел<br>
+<code>2</code>. <code>resize2fs /dev/sda1 1G</code> - меняем размер ФС в меньшую сторону<br>
+<code>3</code>. <code>mount /dev/sdc1/ mnt/hello</code> - монтируем раздел<br>
+<code>4</code>. <code>fdisk /dev/sda</code>- удаляем раздел командой d  и создаем новый с уменьшенным размером (+2G вместо трех, например)<br>
+<code>partrobe</code> - при необходимости<br>
+<code>5</code>. <code>resize2fs /dev/sda1</code> - расширяем ФС (если до этого задавали с заделом меньше)<br>
+<strong>.</strong><br>
+•</p>
+</body>
+</html>
+<p>

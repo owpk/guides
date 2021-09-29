@@ -1,0 +1,10 @@
+du -h --max-depth=1 | sort -hr
+journalctl --since=today
+mn create-cli-app --jdk=11 -t spock -f graalvm,http-client org.owpk.hive-cli
+free -lh
+sudo lshw -short -c memory
+xclip -sel clip
+
+curl -H "Authorization: Bearer 'TOKEN'" 'url/address'
+
+curl -X POST -H "Content-Type: application/json" -d '{"username": "user", "password": "100"}' 'url/address'

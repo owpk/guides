@@ -1,0 +1,15 @@
+cd 'project dir'
+
+- compile
+mvn compile 
+
+- compile + package
+mvn package 
+
+- compile + package jar + создает jar зависимость в локальном репозитории
+mvn install  
+
+- очищает папку target
+mvn clean 
+
+mvn assembly:assembly

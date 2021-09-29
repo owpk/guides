@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	alert ("для выхода нажмите q")
+	var answer = parseInt(Math.random() * 100); 
+	do {
+		var a = prompt("число первого игрока");
+		if (a=="q"){
+			break;
+			}
+		else a = parseInt (a);
+		if (a<answer) {
+			alert ("неверно - загаданное число больше, очередь второго игрока");
+			}
+			else if (a>answer) {
+			alert ("неверно - загаданное число меньше, очередь второго игрока");	
+			}
+			else {
+				alert ("победа!")
+				break; 
+			}
+		var b = prompt ("число второго игрока");
+		if (b=="q"){
+			break;
+			}
+		else b = parseInt (b);
+
+		if (b<answer) {
+			alert ("неверно - загаданное число больше, очередь второго игрока");
+			}
+			else if (b>answer) {
+			alert ("неверно - загаданное число меньше, очередь второго игрока");	
+			}
+			else {
+				alert ("победа!")
+				break; 
+			}
+		}
+	 while (a!=answer||b!=answer);
+</script>

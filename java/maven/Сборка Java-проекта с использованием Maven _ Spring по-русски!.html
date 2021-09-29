@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://spring-projects.ru/guides/maven/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<title>Сборка Java-проекта с использованием Maven | Spring по-русски!</title>
+		<link rel="shortcut icon" type="image/x-icon" href="https://spring-projects.ru/wp-content/themes/spring.io.ru/images/favicon.png">
+		<link rel="stylesheet" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/font-awesome.min.css">
+		<link rel="stylesheet" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/jquery-ui-1.10.4.custom.min.css">
+		<link rel="stylesheet" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/tooltip.css">
+		<link rel="stylesheet" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/default.css">
+		<link rel="stylesheet" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/style.css">
+		<link rel="pingback" href="https://spring-projects.ru/xmlrpc.php">
+		<script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/sdk.js.Без названия" async="" crossorigin="anonymous"></script><script id="facebook-jssdk" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/sdk.js(1).Без названия"></script><script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/jquery-1.11.0.min.js.Без названия"></script>
+		<script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/blog.js.Без названия"></script>
+		<!--<script src="https://spring-projects.ru/wp-content/themes/spring.io.ru/js/bowser.min.js"></script>-->
+		<script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/highlight.pack.js.Без названия"></script>
+		<script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/jquery-ui-1.10.4.custom.min.js.Без названия"></script>
+		<!--[if lt IE 9]>
+		<script src="https://spring-projects.ru/wp-content/themes/spring.io.ru/js/html5.js"></script>
+		<![endif]-->
+				<script type="text/javascript">
+		var ajaxurl = 'https://spring-projects.ru/wp-admin/admin-ajax.php';
+		</script>
+				<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/spring-projects.ru\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4.22"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;return g&&g.fillText?(g.textBaseline="top",g.font="600 32px Arial","flag"===a?(g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3):"diversity"===a?(g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e):("simple"===a?g.fillText(h(55357,56835),0,0):g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8"),diversity:d("diversity")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8&&c.supports.diversity||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/wp-emoji-release.min.js.Без названия" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="cptch_stylesheet-css" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/style(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cptch_desktop_style-css" href="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/desktop_style.css" type="text/css" media="all">
+<script type="text/javascript" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/jquery.js.Без названия"></script>
+<script type="text/javascript" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/jquery-migrate.min.js.Без названия"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var cptch_vars = {"nonce":"2bb42187f2","ajaxurl":"https:\/\/spring-projects.ru\/wp-admin\/admin-ajax.php","enlarge":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/front_end_script.js.Без названия"></script>
+<link rel="https://api.w.org/" href="https://spring-projects.ru/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://spring-projects.ru/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://spring-projects.ru/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.4.22">
+<link rel="canonical" href="https://spring-projects.ru/guides/maven/">
+<link rel="shortlink" href="https://spring-projects.ru/?p=134">
+<link rel="alternate" type="application/json+oembed" href="https://spring-projects.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fspring-projects.ru%2Fguides%2Fmaven%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://spring-projects.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fspring-projects.ru%2Fguides%2Fmaven%2F&amp;format=xml">
+	<script type="text/javascript" async="" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/embed.js.Без названия"></script><link rel="prefetch" as="style" href="https://c.disquscdn.com/next/embed/styles/lounge.db072b7d11b56c5c060394cab39e75c5.css"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/common.bundle.f9554506a08a1cc2b021f0dfc3f59ebb.js"><link rel="prefetch" as="script" href="https://c.disquscdn.com/next/embed/lounge.bundle.c094396406c1ff264c890cb20d56647f.js"><link rel="prefetch" as="script" href="https://disqus.com/next/config.js"><script src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/alfalfalfa.0823c767a3bc925f628afd9bed26c958.js.Без названия" async="" charset="UTF-8"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+	<body>
+		<header class="header-desktop">
+			<div class="navbar">
+				<div class="container-fluid">
+					<a class="logo" href="https://spring-projects.ru/"></a>
+					<ul class="menu">
+						<li>
+							<a href="https://spring-projects.ru/blog">Новости</a>
+						</li>
+						<li><a href="https://spring-projects.ru/guides" class="active">Уроки</a></li>
+						<li><a href="https://spring-projects.ru/projects">Проекты</a></li>
+						<!-- <li><a href="https://spring-projects.ru/forum" >Форум</a></li> -->
+						<li><a href="https://spring-projects.ru/about">О сайте</a></li>
+						<li>
+							<a href="https://spring-projects.ru/guides/maven/#" class="search">
+								<i class="fa fa-search"></i>
+								<i class="fa fa-times hide"></i>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="mobile-navbar">
+				<div class="mobile-menu">
+					<div class="mobile-search-container">
+						<input type="text" placeholder="Поиск...">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</div>
+					<a href="https://spring-projects.ru/">На главную <i class="fa fa-chevron-right"></i></a>
+					<a href="https://spring-projects.ru/blog">Новости <i class="fa fa-chevron-right"></i></a>
+					<a href="https://spring-projects.ru/guides">Уроки <i class="fa fa-chevron-right"></i></a>
+					<a href="https://spring-projects.ru/projects">Проекты <i class="fa fa-chevron-right"></i></a>
+					<!-- <a href="https://spring-projects.ru/forum">Форум <i class="fa fa-chevron-right"></i></a> -->
+					<a href="https://spring-projects.ru/about">О сайте <i class="fa fa-chevron-right"></i></a>
+				</div>
+				<div class="mobile-menu-button"><i class="fa fa-bars"></i></div>
+				<div class="logo"><a href="https://spring-projects.ru/"></a></div>
+			</div>
+			<div class="search-container">
+				<div class="container-fluid">
+					<input type="text" class="query-field" placeholder="Поиск по документации, новостям и урокам...">
+					<button type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+				</div>
+			</div>
+		</header>
+		<div class="wrapper"><div class="clear post"></div>
+<div class="container-fluid">
+	<div class="content">
+		<div class="category-title">Учебные материалы</div>
+		<article>
+			<div class="post-list">
+				<h1>Сборка Java-проекта с использованием Maven</h1>
+				<p>Этот урок освещает создание вами простого Java-приложения с использованием Maven.</p>
+				<h2 id="_what_you_ll_build">Что вы создадите</h2>
+				<p>Вы создадите простое приложение и соберете его с помощью Maven.</p>
+				<h2 id="_what_you_ll_need">Что вам потребуется</h2>
+				<p>
+					</p><ul>
+						<li>Примерно 15 минут свободного времени</li>
+						<li>Любимый текстовый редактор или IDE</li>
+						<li><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank" rel="nofollow">JDK 6</a> и выше</li>
+					</ul>
+				<p></p>
+				<h2 id="_how_to_complete_this_guide">Как проходить этот урок</h2>
+				<p>Как и большинство <a href="https://spring-projects.ru/guides" target="_blank">уроков</a> по Spring, вы можете начать с
+					нуля и выполнять каждый шаг, либо пропустить базовые шаги, которые вам уже знакомы. В любом случае,
+					вы в конечном итоге получите рабочий код.
+				</p>
+				<p>Чтобы <b>начать с нуля</b>, перейдите в <a href="https://spring-projects.ru/guides/maven/#scratch">Настройка проекта</a>.</p>
+				<p>Чтобы <b>пропустить базовые шаги</b>, выполните следующее:
+					</p><ul>
+						<li><a href="https://github.com/spring-guides/gs-maven/archive/master.zip" target="_blank" rel="nofollow">Загрузите</a> и
+							распакуйте архив с кодом этого урока, либо кнонируйте из репозитория с помощью
+							<a href="https://spring-projects.ru/understanding-git" target="_blank">Git</a>:
+							<code>git clone <a href="https://github.com/spring-guides/gs-maven.git" target="_blank" rel="nofollow">https://github.com/spring-guides/gs-maven.git</a></code>
+						</li>
+						<li>Перейдите в каталог <code>gs-maven/initial</code></li>
+						<li>Забегая вперед, <a href="https://spring-projects.ru/guides/maven/#initial">установите Maven</a></li>
+					</ul>
+				<p></p>
+				<p><b>Когда вы закончите</b>, можете сравнить получившийся результат с образцом в <code>gs-maven/complete</code>.</p>
+				<h2 id="scratch">Настройка проекта</h2>
+				<p>Для начала вам необходимо настроить Java-проект перед тем, как собрать его Maven'ом. Т.к. урок посвящен Maven,
+					сделаем проект максимально простым, насколько это возможно.
+				</p>
+				<h3>Создание структуры каталогов</h3>
+				<p>В выбранном вами каталоге проекта создайте следующую структуру каталогов; к примеру,
+					командой <code>mkdir -p src/main/java/hello</code> для *nix систем:
+				</p>
+				<pre class="structure-catalog">+-- src
+    +-- main
+        +-- java
+            +-- hello</pre>
+				<p>Внутри <code>src/main/java/hello</code> директории вы можете создать любые Java-классы, какие вы хотите.
+					Для простоты и согласованности с остальной частью урока, Spring рекомендует вам создать два класса:
+					<code>HelloWorld.java</code> и <code>Greeter.java</code>.</p>
+					<p><code>src/main/java/hello/HelloWorld.java</code>
+				</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        Greeter greeter = <span class="hljs-keyword">new</span> Greeter();
+        System.out.println(greeter.sayHello());
+    }
+}</code></pre>
+				</div>
+				<p><code>src/main/java/hello/Greeter.java</code></p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Greeter</span> {</span>
+    <span class="hljs-keyword">public</span> String <span class="hljs-title">sayHello</span>() {
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello world!"</span>;
+    }
+}</code></pre>
+				</div>
+				<p id="initial">Теперь, когда у вас есть проект, который вы можете собрать с Maven, вам нужно установит сам Maven.</p>
+				<p>Maven можно получить, скачав zip-файл с
+					<a href="https://maven.apache.org/download.cgi" target="_blank" rel="nofollow">maven.apache.org/download.cgi</a>.
+					Необходимы только бинарные файлы, так что ищите ссылку на архив с именем apache-maven-<em>version</em>-bin.zip
+					или apache-maven-<em>version</em>-bin.tar.gz.
+				</p>
+				<p>Распакуйте архив и добавьте путь к каталогу bin в переменную окружения path.</p>
+				<p>Чтобы протестировать правильность установки Maven, запустите в командной строке:</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs ">mvn -v</code></pre>
+				</div>
+				<p>Если всё было сделано правильно, то вы увидите сообщение примерно такого содержания:</p>
+				<pre class="structure-catalog">Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 07:51:28-0600)
+Maven home: /usr/share/maven
+Java version: 1.7.0_09, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.7.0_09.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.3", arch: "x86_64", family: "mac"</pre>
+				<p>Теперь у вас есть установленный Maven.</p>
+				<h2 id="_define_a_simple_maven_build">Создание простой сборки Maven</h2>
+				<p>Теперь, когда Maven установлен, вам необходимо создать определение Maven-проекта. Maven-проекты
+					определяются как XML-файлы с названием <em>pom.xml</em>. Помимо всего прочего, этот файл
+					определяет имя проекта, версию, а также зависимости от сторонних библиотек.
+				</p>
+				<p>Создайте файл с названием <em>pom.xml</em> в корневом каталоге проекта и наполните его следующим содержанием:</p>
+				<code>pom.xml</code>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs xml"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">project</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"<a class="vglnk" href="http://maven.apache.org/POM/4.0.0" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>POM</span><span>/</span><span>4</span><span>.</span><span>0</span><span>.</span><span>0</span></a>"</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"<a class="vglnk" href="http://www.w3.org/2001/XMLSchema-instance" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>w3</span><span>.</span><span>org</span><span>/</span><span>2001</span><span>/</span><span>XMLSchema</span><span>-</span><span>instance</span></a>"</span>
+    <span class="hljs-attribute">xsi:schemaLocation</span>=<span class="hljs-value">"<a class="vglnk" href="http://maven.apache.org/POM/4.0.0" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>POM</span><span>/</span><span>4</span><span>.</span><span>0</span><span>.</span><span>0</span></a> <a class="vglnk" href="http://maven.apache.org/maven-v4_0_0.xsd" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>maven</span><span>-</span><span>v4</span><span>_</span><span>0</span><span>_</span><span>0</span><span>.</span><span>xsd</span></a>"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-title">modelVersion</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>gs-maven<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.1.0<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">plugins</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>maven-shade-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>2.1<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">executions</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">execution</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">phase</span>&gt;</span>package<span class="hljs-tag">&lt;/<span class="hljs-title">phase</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">goals</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">goal</span>&gt;</span>shade<span class="hljs-tag">&lt;/<span class="hljs-title">goal</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">goals</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">configuration</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">transformers</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">transformer
+</span>                                    <span class="hljs-attribute">implementation</span>=<span class="hljs-value">"org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">mainClass</span>&gt;</span>hello.HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-title">mainClass</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">transformer</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">transformers</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">configuration</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">execution</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">executions</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">plugins</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">project</span>&gt;</span></code></pre>
+				</div>
+				<p>
+					За исключением дополнительного элемента <code>&lt;packaging&gt;</code>, это простейший из <em>pom.xml</em>
+					файлов, необходимый для сборки Java проекта. Он включает следующие детали конфигурации проекта:
+				</p>
+				<p>
+					</p><ul>
+						<li><code>&lt;modelVersion&gt;</code> - версия POM-модели (всегда 4.0.0)</li>
+						<li><code>&lt;groupId&gt;</code> - группа или организация, к которой принадлежит проект.
+							Чаще всего выражается в виде перевернутого наоборот доменного имени</li>
+						<li><code>&lt;artifactId&gt;</code> - имя, которое будет передано библиотеке экземпляра(artifact) проекта
+							(к примеру, имя его JAR или WAR файла)</li>
+						<li><code>&lt;version&gt;</code> - версия, с которой будет собран проект</li>
+						<li><code>&lt;packaging&gt;</code> - как проект должен быть упакован. По умолчанию,
+							с "jar" упаковывается в JAR-файл, "war" - WAR-файл</li>
+					</ul>
+				<p></p>
+				<div class="note">
+					Когда речь заходит о выборе схемы управления версиями, Spring рекомендует [семантическое управление версиями]
+					<a href="https://semver.org/" target="_blank" rel="nofollow">semver.org</a> подход.
+				</div>
+				<p>На данном этапе мы имеем минимальное, но уже рабочее определение Maven-проекта.</p>
+				<h2 id="_build_java_code">Сборка Java кода</h2>
+				<p>
+					Теперь все готово для сборки проекта Maven'ом. Вы можете выполнить несколько этапов жизненного цикла сборки,
+					включая компиляцию кода, создание библиотеки пакета(такого, как JAR-файл) и установку библиотеки в
+					локальный репозиторий Maven зависимостей.
+				</p>
+				<p>Попробуйте собрать, выполнив команду, приведенную ниже:</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs ">mvn compile</code></pre>
+				</div>
+				<p>
+					Этим вы запустите Maven, передав ему указание на выполнение задачи <em>compile</em>. Когда он закончит,
+					вы должны найни скомпилированные <em>.class</em> файлы в <em>target/classes</em> директории.
+				</p>
+				<p>
+					Вряд ли вы захотите распостранять или работать напрямую с <em>.class</em> файлами, поэтому
+					вам полее подойдет выполнение задачи <em>package</em>:
+				</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs java">mvn <span class="hljs-keyword">package</span></code></pre>
+				</div>
+				<p>
+					Задача <em>package</em> включает компиляцию вашего Java кода, запуск тестов, а в конце упаковывает
+					в JAR-файл в <em>target</em> директории. Название JAR-файла будет основано на <code>&lt;artifactId&gt;</code>
+					и <code>&lt;version&gt;</code>. К примеру, с минимальным <em>pom.xml</em>(см. выше), JAR-файл будет иметь
+					название <em>gs-maven-initial-0.1.0.jar</em>.
+				</p>
+				<div class="note">
+					Если вы изменили значение <code>&lt;packaging&gt;</code> с "jar" на "war", то результатом будет
+					WAR-файл в <em>target</em> директории вместо JAR-файла.
+				</div>
+				<p>
+					Maven также хранит репозиторий зависимостей на вашей локальной машине(обычно в <em>.m2/repository</em>
+					директории в вашей домашней папке) для быстрого доступа к зависимостям проекта. Если вы хотите
+					добавить JAR-файл вашего проекта в локальный репозиторий, тогда вам необходимо выполнить задачу <code>install</code>:
+				</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs ">mvn install</code></pre>
+				</div>
+				<p>
+					Задача <em>install</em> включает компиляцию, тестирование, упаковку кода проекта, а затем
+					копирование в локальный репозиторий, тем самым другие проекты смогут ссылаться на него как на зависимость.
+				</p>
+				<p>Говоря о зависимостях, пришло время объявлять зависимости в Maven сборке.</p>
+				<h2 id="_declare_dependencies">Объявление зависимостей</h2>
+				<p>Простой "Hello World" пример полностью автономный и не зависит от каких-либо дополнительных библиотек.
+					Однако, большинство приложений зависит от внешних библиотек, с реализацией распостраненного и/или
+					сложного функционала.
+				</p>
+				<p>К примеру, предположим, что в дополнение к "Hello World!" вы хотите, чтобы приложение печатало текущую дату и время.
+					Вы могли бы использовать функциональность из стандартных(native) Java библиотек, но мы можем сделать это
+					и другими интересными способами, например с помощью Joda Time библиотеки.
+				</p>
+				<p>Для начала, изменим <code>HelloWorld.java</code>, как показано ниже:</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs java"><span class="hljs-keyword">package</span> hello;
+
+<span class="hljs-keyword">import</span> org.joda.time.LocalTime;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HelloWorld</span> {</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span>(String[] args) {
+        LocalTime currentTime = <span class="hljs-keyword">new</span> LocalTime();
+        System.out.println(<span class="hljs-string">"The current local time is: "</span> + currentTime);
+
+        Greeter greeter = <span class="hljs-keyword">new</span> Greeter();
+        System.out.println(greeter.sayHello());
+    }
+}</code></pre>
+				</div>
+				<p>Здесь <code>HelloWorld</code> использует Joda Time <code>LocalTime</code> класс для получения и печати текущего времени.</p>
+				<p>Если бы вы запустили <code>mvn compile</code> для сборки проекта сейчас, то получили бы ошибку сборки,
+					потому что вы не объявили Joda Time компилируемую зависимость в сборке. Вы можете это исправить,
+					добавив следующие строки в <em>pom.xml</em>(в пределах <code>&lt;project&gt;</code> элемента):
+				</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">dependencies</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>joda-time<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>joda-time<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>2.2<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">dependencies</span>&gt;</span></code></pre>
+				</div>
+				<p>
+					Этот блок XML объявляет список зависимостей проекта. В частности, он объявляет единственную зависимость от
+					Joda Time библиотеки. В <code>&lt;dependency&gt;</code> элементе, зависимость определяется через описание
+					трех вложенных элементов:
+				</p>
+				<p>
+					</p><ul>
+						<li><code>&lt;groupId&gt;</code> - группа или организация, к которой принадлежит зависимость.</li>
+						<li><code>&lt;artifactId&gt;</code> - необходимая библиотека</li>
+						<li><code>&lt;version&gt;</code> - версия необходимой библиотеки</li>
+					</ul>
+				<p></p>
+				<p>
+					По умолчанию, все зависимости определены как <code>&lt;compile&gt;</code> зависимости. Т.е. они должны быть
+					доступны во время компиляции(а если вы собираете WAR-файл, то в <em>/WEB-INF/lib</em> каталоге). Кроме того,
+					вы можете добавить <code>&lt;scope&gt;</code> элемент, с одним из значений:
+				</p>
+				<p>
+					</p><ul>
+						<li><code>provided</code> - зависимости, которые требуются для компиляции кода проекта,
+							но которые будут доступны во время выполнения кода контейнером(например, Java Servlet API)</li>
+						<li><code>test</code> - зависимости, которые используются для компиляции и запуска тестов,
+							но не требуемые для сборки или выполнения кода проекта</li>
+					</ul>
+				<p></p>
+				<p>
+					Сейчас, если вы выполните <code>mvn compile</code> или <code>mvn package</code>, Maven должен
+					будет разрешить Joda Time  зависимость из Maven Central репозитория и успешно собрать проект.
+				</p>
+				<p>Здесь полная версия <code>pom.xml</code>:</p>
+				<div class="highlight">
+					<button class="copy-button" title="копировать"></button>
+					<pre><code class=" hljs xml"><span class="hljs-pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">project</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"<a class="vglnk" href="http://maven.apache.org/POM/4.0.0" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>POM</span><span>/</span><span>4</span><span>.</span><span>0</span><span>.</span><span>0</span></a>"</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"<a class="vglnk" href="http://www.w3.org/2001/XMLSchema-instance" rel="nofollow"><span>http</span><span>://</span><span>www</span><span>.</span><span>w3</span><span>.</span><span>org</span><span>/</span><span>2001</span><span>/</span><span>XMLSchema</span><span>-</span><span>instance</span></a>"</span>
+    <span class="hljs-attribute">xsi:schemaLocation</span>=<span class="hljs-value">"<a class="vglnk" href="http://maven.apache.org/POM/4.0.0" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>POM</span><span>/</span><span>4</span><span>.</span><span>0</span><span>.</span><span>0</span></a> <a class="vglnk" href="http://maven.apache.org/maven-v4_0_0.xsd" rel="nofollow"><span>http</span><span>://</span><span>maven</span><span>.</span><span>apache</span><span>.</span><span>org</span><span>/</span><span>maven</span><span>-</span><span>v4</span><span>_</span><span>0</span><span>_</span><span>0</span><span>.</span><span>xsd</span></a>"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-title">modelVersion</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.springframework<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>gs-maven<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">packaging</span>&gt;</span>jar<span class="hljs-tag">&lt;/<span class="hljs-title">packaging</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>0.1.0<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+
+    <span class="hljs-comment">&lt;!-- tag::joda[] --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">dependencies</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>joda-time<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>joda-time<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>2.2<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">dependencies</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- end::joda[] --&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">build</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">plugins</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-title">plugin</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="hljs-tag">&lt;/<span class="hljs-title">groupId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">artifactId</span>&gt;</span>maven-shade-plugin<span class="hljs-tag">&lt;/<span class="hljs-title">artifactId</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">version</span>&gt;</span>2.1<span class="hljs-tag">&lt;/<span class="hljs-title">version</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-title">executions</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-title">execution</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">phase</span>&gt;</span>package<span class="hljs-tag">&lt;/<span class="hljs-title">phase</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">goals</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">goal</span>&gt;</span>shade<span class="hljs-tag">&lt;/<span class="hljs-title">goal</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">goals</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-title">configuration</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-title">transformers</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-title">transformer
+</span>                                    <span class="hljs-attribute">implementation</span>=<span class="hljs-value">"org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-title">mainClass</span>&gt;</span>hello.HelloWorld<span class="hljs-tag">&lt;/<span class="hljs-title">mainClass</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-title">transformer</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-title">transformers</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-title">configuration</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-title">execution</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-title">executions</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-title">plugin</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">plugins</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">build</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">project</span>&gt;</span></code></pre>
+				</div>
+				<div class="note">
+					Полная версия <b>pom.xml</b> использует
+					<a href="https://maven.apache.org/plugins/maven-shade-plugin/" target="_blank" rel="nofollow">Maven Shade Plugin</a>
+					как удобный инструмент для создание выполняемого JAR-файла. Целью данного урока является показать, как начать
+					работать с Maven, не используя, в частности, этот плагин.
+				</div>
+				<h2 id="_summary">Итог</h2>
+				<p>Поздравляем! Вы создали простой, но эффективный файл сборки Maven для сборки Java проектов.</p>
+				<p>С оригинальным текстом урока вы можете ознакомиться на
+					<a href="https://spring.io/guides/gs/maven/" target="_blank" rel="nofollow">spring.io</a>.
+				</p>
+				<div id="disqus_thread"><iframe id="dsq-app2697" name="dsq-app2697" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 8588px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+            <script type="text/javascript">
+                var disqus_shortname = "spring-projects-ru";
+                (function() {
+                    var dsq = document.createElement("script"); dsq.type = "text/javascript"; dsq.async = true;
+                    dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
+                    (document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            			</div>
+		</article>
+		<aside class="right-panel">
+			<a href="https://drone.io/github.com/spring-guides/gs-maven/latest" class="link-status" target="_blank" rel="nofollow">
+				<img src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/status.png" alt="">
+			</a>
+			<div class="get-code">
+				<h2>Получить код</h2>
+				<div class="btn-group">
+					<button class="btn toggled" data="https://github.com/spring-guides/gs-maven.git">HTTPS</button>
+					<button class="btn" data="git@github.com:spring-guides/gs-maven.git">SSH</button>
+					<button class="btn" data="https://github.com/spring-guides/gs-maven">Subversion</button>
+				</div>
+				<div class="clone-url">
+					<input type="text" value="https://github.com/spring-guides/gs-maven.git">
+					<button class="copy-button"></button>
+				</div>
+				<a href="https://github.com/spring-guides/gs-maven/archive/master.zip" class="quickstart" rel="nofollow">Загрузить zip</a>
+				<a href="https://github.com/spring-guides/gs-maven" class="go-to-repo" target="_blank" rel="nofollow">
+					<i class="fa fa-github"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;перейти в репозиторий
+				</a>
+			</div>
+			<div class="contents">
+				<h3>Содержание</h3>
+				<ul>
+					<li><a href="https://spring-projects.ru/guides/maven/#_what_you_ll_build">Что вы создадите</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_what_you_ll_need">Что вам потребуется</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_how_to_complete_this_guide">Как проходить этот урок</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#scratch">Настройка проекта</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_define_a_simple_maven_build">Создание простой сборки Maven</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_build_java_code">Сборка Java кода</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_declare_dependencies">Объявление зависимостей</a></li>
+					<li><a href="https://spring-projects.ru/guides/maven/#_summary">Итог</a></li>
+				</ul>
+			</div>
+			<div class="tags">
+				<h3>Теги</h3>
+				<ul>
+					<li><a href="https://spring-projects.ru/guides/maven/">maven</a></li>
+				</ul>
+				<h3>Концепции и технологии</h3>
+				<ul>
+					<li><a href="https://spring-projects.ru/understanding/git">Git</a></li>
+				</ul>
+			</div>
+			<script type="text/javascript" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/openapi.js.Без названия"></script>
+            <!-- VK Widget -->
+            <div id="vk_groups" style="width: 340px; height: 250px; background: none;"><iframe name="fXD8568b" frameborder="0" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/widget_community.html" width="340" height="250" scrolling="no" id="vkwidget1" style="overflow: hidden; height: 250px;"></iframe></div>
+            <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 0, width: "340", height: "250", color1: "f1f1f1", color2: "34302d", color3: "6db33f"}, 72315841);
+            </script><br>
+            <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, "script", "facebook-jssdk"));</script>
+<div class="fb-like-box fb_iframe_widget" data-href="https://www.facebook.com/spring.projects.ru" data-width="340" data-height="250" data-colorscheme="light" data-show-faces="true" data-header="true" data-stream="false" data-show-border="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=&amp;color_scheme=light&amp;container_width=338&amp;header=true&amp;height=250&amp;href=https%3A%2F%2Fwww.facebook.com%2Fspring.projects.ru&amp;locale=ru_RU&amp;sdk=joey&amp;show_border=true&amp;show_faces=true&amp;stream=false&amp;width=340"><span style="vertical-align: bottom; width: 340px; height: 181px;"><iframe name="f306d954a2898" width="340px" height="250px" data-testid="fb:like_box Facebook Social Plugin" title="fb:like_box Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/like_box.html" style="border: none; visibility: visible; width: 340px; height: 181px;" class=""></iframe></span></div>		</aside>
+	</div>
+</div>
+		</div>
+		<div class="clear"></div>
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="footer-content">
+					<a href="https://vk.com/spring_projects_ru" class="social" target="_blank" rel="nofollow"><i class="fa fa-vk"></i></a>
+					<a href="https://facebook.com/spring.projects.ru" class="social" target="_blank" rel="nofollow"><i class="fa fa-facebook"></i></a>
+					<div class="copyright">
+						Copyright<sup>©</sup> 2014-2020 <a href="https://spring-projects.ru/">spring.io.ru</a>
+						Использование материалов сайта без указания ссылки запрещено 
+					</div>
+					<div class="counter">
+                                            <!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t44.3;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=45 height=45 alt='' title='LiveInternet'><\/a>")</script><a href="https://www.liveinternet.ru/click" target="_blank"><img src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/hit" border="0" width="45" height="45" alt="" title="LiveInternet"></a><!--/LiveInternet-->
+                                        </div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/wp-embed.min.js.Без названия"></script>
+	
+<iframe style="display: none;" src="./Сборка Java-проекта с использованием Maven _ Spring по-русски!_files/saved_resource(1).html"></iframe></body></html>

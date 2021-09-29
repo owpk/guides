@@ -1,0 +1,47 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+function riddleWatch (userAnswer,answer,answerB,tryCounter) {
+		var correctAnswer=0;
+
+	for (var i=1; i<=tryCounter; i++) {	
+		if (userAnswer==answer||userAnswer==answerB) {
+			alert ("Верно");
+			correctAnswer++;
+			break;
+		}
+		else if  (i==tryCounter&&(userAnswer!=answer||userAnswer!=answerB)) {
+			alert ("Не верно. Следующая загадка");
+		}
+		else if (userAnswer!=answer||userAnswer!=answerB) {
+			alert ("Не верно, попробуйте еще раз");
+			userAnswer = answerWatch();
+		}
+	}
+	if (correctAnswer==1) {
+		alert ("Следующая загадка");
+	}
+	return correctAnswer;
+}
+
+function answerWatch (x) {
+		var riddleAnswer = prompt("Ответ:");
+	return riddleAnswer;
+	}
+
+
+var tryCounter = 3;
+var answCounter = 0;
+	alert ("У вас есть "+ (tryCounter) +" попытки, чтобы разгадать каждую из загадок\nВсего будет три загадки, в конце будет подсчтано количество правильных ответов");
+	
+	alert ("Не отыскать её корней,\nВерхушка выше тополей.\nВсё круче вверх она идёт-\nА не растёт.");
+	answCounter = answCounter + riddleWatch(answerWatch(),"гора","скала",tryCounter);
+
+	alert ("Тридцать белых коней\nНа двух красных холмах -\nРазбегутся, сшибутся\nИ снова затихнут впотьмах.");
+	answCounter = answCounter + riddleWatch(answerWatch(),"зубы","Зубы",tryCounter);
+
+	alert ("Без голоса кричит,\nБез крыльев - а летает,\nИ безо рта свистит,\nИ без зубов кусает.");
+	answCounter = answCounter + riddleWatch(answerWatch(),"ветер","Ветер",tryCounter);
+
+	alert ("Отвечено верно: "+ answCounter);
+
+</script>

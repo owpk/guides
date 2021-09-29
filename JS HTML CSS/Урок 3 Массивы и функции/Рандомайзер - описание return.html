@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function getRandomNumber (max) {
+		var y = Math.round(Math.random()*max-1);
+		if (y<0) {
+			y+=1;
+		}
+		document.write(y);
+		return y;
+		//или такая же сокращенная запись той же функции сверху 
+		//return = Math.round(Math.random()*max);
+	}
+	function max (a,b) {
+		if (a>b) {
+			return a;
+		} else {
+			return b;
+		}
+	}
+	function factorial (g) {
+		var res = 1;
+	for (var i=1; i<=g; i++) {
+		res = res * i;
+		}
+		alert ("факториал числа "+g+" равен "+res+" ");
+		return res;
+	}
+		
+	
+	//факториал от 5 это 1*2*3*4*5
+
+	var j = prompt ();
+	factorial(j); 
+	var n = getRandomNumber(100);
+	var m = getRandomNumber(1000);
+	var a = max (64,38);
+	var c = max (n,m)+a;
+	alert (c);
+	
+
+		
+</script>

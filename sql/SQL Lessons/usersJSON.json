@@ -1,0 +1,90 @@
+[
+	{
+		"id" : 1,
+		"firstname" : "Tamekah",
+		"lastname" : "Chan",
+		"email" : "blandit.Nam.nulla@enimnectempus.co.uk",
+		"password_hash" : "33949225",
+		"phone" : 8958155130
+	},
+	{
+		"id" : 2,
+		"firstname" : "Ralph",
+		"lastname" : "Chavez",
+		"email" : "at@elit.ca",
+		"password_hash" : "78818799",
+		"phone" : 8941837860
+	},
+	{
+		"id" : 3,
+		"firstname" : "Lucy",
+		"lastname" : "Rutledge",
+		"email" : "faucibus@Phasellusornare.net",
+		"password_hash" : "16886912",
+		"phone" : 8906332534
+	},
+	{
+		"id" : 4,
+		"firstname" : "McKenzie",
+		"lastname" : "Reilly",
+		"email" : "fermentum.metus@acmattis.ca",
+		"password_hash" : "59823386",
+		"phone" : 8950697968
+	},
+	{
+		"id" : 5,
+		"firstname" : "Dahlia",
+		"lastname" : "Terry",
+		"email" : "ultrices@egetlaoreet.co.uk",
+		"password_hash" : "92766418",
+		"phone" : 8980219305
+	},
+	{
+		"id" : 6,
+		"firstname" : "Gareth",
+		"lastname" : "Curtis",
+		"email" : "et@quislectus.com",
+		"password_hash" : "29165759",
+		"phone" : 8942884124
+	},
+	{
+		"id" : 7,
+		"firstname" : "Drew",
+		"lastname" : "Curtis",
+		"email" : "vel.mauris.Integer@ametconsectetuer.co.uk",
+		"password_hash" : "53188007",
+		"phone" : 8998830705
+	},
+	{
+		"id" : 8,
+		"firstname" : "Madonna",
+		"lastname" : "Burch",
+		"email" : "pede.sagittis.augue@eueuismodac.edu",
+		"password_hash" : "68116523",
+		"phone" : 8928373184
+	},
+	{
+		"id" : 9,
+		"firstname" : "Renee",
+		"lastname" : "Gill",
+		"email" : "Nulla.tempor@tellus.edu",
+		"password_hash" : "39838769",
+		"phone" : 8943304902
+	},
+	{
+		"id" : 10,
+		"firstname" : "Leslie",
+		"lastname" : "Knox",
+		"email" : "amet.ante@Nuncmaurissapien.net",
+		"password_hash" : "62207740",
+		"phone" : 8953331302
+	},
+	{
+		"id" : 12,
+		"firstname" : "Troy",
+		"lastname" : "Baker",
+		"email" : "troyBaker@gmail.com",
+		"password_hash" : "1234545645",
+		"phone" : 1235456
+	}
+]

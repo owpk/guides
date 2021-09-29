@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th th:text="#{msgs.headers.name}">Name</th>
+        <th th:text="#{msgs.headers.price}">Price</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p: ${prods}">
+        <td th:text="${p.title}">Oranges</td>
+        <td th:text="${#numbers.formatDecimal(p.price, 1, 2)}"/>
+    </tr>
+    </tbody>
+</table>
+<div>
+    Current time is <span th:text="${serverTime}"/>
+</div>
+<form action="#" th:action="@{/some}" th:object="${item}" method="post">
+    <input type="text" th:field="*{date}"/>
+    <input type="text" th:field="*{header}"/>
+    <input type="text" th:field="*{text}"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function genText(length) {
+		
+		var text = "";
+		var arr = ["ф","ы","в",/*"а","ж","д","л","о"*/];
+		var arrB = [];
+
+		for (var i=0; i<=length; i++) {
+			var n = randomNumber(letters.length-1);
+			text = text + letters[n];
+		var n = randomNumber(arr.length);
+			var m = randomNumber(arrB.length);
+			if (arr.length>0) {
+				arrB.push(arr[n]);
+				arr.splice([n]);
+			}else {
+				arr.push(arrB[m]);
+				arrB.splice([m]);
+			}
+		return text; 
+	}
+	function randomNumber (max) {
+		return Math.round(Math.random()*max);
+	}
+
+	alert ("Хай зяблс");
+
+	while (true) {
+		var text = genText(10); 
+		var userText = prompt(text);
+			if (userText==text) {
+				alert ("nice")
+				break;
+			} else {
+				alert ("warning")
+			}
+		}
+
+	</script>

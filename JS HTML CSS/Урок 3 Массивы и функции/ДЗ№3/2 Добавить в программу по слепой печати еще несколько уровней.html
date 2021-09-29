@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+function genText(arr, textLength) { //генерируем случайные неповторяющиеся буквы: копируем и удаляем элементы массива arr во временный массив arrB, если в первом массиве не остается элементов, производим обратную операцию, и наоборот. Если длина слова меньше 3 букв, генерируем случайное число равное элементу массива arr и записываем его в text.
+	var text = "";
+	var arrB = [];
+	if (arr.length>=3) {
+	for (var i=1; i<=textLength; i++) {
+		var n = randomNumber(arr.length);
+		var m = randomNumber(arrB.length);
+
+		if (arr.length>0) {
+			text = text + arr[n];
+			arrB.push(arr[n]);
+			arr.splice(n,1);
+			
+		}else {
+			text = text + arrB[n];
+			arr.push(arrB[m]);
+			arrB.splice(m,1);
+		}
+	}
+	}else {
+		for (var i=1; i<=textLength; i++) {//чтобы не повторялись буквы - создать новую переменную text в качестве пустого массива, записывать в него последовательность c условием if (text[n]==(text[n-1]) {
+			//text[n]==*следующий элемент заданного массива arr*;
+			//}
+			var n = randomNumber(arr.length);
+			text=text+arr[n];
+		}
+		
+	}
+	return text;
+}
+	function randomNumberB (max) {
+		return Math.round(Math.random()*max);
+	}
+
+	function randomNumber (max) {
+		var y = Math.round(Math.random()*max-1);
+		if (y<0){
+			y+=1;
+		}
+		return y;
+	}
+	alert ("Для выхода нажмите q");
+	alert ("«Поставьте мизинец левой руки на букву Ф,\n безымянный палец — на Ы,\n средний — на В,\n указательный — на А.\n Мизинец правой руки на букву Ж,\n безымянный палец — на Д,\n средний — на Л,\n указательный — на О.\n Запомните расположение пальцев. Повторяйте за мной».");
+		
+	while (true) {
+		var text = genText(["о","ы","л","г","т","м","и","у","й",],10); 
+		var userText = prompt(text);
+			if (userText=="q") {
+				break;
+			}
+			if (userText==text) {
+				alert ("правильно!, следующее задание")
+				break;
+			} else {
+				alert ("не верно, попробуйте еще раз")
+			}
+		}
+	alert ("«Поставьте мизинец левой руки на букву Ф,\n безымянный палец — на Ы,\n средний — на В,\n указательный — на А.\n Мизинец правой руки на букву Ж,\n безымянный палец — на Д,\n средний -— на Л,\n указательный — на О.\n Запомните расположение пальцев»");
+	while (true) {
+		var text = genText(["о","ж",/*"л","г","т","м","и","у","й",*/],10); 
+		var userText = prompt(text);
+			if (userText=="q") {
+				break;
+			}
+			if (userText==text) {
+				alert ("правильно!")
+				break;
+			} else {
+				alert ("не верно, попробуйте еще раз")
+			}
+		}
+</script>

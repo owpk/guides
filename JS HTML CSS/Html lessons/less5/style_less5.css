@@ -1,0 +1,137 @@
+* {
+   margin: 0%;
+   padding: 0%;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+   margin: 0 auto;
+   max-width: 750px;
+   border-left: 1px solid rgba(117, 117, 117, 0.37);
+   border-right: 1px solid  rgba(117, 117, 117, 0.37);
+
+}
+
+.content {
+   height: 250px;
+   display: flex;
+   justify-content: space-around;
+   /* flex-direction: column;  <!-- расположить по горизонтали --> */
+   flex-wrap: wrap;
+}
+
+.block {
+   padding: 5px;
+   background-color: rgb(167, 153, 148);
+   text-align: center;
+}
+
+.last_block {
+   align-self: center;
+   flex-grow: 2;
+}
+
+.text {
+   flex-basis: 200px;
+}
+
+.header {
+   top: 0;
+   position: sticky;
+   height: 35px;
+   padding: 0px;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   background-color:rgb(105, 105, 105) ;
+}
+
+.header a {
+   color: white;
+   text-decoration: none;
+}
+
+.block:hover a {
+   color: black;
+}
+
+.block:hover {
+   background-color: rgb(140, 153, 146);
+}
+
+.image_box {
+   display: flex;
+   flex-grow: 2;
+}
+
+.img_block {
+   display: flex;
+   color: ivory;
+   justify-content: flex-end;
+   padding: 10px;
+   margin: 10px;
+   border-radius: 10px;
+   width: 100%;
+   min-height: 300px;
+   background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+
+.img_block_big {
+   color: ivory;
+   padding: 10px;
+   margin: 10px;
+   border-radius: 10px;
+   width: 100%;
+   min-height: 300px;
+   background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+
+.text_img_block {
+   max-width: 60%;
+}
+
+.h_top {
+   width: 359px;
+}
+
+.top_block {
+   flex-direction: column;
+   text-align: right;
+   max-width: 60%;
+}
+
+.top_text {
+   width:585px;
+   display:inline-block;
+}
+
+.inline_description_block {
+   padding: 20px;
+   text-align: center;
+}
+
+p {
+   margin: 10px;
+}
+
+.main_footer {
+   color: rgb(145, 161, 190);
+   padding: 50px;
+   background-color: rgb(95, 111, 141);
+}
+
+.footer_content {
+   display: flex;
+   justify-content: space-between;
+}
+
+.t_block {
+   text-align: center;
+   height: 100px;
+   min-width: 100px;
+}
+
+.flex_content {
+   display: flex;
+   flex-wrap: wrap;
+}

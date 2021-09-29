@@ -1,0 +1,40 @@
+ - просмотр списка пакетов
+sudo dpkg --get-selections
+
+- утилита для просмотра конфигурации железа
+sudo apt-get install hardinfo
+
+- сена пользователя
+:root
+sudo -i 
+:'username'
+sudo - 'username'
+
+-инфо о железе 
+lspci -v
+
+-инфо о процессах
+top
+
+-инфо о файловой системе 
+df -h
+
+-инфо о диске
+dd if=/dev/sda bs=1 count=500 | hexdump -C
+
+-инфо о разделах 
+cat /proc/partitions
+
+-размонтировать диск
+umount /dev/'disk_name'
+
+-ресайз файловой системы 
+resize2fs /dev/'disk_name' [size]
+
+sudo ps aux --sort %mem
+Показывает значения:
+●	RSS (Resident Set Size) — сколько физической памяти RAM использует процесс; не включает память свопа и память из разделяемых библиотек (shared library), но включает стек и heap — динамически распределяемую память приложения;
+●	VSZ (Virtual Set Size) — показывает, сколько виртуальной памяти использует процесс; включает физическую память и swap + shared-память. 
+
+-информация ОЗУ
+cat /proc/meminfo

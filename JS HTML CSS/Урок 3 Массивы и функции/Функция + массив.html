@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function getAnswer (x, answer) {
+		if (x==answer) {
+	alert ("da");
+		} else {
+		alert ("net, правильно будет "+answer);
+		}
+	}
+	
+	function getRandomNumber (max) {
+			var y = Math.round(Math.random()*max);
+			return y;
+		}
+
+	function getRandomArray (length) {
+
+		var arr = [];
+
+		for (var i=0; i<=length; i++) {
+			var random = getRandomNumber(100);
+			arr.push(random);
+		}
+		return arr;
+	}
+
+var numbers = getRandomArray(getRandomNumber(100));
+alert("запомни числа, быдло");
+alert (getRandomArray(10));
+var usAnsw = +prompt("назови 1 число");
+getAnswer (usAnsw,numbers[0]);
+
+usAnsw = +prompt("а последнее?");
+alert ("всего чисел было " + numbers.length);
+getAnswer (usAnsw, numbers[numbers.length-1]);
+
+var n = getRandomNumber(numbers.length);
+alert ("a помнишь "+(n+1)+" число?");
+usAnsw = +prompt();
+getAnswer (usAnsw, numbers[n]);
+
+</script>

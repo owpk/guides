@@ -1,0 +1,12 @@
+FROM python:3.8
+
+RUN mkdir -p /usr/src/app
+WORKDIR /usr/src/app
+
+COPY . $WORKSPACE
+RUN pip install --no-cache-dir -r dependecies.txt
+
+# ENV TZ Asia/Irkutsk
+
+CMD ["python3", "app.py"]
+

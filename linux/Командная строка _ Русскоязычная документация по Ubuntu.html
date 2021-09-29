@@ -1,0 +1,2056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0119)https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0 -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Командная строка | Русскоязычная документация по Ubuntu</title><link rel="shortcut icon" href="https://help.ubuntu.ru/lib/tpl/ubuntu-portal/images/favicon.ico">
+<link rel="apple-touch-icon" href="https://help.ubuntu.ru/lib/tpl/ubuntu-portal/images/apple-touch-icon.png">
+<meta name="generator" content="DokuWiki">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="командная строка,терминал,консоль">
+<link rel="search" type="application/opensearchdescription+xml" href="https://help.ubuntu.ru/lib/exe/opensearch.php" title="Русскоязычная документация по Ubuntu">
+<link rel="start" href="https://help.ubuntu.ru/">
+<link rel="contents" href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=index" title="Все страницы">
+<link rel="alternate" type="application/rss+xml" title="Недавние изменения" href="https://help.ubuntu.ru/feed.php">
+<link rel="alternate" type="application/rss+xml" title="Текущее пространство имён" href="https://help.ubuntu.ru/feed.php?mode=list&amp;ns=wiki">
+<link rel="alternate" type="text/html" title="Простой HTML" href="https://help.ubuntu.ru/_export/xhtml/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0">
+<link rel="alternate" type="text/plain" title="вики-разметка" href="https://help.ubuntu.ru/_export/raw/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0">
+<link rel="canonical" href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0">
+<link rel="stylesheet" type="text/css" href="./Командная строка _ Русскоязычная документация по Ubuntu_files/css.php">
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='wiki';var JSINFO = {"id":"wiki:\u043a\u043e\u043c\u0430\u043d\u0434\u043d\u0430\u044f_\u0441\u0442\u0440\u043e\u043a\u0430","namespace":"wiki"};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="./Командная строка _ Русскоязычная документация по Ubuntu_files/jquery.php"></script>
+<script type="text/javascript" charset="utf-8" src="./Командная строка _ Русскоязычная документация по Ubuntu_files/js.php"></script><style id="iris-css">.iris-picker{display:block;position:relative}.iris-picker,.iris-picker *{-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input+.iris-picker{margin-top:4px}.iris-error{background-color:#ffafaf}.iris-border{border-radius:3px;border:1px solid #aaa;width:200px;background-color:#fff}.iris-picker-inner{position:absolute;top:0;right:0;left:0;bottom:0}.iris-border .iris-picker-inner{top:10px;right:10px;left:10px;bottom:10px}.iris-picker .iris-square-inner{position:absolute;left:0;right:0;top:0;bottom:0}.iris-picker .iris-square,.iris-picker .iris-slider,.iris-picker .iris-square-inner,.iris-picker .iris-palette{border-radius:3px;box-shadow:inset 0 0 5px rgba(0,0,0,.4);height:100%;width:12.5%;float:left;margin-right:5%}.iris-picker .iris-square{width:76%;margin-right:10%;position:relative}.iris-picker .iris-square-inner{width:auto;margin:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-square-inner,.iris-ie-9 .iris-palette{box-shadow:none;border-radius:0}.iris-ie-9 .iris-square,.iris-ie-9 .iris-slider,.iris-ie-9 .iris-palette{outline:1px solid rgba(0,0,0,.1)}.iris-ie-lt9 .iris-square,.iris-ie-lt9 .iris-slider,.iris-ie-lt9 .iris-square-inner,.iris-ie-lt9 .iris-palette{outline:1px solid #aaa}.iris-ie-lt9 .iris-square .ui-slider-handle{outline:1px solid #aaa;background-color:#fff;-ms-filter:"alpha(Opacity=30)"}.iris-ie-lt9 .iris-square .iris-square-handle{background:0;border:3px solid #fff;-ms-filter:"alpha(Opacity=50)"}.iris-picker .iris-strip{margin-right:0;position:relative}.iris-picker .iris-strip .ui-slider-handle{position:absolute;background:0;margin:0;right:-3px;left:-3px;border:4px solid #aaa;border-width:4px 3px;width:auto;height:6px;border-radius:4px;box-shadow:0 1px 2px rgba(0,0,0,.2);opacity:.9;z-index:5;cursor:ns-resize}.iris-strip .ui-slider-handle:before{content:" ";position:absolute;left:-2px;right:-2px;top:-3px;bottom:-3px;border:2px solid #fff;border-radius:3px}.iris-picker .iris-slider-offset{position:absolute;top:11px;left:0;right:0;bottom:-3px;width:auto;height:auto;background:transparent;border:0;border-radius:0}.iris-picker .iris-square-handle{background:transparent;border:5px solid #aaa;border-radius:50%;border-color:rgba(128,128,128,.5);box-shadow:none;width:12px;height:12px;position:absolute;left:-10px;top:-10px;cursor:move;opacity:1;z-index:10}.iris-picker .ui-state-focus .iris-square-handle{opacity:.8}.iris-picker .iris-square-handle:hover{border-color:#999}.iris-picker .iris-square-value:focus .iris-square-handle{box-shadow:0 0 2px rgba(0,0,0,.75);opacity:.8}.iris-picker .iris-square-handle:hover::after{border-color:#fff}.iris-picker .iris-square-handle::after{position:absolute;bottom:-4px;right:-4px;left:-4px;top:-4px;border:3px solid #f9f9f9;border-color:rgba(255,255,255,.8);border-radius:50%;content:" "}.iris-picker .iris-square-value{width:8px;height:8px;position:absolute}.iris-ie-lt9 .iris-square-value,.iris-mozilla .iris-square-value{width:1px;height:1px}.iris-palette-container{position:absolute;bottom:0;left:0;margin:0;padding:0}.iris-border .iris-palette-container{left:10px;bottom:10px}.iris-picker .iris-palette{margin:0;cursor:pointer}.iris-square-handle,.ui-slider-handle{border:0;outline:0}</style>
+<!--<![endif]-->
+		<link href="./Командная строка _ Русскоязычная документация по Ubuntu_files/css" rel="stylesheet" type="text/css">
+				<link rel="stylesheet" type="text/css" href="./Командная строка _ Русскоязычная документация по Ubuntu_files/ubuntu-portal.css">
+				<script type="text/javascript" src="./Командная строка _ Русскоязычная документация по Ubuntu_files/ubuntu-portal.js.Без названия"></script></head>
+<body class="with-bottom-panel act-show">
+<div id="__container">
+<!-- Document -->
+<div>
+	<!-- Page -->
+	<div id="__page">
+		<div id="__wrapper"><div>
+			<!-- Header -->
+			<div id="__header">
+	<div id="__header-menu">
+		<ul>
+			<li>
+				<a href="https://ubuntu.ru/" title="Главная страница сайта ubuntu.ru">Сайт</a>			</li>
+			<li>
+				<a href="https://forum.ubuntu.ru/" title="Форум русскоязычного сообщества Ubuntu. На нём вы можете задать интересующие вас вопросы и получить помощь от других пользователей Ubuntu.">Форум</a>			</li>
+			<li>
+				<a href="https://help.ubuntu.ru/" title="Различная русскоязычная документация по семейству операционных систем на базе Ubuntu" class="active">Документация</a>					<div class="header-submenu">
+						<div>
+							<ul>
+								<li>
+					<a href="https://help.ubuntu.ru/wiki" title="Документация, создаваемая пользователями Ubuntu" class="active">Пользовательская документация</a>
+				<div class="header-popup">
+					<ul>
+						<li><a href="https://help.ubuntu.ru/wiki/%D1%81%D0%B5%D0%BC%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%BE_ubuntu" title="Документация по дистрибутивам, входящим в семейство Ubuntu">Семейство Ubuntu</a></li>
+						<li><a href="https://help.ubuntu.ru/wiki/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0" title="Различные материалы по Ubuntu, доступные для загрузки">Материалы для загрузки</a></li>
+						<li><a href="https://help.ubuntu.ru/wiki/%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C" title="Раздел, посвящённый совместимости Ubuntu с оборудованием, в первую очередь - с ноутбуками">Совместимость с оборудованием</a></li>
+					</ul>
+				</div></li>
+								<li><a href="https://help.ubuntu.ru/doc" title="Переводы официальной документации по Ubuntu на русский язык">Официальная документация</a></li>
+							</ul>
+									<div id="__header-controls">			<div id="__header-user"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=login&amp;sectok=" class="action login" rel="nofollow" title="Войти">Войти / Зарегистрироваться</a>			</div>		</div>							<div class="clearer"></div>
+						</div>
+					</div>
+							</li>
+			<li>
+				<a href="https://team.ubuntu.ru/" title="Материалы, касающиеся работы русскоязычного сообщества и русскоязычной LoCo команды Ubuntu">Сообщество</a>			</li>
+		</ul>
+		<div id="__header-logo">
+			<a href="https://ubuntu.ru/" title="На главную страницу сайта">
+				<img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/logo_ru.png" alt="">
+			</a>
+		</div>
+	</div>
+	<div id="__search-box">
+		<form action="https://help.ubuntu.ru/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F" accept-charset="utf-8" class="search" id="dw__search" method="get" role="search"><div class="no"><input type="hidden" name="do" value="search"><input type="text" placeholder="Найти" id="qsearch__in" accesskey="f" name="id" class="edit" title="[F]"><button type="submit" title="Найти">Найти</button><div id="qsearch__out" class="ajax_qsearch JSpopup" style="display: none;"></div></div></form>	</div>
+</div>
+			<!-- /Header -->
+			<!-- Main -->
+							<div id="__main">
+					<div id="__main-title">
+						<h1><a name="командная_строка" id="командная_строка">Командная строка</a></h1>
+					</div>
+					<div class="msgarea">
+											</div>
+					<div class="content">
+						<div class="content-main dokuwiki">
+							<!-- TOC START -->
+<div id="dw__toc">
+<h3 class="toggle open" style="cursor: pointer;"><strong><span>−</span></strong>Содержание</h3>
+<div aria-expanded="true" style="">
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0">Командная строка</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C">Консоль</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB">Терминал</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B3%D0%BE%D1%80%D1%8F%D1%87%D0%B8%D0%B5_%D0%BA%D0%BB%D0%B0%D0%B2%D0%B8%D1%88%D0%B8">Горячие клавиши</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BD%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BE%D0%BB%D0%BE%D1%87%D0%BA%D0%B0">Программная оболочка</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B">Команды</a></div></li>
+<li class="level1"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%88%D0%BF%D0%B0%D1%80%D0%B3%D0%B0%D0%BB%D0%BA%D0%B0_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4">Шпаргалка команд</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D0%B5_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B">Файловые команды</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B0%D1%80%D1%85%D0%B8%D0%B2%D0%B0%D1%86%D0%B8%D1%8F">Архивация</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0_%D1%81_%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8_deb-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0%D0%BC%D0%B8_dpkg">Работа с локальными deb-пакетами (dpkg)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D0%B0_apt">Использование пакетного менеджера Apt</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80_%D1%81%D0%BE%D0%B4%D0%B5%D1%80%D0%B6%D0%B8%D0%BC%D0%BE%D0%B3%D0%BE_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2">Просмотр содержимого файлов</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BC%D0%B0%D0%BD%D0%B8%D0%BF%D1%83%D0%BB%D1%8F%D1%86%D0%B8%D0%B8_%D1%81_%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%BE%D0%BC">Манипуляции с текстом</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%D0%BE%D0%B2_%D1%81%D0%B8%D0%BC%D0%B2%D0%BE%D0%BB%D0%BE%D0%B2_%D0%B8_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%BE%D0%B2">Преобразование наборов символов и файловых форматов</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC">Анализ файловых систем</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC">Монтирование файловых систем</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D1%8B%D1%85_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC">Форматирование файловых систем</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B5%D0%B7%D0%B5%D1%80%D0%B2%D0%BD%D1%8B%D1%85_%D0%BA%D0%BE%D0%BF%D0%B8%D0%B9_backup">Создание резервных копий (backup)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%81%D1%82%D0%B2%D0%BE">Дисковое пространство</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#cdrom">CDROM</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B8_%D0%B8_%D0%B3%D1%80%D1%83%D0%BF%D0%BF%D1%8B">Пользователи и группы</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B2%D1%8B%D1%81%D1%82%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5%D0%B8%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%BC%D0%BE%D1%87%D0%B8%D0%B9_%D0%BD%D0%B0_%D1%84%D0%B0%D0%B9%D0%BB%D1%8B">Выставление/изменение полномочий на файлы</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_secure_shell_ssh">Команды Secure Shell (ssh)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BF%D1%80%D0%BE%D1%86%D0%B5%D1%81%D1%81%D0%B0%D0%BC%D0%B8">Управление процессами</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%81%D0%B5%D1%82%D1%8C_lan_%D0%B8_wifi">Сеть (LAN и WiFi)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#microsoft_windows_networks_samba">Microsoft Windows networks(SAMBA)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#iptables_firewall">IPTABLES (firewall)</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D0%B0%D1%8F_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F">Системная информация</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B">Остановка системы</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5_%D0%BF%D0%BE%D0%BB%D0%B5%D0%B7%D0%BD%D1%8B%D0%B5_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B">Другие полезные команды</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D1%80%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8_%D0%B8_%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0_%D0%BF%D0%BE_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B5">Просмотр справки и руководства по программе</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D0%BE%D0%B8%D1%81%D0%BA_%D0%BF%D0%BE_man_%D0%B0%D0%BC">Поиск по man'ам</a></div></li>
+<li class="level3"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5_%D0%BF%D1%80%D0%B8%D0%B2%D0%BB%D0%B5%D0%BA%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_man_%D1%8B">Более привлекательные man'ы</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B2%D1%8B%D0%BF%D0%BE%D0%BB%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4_%D1%81_%D0%BD%D0%B5%D0%BE%D0%B3%D1%80%D0%B0%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%BC%D0%B8_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%BB%D0%B5%D0%B3%D0%B8%D1%8F%D0%BC%D0%B8">Выполнение команд с неограниченными привилегиями</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_%D0%B4%D0%BB%D1%8F_%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B_%D1%81_%D1%84%D0%B0%D0%B9%D0%BB%D0%B0%D0%BC%D0%B8_%D0%B8_%D0%BF%D0%B0%D0%BF%D0%BA%D0%B0%D0%BC%D0%B8">Команды для работы с файлами и папками</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%B8_%D0%BE_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5">Команды информации о системе</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%B4%D0%BE%D0%B1%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D0%BD%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8F">Добавление нового пользователя</a></div></li>
+<li class="level2"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D0%BF%D0%BE%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B0_%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2_tree">Построение дерева каталогов (tree)</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0#%D1%81%D1%81%D1%8B%D0%BB%D0%BA%D0%B8">Ссылки</a></div></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<div class="level1">
+
+<p>
+ В <a href="https://help.ubuntu.ru/wiki/ubuntu" class="wikilink1" title="wiki:ubuntu">Ubuntu</a> существует два вида интерфейса: графический интерфейс пользователя и интерфейс командной строки.<br>
+
+</p>
+
+<p>
+<strong>Графический интерфейс пользователя</strong> <em>(англ. Graphical user interface, <abbr title="Graphical User Interface">GUI</abbr>).</em> - управление программами с помощью графических кнопок, всплывающих меню, окон и других элементов. Множество действий можно выполнять с помощью мыши. <br>
+
+</p>
+
+<p>
+Преимущества: визуальное отображение программ и их содержимого, возможности программ можно изучать без чтения документации. <br>
+
+</p>
+
+<p>
+<strong>Интерфейс командной строки</strong> <em>(англ. Command Line Interface, CLI).</em> - управление программами с помощью команд. Команды состоят из букв, цифр, символов, набираются построчно, выполняются после нажатия клавиши Enter. Основной инструмент здесь клавиатура. <br>
+
+Данный интерфейс встроен в ядро системы, он будет доступен, даже если графический интерфейс не запустится. <br>
+
+</p>
+
+<p>
+Преимущества: небольшой расход ресурсов, гибкость при составлении перечня действий из команд, возможность автоматического выполнения команд, возможность копировать и вставлять команды. <br>
+
+</p>
+
+<p>
+Если сравнивать интерфейсы в разных системах, то можно заметить, что основные команды одинаковы во всех дистрибутивах семейства Linux, а вот графические программы в каждой системе могут очень сильно различаться. <br>
+
+<br>
+
+</p>
+
+<p>
+Добраться до командной строки можно двумя способами: через консоль или терминал. <br>
+
+</p>
+
+</div>
+
+<h2 class="sectionedit2" id="консоль">Консоль</h2>
+<div class="level2">
+
+<p>
+<a href="https://help.ubuntu.ru/_detail/wiki/%D0%B2%D0%B8%D1%80%D1%82%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C.png?id=wiki%3A%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0" class="media" title="wiki:виртуальная_консоль.png"><img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/виртуальная_консоль.png" class="media" alt=""></a>
+</p>
+
+<p>
+Во время загрузки Ubuntu запускаются семь полноэкранных консолей, у каждой свой независимый сеанс, с первой по шестую с интерфейсом командной строки, в седьмой запускается графический режим. Пользователь во время загрузки видит только графический режим. <br>
+
+Переключиться на одну из виртуальных консолей можно нажав сочетание клавиш: <br>
+
+Ctrl+Alt+F1 - первая виртуальная консоль; <br>
+
+Ctrl+Alt+F2 - вторая виртуальная консоль; <br>
+
+Ctrl+Alt+F3 - третья виртуальная консоль; <br>
+
+Ctrl+Alt+F4 - четвертая виртуальная консоль; <br>
+
+Ctrl+Alt+F5 - пятая виртуальная консоль; <br>
+
+Ctrl+Alt+F6 - шестая виртуальная консоль; <br>
+
+Ctrl+Alt+F7 - седьмая виртуальная консоль, возврат в графический режим. <br>
+
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="терминал">Терминал</h2>
+<div class="level2">
+
+<p>
+<a href="https://help.ubuntu.ru/_detail/wiki/gnome-terminal.png?id=wiki%3A%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0" class="media" title="wiki:gnome-terminal.png"><img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/gnome-terminal.png" class="media" title="Окно терминала" alt="Окно терминала"></a>
+</p>
+
+<p>
+<strong>Терминал</strong> - графическая программа эмулирующая консоль. <br>
+
+Такие программы позволяют не выходя из графического режима выполнять команды. <br>
+
+Терминал по сравнению с консолью имеет дополнительный функционал (управление мышью, контекстное меню, полоса прокрутки, вкладки, запуск нескольких окон, главное меню, графические настройки). <br>
+
+</p>
+
+<p>
+Запустить терминал можно следующим образом:
+</p>
+
+<p>
+<strong>В Unity</strong>: <br>
+
+<em>Главное меню → Набрать в поисковой строке слово Терминал</em> <br>
+
+или нажать комбинацию клавиш: <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>
+</p>
+
+<p>
+<strong>В Gnome Fallback</strong> <br>
+
+<em>Приложения → Стандартные → Терминал</em>
+</p>
+
+<p>
+<strong>В Xfce (Xubuntu)</strong>: <br>
+
+<em>Главное меню → Приложения → Система → Терминал</em>
+</p>
+
+<p>
+<strong>В KDE (Kubuntu)</strong>: <br>
+
+<em>Главное меню → Приложения → Система → Терминал</em>
+</p>
+
+<p>
+<strong>В LXDE (Lubuntu)</strong>: <br>
+
+<em>Главное меню → Системные → LXTerminal</em>
+</p>
+
+<p>
+После запуска терминала мы видим строку с приглашением к вводу команд, например: <br>
+
+<strong>vladimir@Zotac-Zbox-Nano:~$</strong> <br>
+
+</p>
+
+<p>
+vladimir - имя учетной записи пользователя<br>
+
+@ - разделитель между учетной записью и именем компьютера <br>
+
+Zotac-Zbox-Nano - имя компьютера <br>
+
+: - разделитель <br>
+
+~ - в какой папке выполняется команда, ~ это домашняя папка пользователя, если выполните команду ls то получите список файлов из этой папки <br>
+
+$ - приглашение к выполнению команды с правами простого пользователя (# будет означать приглашение на выполнение команд с правами администратора)<br>
+
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="горячие_клавиши">Горячие клавиши</h2>
+<div class="level2">
+
+<p>
+<strong>Копирование команд</strong>
+</p>
+
+<p>
+Часто вам придётся следовать каким-либо инструкциям, которые требуют копирования команд в терминал. Наверное, вы удивитесь, когда обнаружите, что текст, скопированный вами с интернет-страницы при помощи комбинации клавиш <kbd>Ctrl</kbd>+<kbd>С</kbd>, не вставляется в терминал при нажатии <kbd>Ctrl</kbd>+<kbd>V</kbd>. И что, неужели придётся перепечатывать все эти команды и имена файлов вручную? Нет, расслабьтесь! Вставить текст в терминал можно тремя способами: <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>, нажатием средней кнопки мыши или правой кнопки мыши и выбором строки «Вставить».
+</p>
+
+<p>
+<strong>Экономия набора</strong>
+</p>
+<div class="table sectionedit5"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"> <kbd>↑</kbd> или <kbd>Ctrl</kbd>+<kbd>P</kbd> </td><td class="col1"> прокрутка недавно использованных команд вверх </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"> <kbd>↓</kbd> или <kbd>Ctrl</kbd>+<kbd>N</kbd></td><td class="col1"> прокрутка недавно использованных команд вниз </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"> <kbd>Enter</kbd> </td><td class="col1"> выполнение выбранной команды </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><kbd>Tab</kbd> </td><td class="col1"> крайне удобная возможность - автозаподстановка команд и имён файлов. Если с выбранных символов начинается только одна команда, подставится именно она, а если их несколько,то по двойному нажатию tab выведется список всех возможных вариантов.</td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"> <kbd>Ctrl</kbd>+<kbd>R</kbd> </td><td class="col1"> поиск по командам, которые вы вводили раньше. Если вам нужно повторно выполнить очень длинную и сложную команду, вы можете ввести только её часть, а эта комбинация клавиш поможет найти команду целиком.</td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"> <strong>History</strong> </td><td class="col1"> Команда <strong>history</strong> выводит список всех команд, которые вы вводили. Каждой команде будет присвоен номер. Чтобы выполнить команду под номером x, просто введите <strong>«!x»</strong>. Если у вас получилась слишком длинная история, можно попробовать <strong>«history I less»</strong>, это сделает список прокручиваемым. </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+<strong>Изменение текста</strong>
+</p>
+
+<p>
+Здесь мышь не работает. Используйте стрелки влево/вправо, чтобы перемещаться по строке.
+</p>
+
+<p>
+Ввод с клавиатуры будет добавлять символы. Существующий текст удаляться не будет. 
+</p>
+<div class="table sectionedit6"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0 leftalign"> <strong>ctrl+a</strong> или <strong>Home</strong>  </td><td class="col1"> перемещает курсор в начало строки </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0 leftalign"> <strong>ctrl+e</strong> или <strong>End</strong>  </td><td class="col1"> перемещает курсор в конец строки </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0 leftalign"> <strong>ctrl+b</strong>  </td><td class="col1"> перемещает курсор в начало предыдущего или текущего слова </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0 leftalign"> <strong>ctrl+k</strong>  </td><td class="col1"> удаляет текст с текущей позиции курсора до конца строки </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0 leftalign"> <strong>ctrl+u</strong>  </td><td class="col1"> удаляет всю текущую строку </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"> <strong>ctrl+w</strong>  </td><td class="col1"> удаляет слово перед курсором </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit7" id="программная_оболочка">Программная оболочка</h2>
+<div class="level2">
+
+<p>
+Консоль и терминал обрабатывают команды с помощью программной оболочки. <br>
+
+Программная оболочка - интерпретатор команд, он распознает команды введенные в командной строке, и запускает программы для выполнения команды. <br>
+
+В <a href="https://help.ubuntu.ru/wiki/ubuntu" class="wikilink1" title="wiki:ubuntu">Ubuntu</a> по умолчанию используется оболочка <a href="https://help.ubuntu.ru/wiki/bash" class="wikilink1" title="wiki:bash">bash</a>, он распознает команды на языке bash. <br>
+
+Bash можно заменить на другую оболочку, их существует несколько. Каждая оболочка имеет свой набор настроек и возможностей. <br>
+
+(автовыполнение команд при входе в оболочку, внутренние команды оболочки, ведение истории, можно назначать сокращенные команды - алиасы). <br>
+
+</p>
+
+</div>
+
+<h1 class="sectionedit8" id="команды">Команды</h1>
+<div class="level1">
+
+<p>
+Команды - это предопределенный набор букв, цифр, символов, которые можно ввести в командной строке и выполнить нажав энтер.
+</p>
+
+<p>
+Команды делятся на два вида:
+</p>
+<ul>
+<li class="level"><div class="li">
+ команды встроенные в программную оболочку (например history)
+</div></li>
+<li class="level"><div class="li">
+ команды управляющие программами, установленными в системе 
+</div></li>
+</ul>
+
+
+<p>
+Команды для управления программами строятся по такой схеме: 
+</p>
+<pre class="code bash">название_программы -ключ значение </pre>
+
+<p>
+  <br>
+
+<strong>Название програмы</strong> - это название исполняемого файла из каталогов записанных в переменной $PATH (/bin, /sbin, /usr/bin, /usr/sbin, /usr/local/bin, /usr/local/sbin и др.) или полный путь к исполняемому файлу (/opt/deadbeef/bin/deadbeef) <br>
+
+<strong>Ключ</strong> - пишется после названия программы, например -h, у каждой программы свой набор ключей, они перечислены в справке к программе, ключи используются для указания какие настройки использовать или какое действие выполнить <br>
+
+<strong>Значение</strong> - адрес, цифры, текст, спецсимволы (*, ~, \, &amp;, « », _ ), переменные ($HOME, $USER, $PATH) <br>
+
+</p>
+
+<p>
+Выполнить команды можно следующим образом:
+</p>
+<ul>
+<li class="level"><div class="li">
+ набрать команду в командной строке и нажать Enter
+</div></li>
+<li class="level"><div class="li">
+ скопировать команду из инструкции и вставить ее в командную строку, затем нажать Enter
+</div></li>
+<li class="level"><div class="li">
+ создать скрипт и выполнить двойным нажатием мыши (создать текстовый файл, в первой строке написать #!/bin/bash, ниже написать команды в столбик, сохранить, в свойствах файла разрешить выполнение, нажать два раза по файлу для выполнения всех перечисленных команд)
+</div></li>
+</ul>
+
+<div class="noteimportant">Помните, что терминал чувствителен к регистру! Слова User, user и USER в Linux различаются!
+</div>
+</div>
+
+<h1 class="sectionedit9" id="шпаргалка_команд">Шпаргалка команд</h1>
+<div class="level1">
+
+</div>
+
+<h2 class="sectionedit10" id="файловые_команды">Файловые команды</h2>
+<div class="level2">
+<div class="table sectionedit11"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>cd ../..</strong></td><td class="col1">перейти в директорию двумя уровнями выше </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>cd</strong> </td><td class="col1">перейти в домашнюю директорию </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>cd ~user</strong> </td><td class="col1">перейти в домашнюю директорию пользователя user </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>cd -</strong> </td><td class="col1">перейти в директорию, в которой находились до перехода в текущую директорию </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>pwd</strong> </td><td class="col1">показать текущюю директорию </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>mkdir dir</strong> </td><td class="col1">создать каталог dir </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>mkdir dir1</strong> </td><td class="col1">создать директорию с именем 'dir1' </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>mkdir dir1 dir2</strong> </td><td class="col1">создать две директории одновременно </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>mkdir -p /tmp/dir1/dir2</strong> </td><td class="col1">создать дерево директорий </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>rm file</strong> </td><td class="col1">удалить file </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>rm -r dir</strong> </td><td class="col1">удалить каталог dir </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>rm -f file</strong> </td><td class="col1">удалить форсированно file </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>rm -rf dir</strong> </td><td class="col1">удалить форсированно каталог dir </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>rm -f file1</strong> </td><td class="col1">удалить файл с именем 'file1'</td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>rmdir dir1</strong> </td><td class="col1">удалить директорию с именем 'dir1' </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>rm -rf dir1</strong> </td><td class="col1">удалить директорию с именем 'dir1' и рекурсивно всё её содержимое </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>rm -rf dir1 dir2</strong> </td><td class="col1">удалить две директории и рекурсивно их содержимое </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>cp file1 file2</strong> </td><td class="col1">скопировать file1 в file2 </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>cp -r dir1 dir2</strong> </td><td class="col1">скопировать dir1 в dir2; создаст каталог dir2, если он не существует </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>cp dir/</strong> </td><td class="col1">копировать все файлы директории dir в текущую директорию </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>cp -a /tmp/dir1</strong> </td><td class="col1">копировать директорию dir1 со всем содержимым в текущую директорию </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><strong>cp -a dir1 dir2</strong> </td><td class="col1">копировать директорию dir1 в директорию dir2 </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><strong>mv dir1 new_dir</strong> </td><td class="col1">переименовать или переместить файл или директорию </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><strong>mv file1 file2</strong> </td><td class="col1">переименовать или переместить file1 в file2. если file2 существующий каталог - переместить file1 в каталог file2 </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><strong>ln -s file1 lnk1</strong> </td><td class="col1">создать символическую ссылку на файл или директорию</td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><strong>ln file1 lnk1</strong> </td><td class="col1">создать «жёсткую» (физическую) ссылку на файл или директорию</td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><strong>touch file</strong> </td><td class="col1">создать file </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><strong>touch -t 0712250000 fileditest</strong> </td><td class="col1">модифицировать дату и время создания файла, при его отсутствии, создать файл с указанными датой и временем (YYMMDDhhmm) </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><strong>cat &gt; file</strong> </td><td class="col1">направить стандартный ввод в file </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><strong>more file</strong> </td><td class="col1">вывести содержимое file </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><strong>head file</strong> </td><td class="col1">вывести первые 10 строк file </td>
+	</tr>
+	<tr class="row31">
+		<td class="col0"><strong>tail file</strong> </td><td class="col1">вывести последние 10 строк file </td>
+	</tr>
+	<tr class="row32">
+		<td class="col0"><strong>tail -f file</strong> </td><td class="col1">вывести содержимое file по мере роста, начинает с последних 10 строк </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit12" id="архивация">Архивация</h2>
+<div class="level2">
+<div class="table sectionedit13"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>tar cf file.tar files</strong> </td><td class="col1">создать tar-архив с именем file.tar содержащий files </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>tar xf file.tar</strong> </td><td class="col1">распаковать file.tar </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>tar czf file.tar.gz files</strong> </td><td class="col1">создать архив tar с сжатием Gzip </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>tar xzf file.tar.gz</strong> </td><td class="col1">распаковать tar с Gzip </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>tar cjf file.tar.bz2</strong> </td><td class="col1">создать архив tar с сжатием Bzip2 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>tar xjf file.tar.bz2</strong> </td><td class="col1">распаковать tar с Bzip2 </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>gzip file</strong> </td><td class="col1">сжать file и переименовать в file.gz </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>gzip -d file.gz</strong> </td><td class="col1">разжать file.gz в file </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>bunzip2 file1.bz2</strong> </td><td class="col1">разжимает файл 'file1.gz' </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>gzip -9 file1</strong> </td><td class="col1">сжать файл file1 с максимальным сжатием </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>rar a file1.rar test_file</strong> </td><td class="col1">создать rar-архив 'file1.rar' и включить в него файл test_file </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>rar a file1.rar file1 file2 dir1</strong> </td><td class="col1">создать rar-архив 'file1.rar' и включить в него file1, file2 и dir1 </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>rar x file1.rar</strong> </td><td class="col1">распаковать rar-архив </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>tar -cvf archive.tar file1</strong> </td><td class="col1">создать tar-архив archive.tar, содержащий файл file1 </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>tar -cvf archive.tar file1 file2 dir1</strong> </td><td class="col1">создать tar-архив archive.tar, содержащий файл file1, file2 и dir1 </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>tar -tf archive.tar</strong> </td><td class="col1">показать содержимое архива </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>tar -xvf archive.tar</strong> </td><td class="col1">распаковать архив </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>tar -xvf archive.tar -C /tmp</strong> </td><td class="col1">распаковать архив в /tmp </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>tar -cvfj archive.tar.bz2 dir1</strong> </td><td class="col1">создать архив и сжать его с помощью bzip2(Прим.переводчика. ключ -j работает не во всех *nix системах) </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>tar -xvfj archive.tar.bz2</strong> </td><td class="col1">разжать архив и распаковать его(Прим.переводчика. ключ -j работает не во всех *nix системах) </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>tar -cvfz archive.tar.gz dir1</strong> </td><td class="col1">создать архив и сжать его с помощью gzip </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><strong>tar -xvfz archive.tar.gz</strong> </td><td class="col1">разжать архив и распаковать его </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><strong>zip file1.zip file1</strong> </td><td class="col1">создать сжатый zip-архив </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><strong>zip -r file1.zip file1 file2 dir1</strong> </td><td class="col1">создать сжатый zip-архив и со включением в него нескольких файлов и/или директорий </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><strong>unzip file1.zip</strong> </td><td class="col1">разжать и распаковать zip-архив </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit14" id="работа_с_локальными_deb-пакетами_dpkg">Работа с локальными deb-пакетами (dpkg)</h2>
+<div class="level2">
+
+<p>
+deb — расширение имён файлов «бинарных» пакетов для распространения и установки программного обеспечения в ОС проекта Debian, и других, использующих систему управления пакетами dpkg. Deb — это часть слова Debian, в свою очередь, образованного от слов Debra — имени подруги (впоследствии — жены, ныне — бывшей) основателя Дебиана Яна Мердока и Ian от его собственного имени.
+</p>
+<div class="table sectionedit15"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>dpkg -i package.deb</strong> </td><td class="col1">установить / обновить пакет </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>dpkg -r package_name</strong> </td><td class="col1">удалить пакет из системы </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>dpkg -l</strong> </td><td class="col1">показать все пакеты, установленные в систему </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>dpkg -l | grep httpd </strong> </td><td class="col1">среди всех пакетов, установленных в системе, найти пакет содержащий в своём имени «httpd» </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong> dpkg -s package_name</strong> </td><td class="col1">отобразить инфрмацию о конкретном пакете </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>dpkg -L package_name </strong> </td><td class="col1">вывести список файлов, входящих в пакет, установленный в систему </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>dpkg –contents package.deb</strong> </td><td class="col1">отобразить список файлов, входящих в пакет, который ешё не установлен в систему </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>dpkg -S /bin/ping</strong> </td><td class="col1">найти пакет, в который входит указанный файл </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit16" id="использование_пакетного_менеджера_apt">Использование пакетного менеджера Apt</h2>
+<div class="level2">
+
+<p>
+apt (advanced packaging tool) — программа для установки, обновления и удаления программных пакетов в операционных системах Debian и основанных на них (Ubuntu, Linux Mint и т. п.), иногда также используется в дистрибутивах, основанных на Mandrake, например Mandriva, ALTLinux и PCLinuxOS. Способна автоматически устанавливать и настраивать программы для UNIX-подобных операционных систем как из предварительно откомпилированных пакетов, так и из исходных кодов.
+</p>
+<div class="table sectionedit17"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>apt-get install package_name</strong> </td><td class="col1">установить / обновить пакет </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>apt-cdrom install package_name</strong> </td><td class="col1">установить / обновить пакет с cdrom'а </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>apt-get update</strong> </td><td class="col1">получить обновлённые списки пакетов </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>apt-get upgrade</strong> </td><td class="col1">обновить пакеты, установленные в систему </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>apt-get remove package_name</strong> </td><td class="col1">удалить пакет, установленный в систему с сохранением файлов конфигурации </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>apt-get purge package_name</strong> </td><td class="col1">удалить пакет, установленный в систему с удалением файлов конфигурации </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>apt-get check</strong> </td><td class="col1">проверить целостность зависимостей </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>apt-get clean</strong> </td><td class="col1">удалить загруженные архивные файлы пакетов </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>apt-get autoclean</strong> </td><td class="col1">удалить старые загруженные архивные файлы пакетов </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit18" id="просмотр_содержимого_файлов">Просмотр содержимого файлов</h2>
+<div class="level2">
+<div class="table sectionedit19"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>cat file1</strong> </td><td class="col1">вывести содержимое файла file1 на стандартное устройсво вывода </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>tac file1</strong> </td><td class="col1">вывести содержимое файла file1 на стандартное устройсво вывода в обратном порядке (последняя строка становиться первой и т.д.) </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>more file1</strong> </td><td class="col1">постраничный вывод содержимого файла file1 на стандартное устройство вывода </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>less file1</strong> </td><td class="col1">постраничный вывод содержимого файла file1 на стандартное устройство вывода, но с возможностью пролистывания в обе стороны (вверх-вниз), поиска по содержимому и т.п. </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>head -2 file1</strong> </td><td class="col1">вывести первые две строки файла file1 на стандартное устройство вывода. По-умолчанию выводится десять строк </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>tail -2 file1</strong> </td><td class="col1">вывести последние две строки файла file1 на стандартное устройство вывода. По-умолчанию выводится десять строк </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>tail -f /var/log/messages</strong> </td><td class="col1">выводить содержимое файла /var/log/messages на стандартное устройство вывода по мере появления в нём текста </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit20" id="манипуляции_с_текстом">Манипуляции с текстом</h2>
+<div class="level2">
+<div class="table sectionedit21"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>cat file_originale | [operation: sed, grep, awk, grep и т.п.] &gt; result.txt</strong> </td><td class="col1">общий синтаксис выполнения действий по обработке содержимого файла и вывода результата в новый </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>cat file_originale | [operazione: sed, grep, awk, grep и т.п.] » result.txt</strong> </td><td class="col1">общий синтаксис выполнения действий по обработке содержимого файла и вывода результата в существующий файл. Если файл не существует, он будет создан </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>grep Aug /var/log/messages	из файла '/var/log/messages'</strong> </td><td class="col1">отобрать и вывести на стандартное устройство вывода строки, содержащие «Aug» </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>grep ^Aug /var/log/messages	из файла '/var/log/messages'</strong> </td><td class="col1">отобрать и вывести на стандартное устройство вывода строки, начинающиеся на «Aug» </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>grep [0-9] /var/log/messages	из файла '/var/log/messages'</strong> </td><td class="col1">отобрать и вывести на стандартное устройство вывода строки, содержащие цифры </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>grep Aug -R /var/log/* </strong> </td><td class="col1 rightalign">	отобрать и вывести на стандартное устройство вывода строки, содержащие «Aug», во всех файлах, находящихся в директории /var/log и ниже </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>sed 's/stringa1/stringa2/g' example.txt</strong> </td><td class="col1">в файле example.txt заменить «string1» на «string2», результат вывести на стандартное устройство вывода </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>sed '/^$/d' example.txt</strong> </td><td class="col1">удалить пустые строки из файла example.txt </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>sed '/ *#/d; /^$/d' example.txt</strong> </td><td class="col1">удалить пустые строки и комментарии из файла example.txt </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>echo 'esempio' | tr '[:lower:]' '[:upper:]'</strong> </td><td class="col1">преобразовать символы из нижнего регистра в верхний </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>sed -e '1d' result.txt</strong> </td><td class="col1">удалить первую строку из файла example.txt </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>sed -n '/string1/p'</strong> </td><td class="col1">отобразить только строки содержашие «string1» </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>sed -e 's/ *$<em>' example.txt<strong> |удалить пустые символы в в конце каждой строки |
+|</strong>sed -e 's/string1</em>g' example.txt</strong> </td><td class="col1">удалить строку «string1» из текста не изменяя всего остального </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>sed -n '1,8p;5q' example.txt</strong> </td><td class="col1">взять из файла с первой по восьмую строки и из них вывести первые пять </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>sed -n '5p;5q' example.txt</strong> </td><td class="col1">вывести пятую строку </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>sed -e 's/0*/0/g' example.txt</strong> </td><td class="col1">заменить последовательность из любого количества нулей одним нулём </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>cat -n file1</strong> </td><td class="col1">пронумеровать строки при выводе содержимого файла </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>cat example.txt | awk 'NR%2==1'</strong> </td><td class="col1">при выводе содержимого файла, не выводить чётные строки файла </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>echo a b c | awk '{print $1}'</strong> </td><td class="col1">вывести первую колонку. Разделение, по-умолчанию, по проблелу/пробелам или символу/символам табуляции </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>echo a b c | awk '{print $1,$3}'</strong> </td><td class="col1">вывести первую и треью колонки. Разделение, по-умолчанию, по проблелу/пробелам или символу/символам табуляции </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>paste file1 file2</strong> </td><td class="col1">объединить содержимое file1 и file2 в виде таблицы: строка 1 из file1 = строка 1 колонка 1-n, строка 1 из file2 = строка 1 колонка n+1-m </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><strong>paste -d '+' file1 file2</strong> </td><td class="col1">объединить содержимое file1 и file2 в виде таблицы с разделителем «+» </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><strong>sort file1 file2</strong> </td><td class="col1">отсортировать содержимое двух файлов </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><strong>sort file1 file2 | uniq</strong> </td><td class="col1">отсортировать содержимое двух файлов, не отображая повторов </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><strong>sort file1 file2 | uniq -u</strong> </td><td class="col1">отсортировать содержимое двух файлов, отображая только уникальные строки (строки, встречающиеся в обоих файлах, не выводятся на стандартное устройство вывода) </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><strong>sort file1 file2 | uniq -d</strong> </td><td class="col1">отсортировать содержимое двух файлов, отображая только повторяющиеся строки </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><strong>comm -1 file1 file2</strong> </td><td class="col1">сравнить содержимое двух файлов, не отображая строки принадлежащие файлу 'file1' </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><strong>comm -2 file1 file2</strong> </td><td class="col1">сравнить содержимое двух файлов, не отображая строки принадлежащие файлу 'file2' </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><strong>comm -3 file1 file2</strong> </td><td class="col1">сравнить содержимое двух файлов, удаляя строки встречающиеся в обоих файлах </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit22" id="преобразование_наборов_символов_и_файловых_форматов">Преобразование наборов символов и файловых форматов</h2>
+<div class="level2">
+<div class="table sectionedit23"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>dos2unix filedos.txt fileunix.txt</strong> </td><td class="col1">конвертировать файл текстового формата из MSDOS в UNIX (разница в символах возврата каретки) </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>unix2dos fileunix.txt filedos.txt</strong> </td><td class="col1">конвертировать файл текстового формата из UNIX в MSDOS (разница в символах возврата коретки) </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>recode ..<abbr title="HyperText Markup Language">HTML</abbr> &lt; page.txt &gt; page.html</strong> </td><td class="col1">конвертировать содержимое тестового файла page.txt в html-файл page.html </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>recode -l | more</strong> </td><td class="col1">вывести список доступных форматов </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit24" id="анализ_файловых_систем">Анализ файловых систем</h2>
+<div class="level2">
+<div class="table sectionedit25"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>badblocks -v /dev/hda1</strong> </td><td class="col1">проверить раздел hda1 на наличие bad-блоков </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>fsck /dev/hda1</strong> </td><td class="col1">проверить/восстановить целостность linux-файловой системы раздела hda1 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>fsck.ext2 /dev/hda1</strong> </td><td class="col1">проверить/восстановить целостность файловой системы ext2 раздела hda1 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>e2fsck -j /dev/hda1</strong> </td><td class="col1">проверить/восстановить целостность файловой системы ext3 раздела hda1 с указанием, что журнал расположен там же </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>fsck.ext3 /dev/hda1</strong> </td><td class="col1">проверить/восстановить целостность файловой системы ext3 раздела hda1 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>fsck.vfat /dev/hda1</strong> </td><td class="col1">проверить/восстановить целостность файловой системы fat раздела hda1 </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit26" id="монтирование_файловых_систем">Монтирование файловых систем</h2>
+<div class="level2">
+
+<p>
+Монтирование файловой системы — процесс, подготавливающий раздел диска к использованию операционной системой.
+</p>
+
+<p>
+Операция монтирования состоит из нескольких этапов:
+</p>
+<ol>
+<li class="level"><div class="li">
+ определение типа монтируемой системы
+</div></li>
+<li class="level"><div class="li">
+ проверка целостности монтируемой системы
+</div></li>
+<li class="level"><div class="li">
+ считывание системных структур данных и инициализация соответствующего модуля файлового менеджера (драйвера файловой системы)
+</div></li>
+<li class="level"><div class="li">
+ установка флага, сообщающего об окончании монтирования. При корректном размонтировании этот флаг сбрасывается. Если при загрузке система      определяет, что флаг не сброшен, значит работа была завершена некорректно, и возможно ФС нуждается в починке
+</div></li>
+<li class="level"><div class="li">
+ включение новой файловой системы в общее пространство имен
+</div></li>
+</ol>
+
+<div class="table sectionedit27"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>mount /dev/hda2 /mnt/hda2</strong> </td><td class="col1">монтирует раздел 'hda2' в точку монтирования '/mnt/hda2'. Убедитесь в наличии директории-точки монтирования '/mnt/hda2' </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>umount /dev/hda2</strong> </td><td class="col1">размонтирует раздел 'hda2'. Перед выполнением, покиньте '/mnt/hda2' </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>fuser -km /mnt/hda2</strong> </td><td class="col1">принудительное размонтирование раздела. Применяется в случае, когда раздел занят каким-либо пользователем </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>umount -n /mnt/hda2</strong> </td><td class="col1">выполнить размонитрование без занесения информации в /etc/mtab. Полезно когда файл имеет атрибуты «только чтение» или недостаточно места на диске </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>mount /dev/fd0 /mnt/floppy</strong> </td><td class="col1">монтировать флоппи-диск </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>mount /dev/cdrom /mnt/cdrom</strong> </td><td class="col1">монтировать CD или DVD </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>mount /dev/hdc /mnt/cdrecorder</strong> </td><td class="col1">монтировать CD-R/CD-RW или DVD-R/DVD-RW(+-) </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>mount -o loop file.iso /mnt/cdrom</strong> </td><td class="col1">смонтировать <abbr title="International Organization for Standardization">ISO</abbr>-образ </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>mount -t vfat /dev/hda5 /mnt/hda5</strong> </td><td class="col1">монтировать файловую систему Windows FAT32 </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit28" id="форматирование_файловых_систем">Форматирование файловых систем</h2>
+<div class="level2">
+
+<p>
+Формати́рование — программный процесс разметки области хранения данных электронных носителей информации, расположенной на магнитной поверхности (жёсткие диски, дискеты), оптических носителях (CD/DVD/Blu-ray-диски), твердотельных накопителях (флэш-память — flash module, SSD) и др. Существуют разные способы этого процесса.
+</p>
+
+<p>
+Само форматирование заключается в создании (формировании) структур доступа к данным, например, структур файловой системы. При этом возможность прямого доступа к находящейся (находившейся до форматирования) на носителе информации теряется, часть её безвозвратно уничтожается. Некоторые программные утилиты дают возможность восстановить некоторую часть (обычно — большую) информации с отформатированных носителей. В процессе форматирования также может проверяться и исправляться целостность носителя.
+</p>
+<div class="table sectionedit29"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>mkfs /dev/hda1</strong> </td><td class="col1">создать linux-файловую систему на разделе hda1 </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>mke2fs /dev/hda1</strong> </td><td class="col1">создать файловую систему ext2 на разделе hda1 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>mke2fs -j /dev/hda1</strong> </td><td class="col1">создать журналирующую файловую систему ext3 на разделе hda1 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>mkfs -t vfat 32 -F /dev/hda1</strong> </td><td class="col1">создать файловую систему FAT32 на разделе hda1 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>fdformat -n /dev/fd0</strong> </td><td class="col1">форматирование флоппи-диска без проверки </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>mkswap /dev/hda3</strong> </td><td class="col1">создание swap-пространства на разделе hda3 </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit30" id="создание_резервных_копий_backup">Создание резервных копий (backup)</h2>
+<div class="level2">
+
+<p>
+Резервное копирование (англ. backup copy) — процесс создания копии данных на носителе (жёстком диске, дискете и т. д.), предназначенном для восстановления данных в оригинальном или новом месте их расположения в случае их повреждения или разрушения.
+</p>
+<div class="table sectionedit31"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>dump -0aj -f /tmp/home0.bak /home</strong> </td><td class="col1">создать полную резервную копию директории /home в файл /tmp/home0.bak </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>dump -1aj -f /tmp/home0.bak /home</strong> </td><td class="col1">создать инкрементальную резервную копию директории /home в файл /tmp/home0.bak </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>restore -if /tmp/home0.bak</strong> </td><td class="col1">восстановить из резервной копии /tmp/home0.bak </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>rsync -rogpav –delete /home /tmp</strong> </td><td class="col1">синхронизировать /tmp с /home </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>rsync -rogpav -e ssh –delete /home ip_address:/tmp</strong> </td><td class="col1">синхронизировать через <abbr title="Secure Shell">SSH</abbr>-туннель </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>rsync -az -e ssh –delete ip_addr:/home/public /home/local</strong> </td><td class="col1">синхронизировать локальную директорию с удалённой директорией через ssh-туннель со сжатием </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>rsync -az -e ssh –delete /home/local ip_addr:/home/public</strong> </td><td class="col1">синхронизировать удалённую директорию с локальной директорией через ssh-туннель со сжатием </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>dd bs=1M if=/dev/hda | gzip | ssh user@ip_addr 'dd of=hda.gz'</strong> </td><td class="col1">сделать «слепок» локального диска в файл на удалённом компьютере через ssh-туннель </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>tar -Puf backup.tar /home/user</strong> </td><td class="col1">создать инкрементальную резервную копию директории '/home/user' в файл backup.tar с сохранением полномочий </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>( cd /tmp/local/ &amp;&amp; tar c . ) | ssh -C user@ip_addr 'cd /home/share/ &amp;&amp; tar x -p'</strong> </td><td class="col1">копирование содержимого /tmp/local на удалённый компьютер через ssh-туннель в /home/share/ </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>( tar c /home ) | ssh -C user@ip_addr 'cd /home/backup-home &amp;&amp; tar x -p'</strong> </td><td class="col1">копирование содержимого /home  на удалённый компьютер через ssh-туннель в /home/backup-home </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>tar cf - . | (cd /tmp/backup ; tar xf - )</strong> </td><td class="col1">копирование одной директории в другую с сохранением полномочий и линков </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>find /home/user1 -name '*.txt' | xargs cp -av –target-directory=/home/backup/ –parents</strong> </td><td class="col1">поиск в /home/user1 всех файлов, имена которых оканчиваются на '.txt', и копирование их в другую директорию </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>find /var/log -name '*.log' | tar cv –files-from=- | bzip2 &gt; log.tar.bz2</strong> </td><td class="col1">поиск в /var/log всех файлов, имена которых оканчиваются на '.log', и создание bzip-архива из них </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>dd if=/dev/hda of=/dev/fd0 bs=512 count=1</strong> </td><td class="col1">создать копию MBR (Master Boot Record) с /dev/hda на флоппи-диск </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>dd if=/dev/fd0 of=/dev/hda bs=512 count=1</strong> </td><td class="col1">восстановить MBR с флоппи-диска на /dev/hda </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit32" id="дисковое_пространство">Дисковое пространство</h2>
+<div class="level2">
+<div class="table sectionedit33"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>df -h</strong> </td><td class="col1">отображает информацию о смонтированных разделах с отображением общего, доступного и используемого пространства (Прим.переводчика. ключ -h работает не во всех *nix системах) </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>ls -lSr |more</strong> </td><td class="col1">выдаёт список файлов и директорий рекурсивно с сортировкой по возрастанию размера и позволяет осуществлять постраничный просмотр </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>du -sh dir1</strong> </td><td class="col1">подсчитывает и выводит размер, занимаемый директорией 'dir1' (Прим.переводчика. ключ -h работает не во всех *nix системах) </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>du -sk * | sort -rn</strong> </td><td class="col1">отображает размер и имена файлов и директорий, с соритровкой по размеру </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>rpm -q -a –qf '%10{SIZE}t%{NAME}n' | sort -k1,1n</strong> </td><td class="col1">показывает размер используемого дискового пространства, занимаемое файлами rpm-пакета, с сортировкой по размеру (fedora, redhat и т.п.) </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>dpkg-query -W -f='${Installed-Size;10}t${Package}n' | sort -k1,1n</strong> </td><td class="col1">показывает размер используемого дискового пространства, занимаемое файлами deb-пакета, с сортировкой по размеру (ubuntu, debian т.п.) </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit34" id="cdrom">CDROM</h2>
+<div class="level2">
+<div class="table sectionedit35"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>mkisofs /dev/cdrom &gt; cd.iso</strong> </td><td class="col1">создать iso образ диска </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>mkisofs /dev/cdrom | gzip &gt; cd_iso.gz</strong> </td><td class="col1">создать сжатый iso образ диска </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>mkisofs -J -allow-leading-dots -R -V «Label CD» -iso-level 4 -o ./cd.iso data_cd</strong> </td><td class="col1">создать iso образ папки </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>cdrecord -v dev=/dev/cdrom cd.iso</strong> </td><td class="col1">записать iso образ </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>gzip -dc cd_iso.gz | cdrecord dev=/dev/cdrom</strong> </td><td class="col1">записать сжатый iso образ </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>mount -o loop cd.iso /mnt/iso</strong> </td><td class="col1">примонтировать iso образ </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0 leftalign"><strong>cd-paranoia -B</strong>  </td><td class="col1">считать аудио треки с диска в wav файлы </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>cd-paranoia – «-3»</strong> </td><td class="col1">считать первые три аудио трека с диска в wav файлы </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>cdrecord –scanbus</strong> </td><td class="col1">идентифицировать канал scsi </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit36" id="пользователи_и_группы">Пользователи и группы</h2>
+<div class="level2">
+<div class="table sectionedit37"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>groupadd group_name</strong> </td><td class="col1">создать новую группу с именем group_name </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>groupdel group_name</strong> </td><td class="col1">удалить группу group_name </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>groupmod -n new_group_name old_group_name</strong> </td><td class="col1">переименовать группу old_group_name в new_group_name </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>useradd -c «Nome Cognome» -g admin -d /home/user1 -s /bin/bash user1</strong> </td><td class="col1">создать пользователя user1, назначить ему в качестве домашнего каталога /home/user1, в качестве shell'а /bin/bash, включить его в группу admin и добавить комментарий Nome Cognome </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>useradd user1</strong> </td><td class="col1">создать пользователя user1 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>userdel -r user1</strong> </td><td class="col1">удалить пользователя user1 и его домашний каталог </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>usermod -c «User <abbr title="File Transfer Protocol">FTP</abbr>» -g system -d /ftp/user1 -s /bin/nologin user1</strong> </td><td class="col1">изменить атрибуты пользователя </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>passwd</strong> </td><td class="col1">сменить пароль </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>passwd user1</strong> </td><td class="col1">сменить пароль пользователя user1 (только root) </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>chage -E 2005-12-31 user1</strong> </td><td class="col1">установить дату окончания действия учётной записи пользователя user1 </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>pwck</strong> </td><td class="col1">проверить корректность системных файлов учётных записей. Проверяются файлы /etc/passwd и /etc/shadow </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>grpck</strong> </td><td class="col1">проверяет корректность системных файлов учётных записей. Проверяется файл/etc/group </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>newgrp [-] group_name</strong> </td><td class="col1">изменяет первичную группу текущего пользователя. Если указать «-», ситуация будет идентичной той, в которой пользователь вышил из системы и снова вошёл. Если не указывать группу, первичная группа будет назначена из /etc/passwd </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit38" id="выставлениеизменение_полномочий_на_файлы">Выставление/изменение полномочий на файлы</h2>
+<div class="level2">
+
+<p>
+chmod (от англ. change mode) — программа для изменения прав доступа к файлам и директориям. Название происходит от программы ОС Unix chmod, которая, собственно, изменяет права доступа к файлам, директориям и символическим ссылкам.
+</p>
+<div class="table sectionedit39"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>ls -lh</strong> </td><td class="col1">просмотр полномочий на файлы и директории в текущей директории </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>ls /tmp | pr -T5 -W$COLUMNS</strong> </td><td class="col1">вывести содержимое директории /tmp и разделить вывод на пять колонок </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>chmod ugo+rwx directory1</strong> </td><td class="col1">добавить полномочия на директорию directory1 ugo(User Group Other)+rwx(Read Write eXecute) - всем полные права. Аналогичное можно сделать таким образом chmod 777 directory1 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>chmod go-rwx directory1</strong> </td><td class="col1">отобрать у группы и всех остальных все полномочия на директорию directory1 </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>chown user1 file1</strong> </td><td class="col1">назначить владельцем файла file1 пользователя user1 </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>chown -R user1 directory1</strong> </td><td class="col1">назначить рекурсивно владельцем директории directory1 пользователя user1 </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>chgrp group1 file1</strong> </td><td class="col1">сменить группу-владельца файла file1 на group1 </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>chown user1:group1 file1</strong> </td><td class="col1">сменить владельца и группу владельца файла file1 </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>find / -perm -u+s</strong> </td><td class="col1">найти, начиная от корня, все файлы с выставленным SUID </td>
+	</tr>
+</tbody></table></div>
+
+<p>
+Популярные значения
+</p>
+<div class="table sectionedit40"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>400 (-r——–)</strong> </td><td class="col1">Владелец имеет право чтения; никто другой не имеет права выполнять никакие действия </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>644 (-rw-r–r–)</strong> </td><td class="col1">Все пользователи имеют право чтения; владелец может редактировать </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>660 (-rw-rw—-)</strong> </td><td class="col1">Владелец и группа могут читать и редактировать; остальные не имеют права выполнять никаких действий </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>664 (-rw-rw-r–)</strong> </td><td class="col1">Все пользователи имеют право чтения; владелец и группа могут редактировать </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>666 (-rw-rw-rw-)</strong> </td><td class="col1">Все пользователи могут читать и редактировать </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>700 (-rwx——)</strong> </td><td class="col1">Владелец может читать, записывать и запускать на выполнение; никто другой не имеет права выполнять никакие действия </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>744 (-rwxr–r–)</strong> </td><td class="col1">Каждый пользователь может читать, владелец имеет право редактировать и запускать на выполнение </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>755 (-rwxr-xr-x)</strong> </td><td class="col1">Каждый пользователь имеет право читать и запускать на выполнение; владелец может редактировать </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>777 (-rwxrwxrwx)</strong> </td><td class="col1">Каждый пользователь может читать, редактировать и запускать на выполнение </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>1555 (-r-xr-xr-t)</strong> </td><td class="col1">Каждый пользователь имеет право читать и запускать на выполнение; удалить файл может только владелец этого файла </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>2555 (-r-xr-sr-x)</strong> </td><td class="col1">Каждый пользователь имеет право читать и запускать на выполнение с правами группы(user group) владельца файла </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>4555 (-r-sr-xr-x)</strong> </td><td class="col1">Каждый пользователь имеет право читать и запускать на выполнение с правами владельца файла </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit41" id="команды_secure_shell_ssh">Команды Secure Shell (ssh)</h2>
+<div class="level2">
+
+<p>
+<abbr title="Secure Shell">SSH</abbr> (англ. Secure Shell — «безопасная оболочка») — сетевой протокол прикладного уровня, позволяющий производить удалённое управление операционной системой и туннелирование TCP-соединений (например, для передачи файлов). Схож по функциональности с протоколами Telnet и rlogin, но, в отличие от них, шифрует весь трафик, включая и передаваемые пароли. <abbr title="Secure Shell">SSH</abbr> допускает выбор различных алгоритмов шифрования. <abbr title="Secure Shell">SSH</abbr>-клиенты и <abbr title="Secure Shell">SSH</abbr>-серверы доступны для большинства сетевых операционных систем.
+</p>
+
+<p>
+<abbr title="Secure Shell">SSH</abbr> позволяет безопасно передавать в незащищённой среде практически любой другой сетевой протокол. Таким образом, можно не только удалённо работать на компьютере через командную оболочку, но и передавать по шифрованному каналу звуковой поток или видео (например, с веб-камеры)[2]. Также <abbr title="Secure Shell">SSH</abbr> может использовать сжатие передаваемых данных для последующего их шифрования, что удобно, например, для удалённого запуска клиентов X Window System.
+</p>
+
+<p>
+Большинство хостинг-провайдеров за определённую плату предоставляют клиентам доступ к их домашнему каталогу по <abbr title="Secure Shell">SSH</abbr>. Это может быть удобно как для работы в командной строке, так и для удалённого запуска программ (в том числе графических приложений).
+</p>
+<div class="table sectionedit42"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>ssh user@host</strong> </td><td class="col1">подключится к host как user </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>ssh -p port user@host</strong> </td><td class="col1">подключится к host на порт port как user </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>ssh-copy-id user@host</strong> </td><td class="col1">добавить ваш ключ на host для user чтобы включить логин без пароля и по ключам </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit43" id="управление_процессами">Управление процессами</h2>
+<div class="level2">
+
+<p>
+Процесс — программа, которая выполняется в текущий момент. Стандарт <abbr title="International Organization for Standardization">ISO</abbr> 9000:2000 определяет процесс как совокупность взаимосвязанных и взаимодействующих действий, преобразующих входящие данные в исходящие.
+Компьютерная программа сама по себе — это только пассивная совокупность инструкций, в то время как процесс — это непосредственное выполнение этих инструкций.
+Также, процессом называют выполняющуюся программу и все её элементы: адресное пространство, глобальные переменные, регистры, стек, открытые файлы и т. д.
+</p>
+<div class="table sectionedit44"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>top</strong> </td><td class="col1">показать все запущенные процессы </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>ps</strong> </td><td class="col1">вывести ваши текущие активные процессы </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>ps -eafw</strong> </td><td class="col1">отобразить запущенные процессы, используемые ими ресурсы и другую полезную информацию (единожды) </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>ps -e -o pid,args –forest</strong> </td><td class="col1">вывести PID'ы и процессы в виде дерева </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>pstree</strong> </td><td class="col1">отобразить дерево процессов </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>kill -9 98989</strong> </td><td class="col1">«убить» процесс с PID 98989 «на смерть» (без соблюдения целостности данных) </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>kill -TERM 98989</strong> </td><td class="col1">Корректно завершить процесс с PID 98989 </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>kill -1 98989</strong> </td><td class="col1">заставить процесс с PID 98989 перепрочитать файл конфигурации </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>lsof -p 98989</strong> </td><td class="col1">отобразить список файлов, открытых процессом с PID 98989 </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>lsof /home/user1</strong> </td><td class="col1">отобразить список открытых файлов из директории /home/user1 </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>strace -c ls &gt;/dev/null</strong> </td><td class="col1">вывести список системных вызовов, созданных и полученных процессом ls </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>strace -f -e open ls &gt;/dev/null</strong> </td><td class="col1">вывести вызовы бибилотек </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>watch -n1 'cat /proc/interrupts'</strong> </td><td class="col1">отображать прерывания в режиме реального времени </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>last reboot</strong> </td><td class="col1">отобразить историю перезагрузок системы </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>last user1</strong> </td><td class="col1">отобразить историю регистрации пользователя user1 в системе и время его нахождения в ней </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>lsmod</strong> </td><td class="col1">вывести загруженные модули ядра </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>free -m</strong> </td><td class="col1">показать состояние оперативной памяти в мегабайтах </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>smartctl -A /dev/hda</strong> </td><td class="col1">контроль состояния жёсткого диска /dev/hda через SMART </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>smartctl -i /dev/hda</strong> </td><td class="col1">проверить доступность SMART на жёстком диске /dev/hda </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>tail /var/log/dmesg</strong> </td><td class="col1">вывести десять последних записей из журнала загрузки ядра </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>tail /var/log/messages</strong> </td><td class="col1">вывести десять последних записей из системного журнала </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit45" id="сеть_lan_и_wifi">Сеть (LAN и WiFi)</h2>
+<div class="level2">
+<div class="table sectionedit46"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>ifconfig eth0</strong> </td><td class="col1">показать конфигурацию сетевого интерфейса eth0 </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>ifup eth0</strong> </td><td class="col1">активировать (поднять) интерфейс eth0 </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>ifdown eth0</strong> </td><td class="col1">деактивировать (опустить) интерфейс eth0 </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</strong> </td><td class="col1">выставить интерфейсу eth0 ip-адрес и маску подсети </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>ifconfig eth0 promisc</strong> </td><td class="col1">перевести интерфейс eth0 в promiscuous-режим для «отлова» пакетов (sniffing) </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>ifconfig eth0 -promisc</strong> </td><td class="col1">отключить promiscuous-режим на интерфейсе eth0 </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>dhclient eth0</strong> </td><td class="col1">активировать интерфейс eth0 в dhcp-режиме </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>route -n</strong> </td><td class="col1">вывести локальную таблицу маршрутизации </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>route add -net 0/0 gw IP_Gateway</strong> </td><td class="col1">задать ip-адрес шлюза по умолчанию (default gateway) </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>route add -net 192.168.0.0 netmask 255.255.0.0 gw 192.168.1.1</strong> </td><td class="col1">добавить статический маршрут в сеть 192.168.0.0/16 через шлюз с ip-адресом 192.168.1.1 </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>route del 0/0 gw IP_gateway</strong> </td><td class="col1">удалить ip-адрес шлюза по умолчанию (default gateway) </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>echo «1» &gt; /proc/sys/net/ipv4/ip_forward</strong> </td><td class="col1">разрешить пересылку пакетов (forwarding) </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>hostname</strong> </td><td class="col1">отобразить имя компьютера </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>host <a href="http://www.linuxguide.it/" class="urlextern" title="http://www.linuxguide.it" rel="nofollow">www.linuxguide.it</a></strong> </td><td class="col1">разрешить имя <a href="http://www.linuxguide.it/" class="urlextern" title="http://www.linuxguide.it" rel="nofollow">www.linuxguide.it</a> хоста в ip-адрес и наоборот <strong>*host 62.149.140.85</strong>* </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>ip link show</strong>* </td><td class="col1">отобразить состояние всех интерфейсов </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>mii-tool eth0</strong> </td><td class="col1">отобразить статус и тип соединения для интерфейса eth0 </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>ethtool eth0</strong> </td><td class="col1">отображает статистику интерфеса eth0 с выводом такой информации, как поддерживаемые и текущие режимы соединения </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>netstat -tupn</strong> </td><td class="col1">отображает все установленные сетевые соединения по протоколам TCP и UDP без разрешения имён в ip-адреса и PID'ы и имена процессов, обеспечивающих эти соединения </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>netstat -tupln</strong> </td><td class="col1">отображает все сетевые соединения по протоколам TCP и UDP без разрешения имён в ip-адреса и PID'ы и имена процессов, слушающих порты </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>tcpdump tcp port 80</strong> </td><td class="col1">отобразить весь трафик на TCP-порт 80 (обычно - <abbr title="Hyper Text Transfer Protocol">HTTP</abbr>) </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>iwlist scan</strong> </td><td class="col1">просканировать эфир на предмет, доступности беспроводных точек доступа </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><strong>iwconfig eth1</strong> </td><td class="col1">показать конфигурацию беспроводного сетевого интерфейса eth1 </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit47" id="microsoft_windows_networks_samba">Microsoft Windows networks(SAMBA)</h2>
+<div class="level2">
+<div class="table sectionedit48"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>nbtscan ip_addr	разрешить netbios</strong> </td><td class="col1">имя nbtscan не во всех системах ставится по-умолчанию, возможно, придётся доустанавливать вручную. nmblookup включен в пакет samba </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>smbclient -L ip_addr/hostname</strong> </td><td class="col1">отобразить ресурсы, предоставленные в общий доступ на windows-машине </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>smbget -Rr smb:<em>ip_addr/share<strong> |подобно wget может получить файлы с windows-машин через smb-протокол |
+|</strong>mount -t smbfs -o username=user,password=pass </em>winclient/share /mnt/share</strong> </td><td class="col1">смонтировать smb-ресурс, предоставленный на windows-машине, в локальную файловую систему </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit49" id="iptables_firewall">IPTABLES (firewall)</h2>
+<div class="level2">
+
+<p>
+iptables — утилита командной строки, является стандартным интерфейсом управления работой межсетевого экрана (брандмауэра) netfilter для ядер Linux версий 2.4, 2.6, 3.x, 4.x . Для использования утилиты iptables требуются привилегии суперпользователя (root).
+</p>
+<div class="table sectionedit50"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>iptables -t filter -nL</strong> </td><td class="col1">отобразить все цепочки правил </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>iptables -t nat -L</strong> </td><td class="col1">отобразить все цепочки правил в NAT-таблице </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>iptables -t filter -F</strong> </td><td class="col1">очистить все цепочки правил в filter-таблице </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>iptables -t nat -F</strong> </td><td class="col1">очистить все цепочки правил в NAT-таблице </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>iptables -t filter -X</strong> </td><td class="col1">удалить все пользовательские цепочки правил в filter-таблице </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>iptables -t filter -A INPUT -p tcp –dport telnet -j ACCEPT</strong> </td><td class="col1">позволить входящее подключение telnet'ом </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>iptables -t filter -A OUTPUT -p tcp –dport http -j DROP</strong> </td><td class="col1">блокировать исходящие <abbr title="Hyper Text Transfer Protocol">HTTP</abbr>-соединения </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>iptables -t filter -A FORWARD -p tcp –dport pop3 -j ACCEPT</strong> </td><td class="col1">позволить «прокидывать» (forward) <abbr title="Post Office Protocol 3">POP3</abbr>-соединения </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>iptables -t filter -A INPUT -j LOG –log-prefix «DROP INPUT»</strong> </td><td class="col1">включить журналирование ядром пакетов, проходящих через цепочку INPUT, и добавлением к сообщению префикса «DROP INPUT» </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</strong> </td><td class="col1">включить NAT (Network Address Translate) исходящих пакетов на интерфейс eth0. Допустимо при использовании с динамически выделяемыми ip-адресами </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>iptables -t nat -A PREROUTING -d 192.168.0.1 -p tcp -m tcp –dport 22 -j DNAT –to-destination 10.0.0.2:22</strong> </td><td class="col1">перенаправление пакетов, адресованных одному хосту, на другой хост </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit51" id="системная_информация">Системная информация</h2>
+<div class="level2">
+<div class="table sectionedit52"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>arch</strong> </td><td class="col1">отобразить архитектуру компьютера </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>uname -r</strong> </td><td class="col1">отобразить используемую версию ядра </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>dmidecode -q</strong> </td><td class="col1">показать аппаратные системные компоненты - (SMBIOS / DMI) </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>hdparm -i /dev/hda</strong> </td><td class="col1">вывести характеристики жесткого диска </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>hdparm -tT /dev/sda</strong> </td><td class="col1">протестировать производительность чтения данных с жесткого диска </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0"><strong>cat /proc/cpuinfo</strong> </td><td class="col1">отобразить информацию о процессоре </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>cat /proc/interrupts</strong> </td><td class="col1">показать прерывания </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>cat /proc/meminfo</strong> </td><td class="col1">проверить использование памяти </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>cat /proc/swaps</strong> </td><td class="col1">показать файл(ы) подкачки </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>cat /proc/version</strong> </td><td class="col1">вывести версию ядра </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>cat /proc/net/dev</strong> </td><td class="col1">показать сетевые интерфейсы и статистику по ним </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>cat /proc/mounts</strong> </td><td class="col1">отобразить смонтированные файловые системы </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>lspci -tv</strong> </td><td class="col1">показать в виде дерева PCI устройства </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>lsusb -tv</strong> </td><td class="col1">показать в виде дерева USB устройства </td>
+	</tr>
+	<tr class="row14">
+		<td class="col0"><strong>date</strong> </td><td class="col1">вывести системную дату </td>
+	</tr>
+	<tr class="row15">
+		<td class="col0"><strong>cal 2007</strong> </td><td class="col1">вывести таблицу-календарь 2007-го года </td>
+	</tr>
+	<tr class="row16">
+		<td class="col0"><strong>date 041217002007.00</strong> </td><td class="col1">установить системные дату и время ММДДЧЧммГГГГ.СС (МесяцДеньЧасМинутыГод.Секунды) </td>
+	</tr>
+	<tr class="row17">
+		<td class="col0"><strong>clock -w</strong> </td><td class="col1">сохранить системное время в BIOS </td>
+	</tr>
+	<tr class="row18">
+		<td class="col0"><strong>uptime</strong> </td><td class="col1">показать текущий аптайм </td>
+	</tr>
+	<tr class="row19">
+		<td class="col0"><strong>w</strong> </td><td class="col1">показать пользователей онлайн </td>
+	</tr>
+	<tr class="row20">
+		<td class="col0"><strong>whoami</strong> </td><td class="col1">имя, под которым вы залогинены </td>
+	</tr>
+	<tr class="row21">
+		<td class="col0"><strong>finger user</strong> </td><td class="col1">показать информацию о user </td>
+	</tr>
+	<tr class="row22">
+		<td class="col0"><strong>uname -a</strong> </td><td class="col1">показать информацию о ядре </td>
+	</tr>
+	<tr class="row23">
+		<td class="col0"><strong>cat /proc/cpuinfo</strong> </td><td class="col1">информация ЦПУ </td>
+	</tr>
+	<tr class="row24">
+		<td class="col0"><strong>cat /proc/meminfo</strong> </td><td class="col1">информация о памяти </td>
+	</tr>
+	<tr class="row25">
+		<td class="col0"><strong>man command</strong> </td><td class="col1">показать мануал для command </td>
+	</tr>
+	<tr class="row26">
+		<td class="col0"><strong>df</strong> </td><td class="col1">показать инф. о использовании дисков </td>
+	</tr>
+	<tr class="row27">
+		<td class="col0"><strong>du</strong> </td><td class="col1">вывести “вес” текущего каталога </td>
+	</tr>
+	<tr class="row28">
+		<td class="col0"><strong>free</strong> </td><td class="col1">использование памяти и swap </td>
+	</tr>
+	<tr class="row29">
+		<td class="col0"><strong>whereis app</strong> </td><td class="col1">возможное расположение программы app </td>
+	</tr>
+	<tr class="row30">
+		<td class="col0"><strong>which app</strong> </td><td class="col1">какая app будет запущена по умолчанию </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit53" id="остановка_системы">Остановка системы</h2>
+<div class="level2">
+<div class="table sectionedit54"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>shutdown -h now</strong> </td><td class="col1">Остановить систему </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>shutdown -h hours:minutes &amp;</strong> </td><td class="col1">запланировать остановку системы на указанное время </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>shutdown -c</strong> </td><td class="col1">отменить запланированную по расписанию остановку системы </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>shutdown -r now</strong> </td><td class="col1">перегрузить систему </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>logout</strong> </td><td class="col1">выйти из системы </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h2 class="sectionedit55" id="другие_полезные_команды">Другие полезные команды</h2>
+<div class="level2">
+<div class="table sectionedit56"><table class="inline">
+	<tbody><tr class="row0">
+		<td class="col0"><strong>apropos …keyword</strong> </td><td class="col1">выводит список комманд, которые так или иначе относятся к ключевым словам. Полезно, когда вы знаете что делает программа, но не помните команду </td>
+	</tr>
+	<tr class="row1">
+		<td class="col0"><strong>man ping</strong> </td><td class="col1">вызов руководства по работе с программой, в данном случае, - ping </td>
+	</tr>
+	<tr class="row2">
+		<td class="col0"><strong>whatis …keyword</strong> </td><td class="col1">отображает описание действий указанной программы </td>
+	</tr>
+	<tr class="row3">
+		<td class="col0"><strong>mkbootdisk –device /dev/fd0 `uname -r`</strong> </td><td class="col1">создаёт загрузочный флоппи-диск </td>
+	</tr>
+	<tr class="row4">
+		<td class="col0"><strong>gpg -c file1</strong> </td><td class="col1">шифрует файл file1 с помощью GNU Privacy Guard </td>
+	</tr>
+	<tr class="row5">
+		<td class="col0 leftalign"><strong>gpg file1.gpg</strong>  </td><td class="col1">дешифрует файл file1 с помощью GNU Privacy Guard </td>
+	</tr>
+	<tr class="row6">
+		<td class="col0"><strong>wget -r <a href="http://www.example.com/" class="urlextern" title="http://www.example.com" rel="nofollow">www.example.com</a></strong> </td><td class="col1">загружает рекурсивно содержимое сайта <a href="http://www.example.com/" class="urlextern" title="http://www.example.com" rel="nofollow">www.example.com</a> </td>
+	</tr>
+	<tr class="row7">
+		<td class="col0"><strong>wget -c <a href="http://www.example.com/file.iso" class="urlextern" title="http://www.example.com/file.iso" rel="nofollow">www.example.com/file.iso</a></strong> </td><td class="col1">загрузить файл <a href="http://www.example.com/file.iso" class="urlextern" title="http://www.example.com/file.iso" rel="nofollow">www.example.com/file.iso</a> с возможностью остановки и продолжения </td>
+	</tr>
+	<tr class="row8">
+		<td class="col0"><strong>echo 'wget -c <a href="http://www.example.com/files.iso" class="urlextern" title="http://www.example.com/files.iso" rel="nofollow">www.example.com/files.iso</a>' | at 09:00</strong> </td><td class="col1">начать закачку в указанное время </td>
+	</tr>
+	<tr class="row9">
+		<td class="col0"><strong>ldd /usr/bin/ssh</strong> </td><td class="col1">вывести список библиотек, необходимых для работы ssh </td>
+	</tr>
+	<tr class="row10">
+		<td class="col0"><strong>alias hh='history'</strong> </td><td class="col1">назначить алиас hh команде history </td>
+	</tr>
+	<tr class="row11">
+		<td class="col0"><strong>find . -maxdepth 1 -name *.jpg -print -exec convert</strong> </td><td class="col1">Изменение размеров всех изображений в папке, передача утилите «convert» из ImageMagick для создания уменьшенных копий изображений (предварительный просмотр) </td>
+	</tr>
+	<tr class="row12">
+		<td class="col0"><strong>swapon /dev/hda3</strong> </td><td class="col1">активировать swap-пространство, расположенное на разделе hda3 </td>
+	</tr>
+	<tr class="row13">
+		<td class="col0"><strong>swapon /dev/hda2 /dev/hdb3</strong> </td><td class="col1">активировать swap-пространства, расположенные на разделах hda2 и hdb3 </td>
+	</tr>
+</tbody></table></div>
+
+</div>
+
+<h1 class="sectionedit57" id="просмотр_справки_и_руководства_по_программе">Просмотр справки и руководства по программе</h1>
+<div class="level1">
+
+<p>
+Названия программ используемых в командах, которые могут пригодиться, нужно выучить или распечатать, а как ими пользоваться можно узнать в любой момент вызвав справку или руководство (man) по программе. <br>
+
+</p>
+
+<p>
+Для получения краткого руководства по программе, нужно выполнить:
+</p>
+<pre class="code bash"><span class="kw2">man</span> программа</pre>
+
+<p>
+Перемещаться можно клавишами со стрелками, а выйти из него, нажав клавишу <kbd>Q</kbd>.
+Подробнее в смотрите в man man
+</p>
+
+<p>
+Для получения справки, в которой указаны ключи, нужно выполнить:
+</p>
+<pre class="code bash">программа <span class="re5">-h</span></pre>
+<pre class="code bash">программа <span class="re5">--help</span></pre>
+
+<p>
+Оба варианта должны работать одинаково, но некоторые авторы программ оставляют один один из этих ключей, так что пробуйте оба если что.
+</p>
+
+</div>
+
+<h3 class="sectionedit58" id="поиск_по_man_ам">Поиск по man'ам</h3>
+<div class="level3">
+
+<p>
+Если вы не уверены, какая команда вам нужна, попробуйте поискать по текстам мануалов.
+</p>
+<ul>
+<li class="level"><div class="li">
+ <pre class="code">man -k something-you-need</pre>
+
+<p>
+ будет искать то, что вам нужно во всех мануалах. Попробуйте: 
+</p>
+<pre class="code">man -k nautilus</pre>
+
+<p>
+ чтобы увидеть, как это работает. Кстати, это то же самое, что выполнить команду <code>apropos</code>. 
+</p></div></li>
+<li class="level"><div class="li">
+ 
+<p></p>
+<pre class="code">man -f something-you-need</pre>
+
+<p>
+ будет искать только по названиям системных мануалов. Попробуйте: 
+</p>
+<pre class="code">man -f gnome</pre>
+
+<p>
+. Для примера выполнение команды <code>whatis</code> приведёт к такому же результату. 
+</p>
+
+</div></li>
+</ul>
+
+
+</div>
+
+<h3 class="sectionedit59" id="более_привлекательные_man_ы">Более привлекательные man'ы</h3>
+<div class="level3">
+
+<p>
+Пользователи рабочего стола Gnome/Unity могут воспользоваться утилитой yelp предоставляющей простой <abbr title="Graphical User Interface">GUI</abbr>, выполнив команду в консоли
+</p>
+<pre class="code">yelp man:&lt;команда&gt;</pre>
+
+<p>
+Пользователи, у которых установлен Konqueror, могут читать страницы мануалом и выполнять по ним поиск в веб-браузерном контексте, украшенном выбранными фоновыми рисунками. Для этого нужно набрать в строке адреса Konqueror'а использовать команду:
+</p>
+<pre class="code">man:/&lt;команда&gt;</pre>
+
+</div>
+
+<h2 class="sectionedit60" id="выполнение_команд_с_неограниченными_привилегиями">Выполнение команд с неограниченными привилегиями</h2>
+<div class="level2">
+
+<p>
+Перед большинством команд, перечисленных ниже, необходимо писать команду:
+</p>
+<pre class="code">sudo</pre>
+
+<p>
+Это временно даёт права суперпользователя, которые необходимы для работы с файлами и каталогами, которые не принадлежат вашему аккаунту. Для использования 
+<code>sudo</code> требуется ввести пароль. Только пользователи с такими административными привилегиями могут использовать эту команду. 
+</p>
+
+</div>
+
+<h2 class="sectionedit61" id="команды_для_работы_с_файлами_и_папками">Команды для работы с файлами и папками</h2>
+<div class="level2">
+<ul>
+<li class="level"><div class="li">
+ Символ тильда (~) обозначает вашу домашнюю папку. Если вы <em>user</em>, то тильда (~) — это /home<em>/user</em>.
+</div></li>
+<li class="level"><div class="li">
+ Команда <code>pwd</code> («print working directory») позволяет вам узнать, в какой директории вы находитесь в данный момент. Помните, однако, что эту же информацию <a href="https://help.ubuntu.ru/wiki/gnome_terminal" class="wikilink1" title="wiki:gnome_terminal">Gnome Terminal</a> всегда показывает в названии окна.
+</div></li>
+<li class="level"><div class="li">
+ <code>ls</code> покажет вам все файлы в текущей директории. Если использовать эту команду с определёнными опциями, можно также включить отображение размера файлов, времени последнего изменения и прав на файлы. Например: <pre class="code">ls ~</pre>
+
+<p>
+ покажет всё, что у вас есть в домашней папке.
+</p></div></li>
+<li class="level"><div class="li">
+ Команда <code>cd</code> меняет рабочую директорию. Когда вы только запускаете терминал, вы будете находиться в вашей домашней папке. Чтобы перемещаться по файловой системе, нужно использовать <code>cd</code>. Примеры:
+</div><ol>
+<li class="level"><div class="li">
+   Чтобы попасть в корневой каталог, выполните:
+<p></p>
+<pre class="code">cd /</pre>
+
+<p>
+
+</p></div></li>
+<li class="level"><div class="li">
+   Чтобы попасть в домашнюю папку, выполните:
+<p></p>
+<pre class="code">cd ~</pre>
+
+<p>
+
+</p></div></li>
+<li class="level"><div class="li">
+   Чтобы переместиться на один каталог вверх, используйте: 
+<p></p>
+<pre class="code">cd ..</pre>
+
+<p>
+
+</p></div></li>
+<li class="level"><div class="li">
+   Для возврата в предыдущую посещённую директорию, используйте: 
+<p></p>
+<pre class="code">cd -</pre>
+
+<p>
+
+</p></div></li>
+<li class="level"><div class="li">
+   Для перемещения через несколько директорий за раз, нужно написать полный путь папки, в которую вы хотите переместиться. Например, команда: 
+<p></p>
+<pre class="code">cd /var/www</pre>
+
+<p>
+ переместит вас в подкаталог /www каталога /var/. А команда: 
+</p>
+<pre class="code">cd ~/Рабочий\ стол</pre>
+
+<p>
+ переместит вас на рабочий стол. В данном случае «\» обозначает экранирование пробела.
+</p></div></li>
+</ol>
+</li>
+<li class="level"><div class="li">
+ Команда <code>cp</code> копирует файл. Например, команда: 
+<p></p>
+<pre class="code">cp text new</pre>
+
+<p>
+ создаст точную копию файла «text» и назовёт её «new», при этом «file» никуда не исчезнет. Для копирования директории необходимо воспользоваться командой: 
+</p>
+<pre class="code">cp -r directory new</pre>
+
+<p>
+ где опция <code>-r</code> обозначает рекурсивное копирование.
+</p></div></li>
+<li class="level"><div class="li">
+ Команда <code>mv</code> перемещает файл в другое место или просто переименовывает файл. Например, команда: 
+<p></p>
+<pre class="code">mv file text</pre>
+
+<p>
+ переименует «file» в «text». 
+</p>
+<pre class="code">mv text ~/Рабочий\ стол</pre>
+
+<p>
+ переместит «text» вам на рабочий стол, но не переименуют его. Чтобы всё-таки переименовать файл, нужно специально указывать ему новое имя. Вы можете заменять путь к вашей домашней папке на '~', чтобы ускоряет работу. Помните, что при использовании <code>mv</code> вместе с <code>sudo</code>, терминал так же привязывает '~' к вашей домашней папке. Однако если вы включаете сессию суперпользователя в консоли с помощью <code>sudo -i</code> или <code>sudo -s</code>, то '~' будет ссылаться на корень диска, а не на ваш домашний каталог.
+</p></div></li>
+<li class="level"><div class="li">
+ Команда <code>rm</code> удаляет файл.
+</div></li>
+<li class="level"><div class="li">
+ Команда <code>rmdir</code> удаляет пустую папку. Чтобы удалить папку вместе со всеми вложениями, используйте <code>rm -r</code> вместо этого.
+</div></li>
+<li class="level"><div class="li">
+ <code>mkdir</code> Эта команда создаёт директорию. Команда <code>mkdir music</code> создаст вам папку, которая будет называться «music».
+</div></li>
+<li class="level"><div class="li">
+ <code>man</code> попробуйте эту команду, когда вы хотите прочитать встроенное описание другой команды. Например: 
+<p></p>
+<pre class="code">man man</pre>
+
+<p>
+ покажет вам описание самой этой команды.
+</p>
+
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit62" id="команды_информации_о_системе">Команды информации о системе</h2>
+<div class="level2">
+<ul>
+<li class="level"><div class="li">
+ Команда <strong><code>df</code></strong> показывает объём занятого дискового пространства на всех смонтированных разделах. Наиболее полезна: <pre class="code">df -h</pre>
+
+<p>
+ Поскольку использует для отображения Мегабайты (M) и Гигабайты (G), а не блоки. <code>-h</code> означает «human readable» («читабельный для человека»).
+</p></div></li>
+<li class="level"><div class="li">
+ <strong><code>du</code></strong> отображает объём дискового пространства, занятого конкретной папкой. Она может показывать информацию для всех поддиректорий отдельно или для папки в целом.
+  .. 
+<p></p>
+<pre class="code">user@users-desktop:~$ du /media/floppy
+1032    /media/floppy/files
+1036    /media/floppy/
+user@users-desktop:~$ du -sh /media/floppy
+1.1M    /media/floppy/</pre>
+
+<p>
+
+  .. <code>-s</code> означает «summary» (в целом), а <code>-h</code> означает «human readable» («читабельный для человека»).
+</p></div></li>
+<li class="level"><div class="li">
+ <strong><code>free</code></strong> отображает объём свободной и занятой оперативной памяти. Команда: 
+<p></p>
+<pre class="code">free -m</pre>
+
+<p>
+ показывает информацию в Мегабайтах.
+</p></div></li>
+<li class="level"><div class="li">
+ <strong><code>top</code></strong> отображает информацию о вашей системе, запущенных процессах и системных ресурсах, включая загрузку CPU, использование RAM и swap и количество запущенных процессов. Чтобы остановить <code>top</code>, нажмите <kbd>Q</kbd>.
+<p></p>
+
+</div></li>
+</ul>
+
+
+<p>
+Также существует еще несколько замечательных и очень нужных утилит, оформленных в стиле <code>top</code>:<br>
+
+</p>
+<ul>
+<li class="level"><div class="li">
+ <strong><code>htop</code></strong> аналог <code>top</code>, намного превосходящий по возможностям<br>
+
+</div></li>
+<li class="level"><div class="li">
+ <strong><code>iftop</code></strong> информация об активных сетевых соединениях, скорость сетевой закачки/отдачи<br>
+
+</div></li>
+<li class="level"><div class="li">
+ <strong><code>iotop</code></strong> информация о процессах выполняющих активные дисковые операции<br>
+
+</div></li>
+</ul>
+
+<div class="notetip"><strong><code>htop</code></strong>, <strong><code>iftop</code></strong>, <strong><code>iotop</code></strong> не входят в стандартный комплект дистрибутива Ubuntu, но легко <a href="https://help.ubuntu.ru/wiki/%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC#%D1%81_%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%D0%BC_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8" class="wikilink1" title="wiki:установка_программ">устанавливаются из стандартных репозиториев</a>.
+
+</div><ul>
+<li class="level"><div class="li">
+ <strong><code>uname</code></strong> с опцией <code>-a</code> выводит всю системную информацию, включая имя машины, версию ядра и другие детали. Самое полезное из этого — проверка версии ядра.
+</div></li>
+<li class="level"><div class="li">
+ <strong><code>lsb_release</code></strong> с опцией <code>-a</code> выводит информацию о версии Linux, которую вы используете. Например:
+</div></li>
+</ul>
+
+<pre class="code">user@computer:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID: Ubuntu
+Description:    Ubuntu 6.06 LTS
+Release:        6.06
+Codename:       dapper</pre>
+<ul>
+<li class="level"><div class="li">
+ <strong><code>ifconfig</code></strong> выводит отчёт о сетевых интерфейсах системы.
+</div></li>
+<li class="level"><div class="li">
+ <strong><code>hwinfo</code></strong> без ключей выводит очень длинный список всего оборудования, но существует ключи для получения конкретной информации о части оборудования <code>--cpu --disk --memory</code> и другие, см <a href="https://help.ubuntu.ru/wiki/man_%D0%B8_%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81%D0%BF%D1%80%D0%B0%D0%B2%D0%BA%D0%B8" class="wikilink2" title="wiki:man_и_получение_справки" rel="nofollow">man</a> по этой утилите. 
+</div></li>
+<li class="level"><div class="li">
+ <strong><code>lsusb</code></strong> и <strong><code>lspci</code></strong> информация о USB- и PCI- устройствах
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit63" id="добавление_нового_пользователя">Добавление нового пользователя</h2>
+<div class="level2">
+<ul>
+<li class="level"><div class="li">
+ Команда создаёт нового пользователя в вашей системе с именем <strong>«newuser»</strong>: <pre class="code">adduser newuser</pre>
+
+<p>
+ Чтобы назначить ему пароль, используйте: 
+</p>
+<pre class="code">passwd newuser</pre>
+
+</div></li>
+</ul>
+
+
+</div>
+
+<h2 class="sectionedit64" id="построение_дерева_каталогов_tree">Построение дерева каталогов (tree)</h2>
+<div class="level2">
+
+<p>
+Утилита выводит дерево каталогов в красиво отформатированном виде.
+Пакет tree находится в репозиториях Ubuntu, поэтому установка выполняется одной строкой:
+</p>
+<pre class="code bash"><span class="kw2">sudo</span> <span class="kw2">apt-get install</span> <span class="kw2">tree</span></pre>
+
+<p>
+Для вывода дерева каталогов команда должна иметь следующий вид:
+</p>
+<pre class="code bash"><span class="kw2">tree</span> <span class="re5">-dA</span> <span class="kw3">test</span></pre>
+
+<p>
+<img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/консоль_tree.png" class="mediacenter" alt="">
+</p>
+
+</div>
+
+<h1 class="sectionedit65" id="ссылки">Ссылки</h1>
+<div class="level1">
+<ul>
+<li class="level"><div class="li">
+ <a href="https://help.ubuntu.com/community/UsingTheTerminal" class="urlextern" title="https://help.ubuntu.com/community/UsingTheTerminal" rel="nofollow">Оригинал статьи</a>
+</div></li>
+<li class="level"><div class="li">
+ <a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0/%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%B0%D1%8F_%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D1%8F_%D0%BE_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B5" class="wikilink1" title="wiki:командная_строка:краткая_информация_о_системе"> Дополнительная краткая информация</a>
+</div></li>
+</ul>
+
+<div class="tags"><span>
+	<a href="https://help.ubuntu.ru/tag/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=showtag&amp;tag=%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0" class="wikilink1" title="tag:командная_строка" rel="tag">командная строка</a>,
+	<a href="https://help.ubuntu.ru/tag/%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB?do=showtag&amp;tag=%D1%82%D0%B5%D1%80%D0%BC%D0%B8%D0%BD%D0%B0%D0%BB" class="wikilink1" title="tag:терминал" rel="tag">терминал</a>,
+	<a href="https://help.ubuntu.ru/tag/%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C?do=showtag&amp;tag=%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C" class="wikilink1" title="tag:консоль" rel="tag">консоль</a>
+</span></div>
+
+</div>
+
+							<div class="clearer"></div>
+						</div>
+					</div>
+					<div class="clearer"></div>
+				</div>
+						<!-- /Main -->
+		</div></div>
+		<!-- Footer -->
+		<div id="__site-footer">
+	<ul>
+		<li><a href="https://ubuntu.ru/" title="Главная страница сайта ubuntu.ru">Сайт</a></li>
+		<li><a href="https://ubuntu.ru/about" title="Описание и особенности дистрибутива Ubuntu">Об Ubuntu</a></li>
+		<li><a href="https://ubuntu.ru/get" title="Страница получения дистрибутива Ubuntu">Скачать Ubuntu</a></li>
+		<li><a href="https://ubuntu.ru/family" title="Список дистрибутивов, входящих в большое семейство Ubuntu">Семейство Ubuntu</a></li>
+		<li><a href="https://ubuntu.ru/news" title="Новости русскоязычного сообщества Ubuntu">Новости</a></li>
+	</ul>
+	<ul>
+		<li><a href="https://forum.ubuntu.ru/" title="Форум русскоязычного сообщества Ubuntu. На нём вы можете задать интересующие вас вопросы и получить помощь от других пользователей Ubuntu.">Форум</a></li>
+		<li><a href="https://forum.ubuntu.ru/index.php?action=help" title="Помощь по использованию форума">Помощь</a></li>
+		<li><a href="https://forum.ubuntu.ru/index.php?action=rules" title="Правила пользования форумом русскоязычного сообщества Ubuntu">Правила</a></li>
+	</ul>
+	<ul>
+		<li><a href="https://help.ubuntu.ru/" title="Различная русскоязычная документация по семейству операционных систем на базе Ubuntu">Документация</a></li>
+		<li><a href="https://help.ubuntu.ru/wiki" title="Документация, создаваемая пользователями Ubuntu" class="active">Пользовательская документация</a></li>
+		<li><a href="https://help.ubuntu.ru/doc" title="Переводы официальной документации по Ubuntu на русский язык">Официальная документация</a></li>
+		<li><a href="https://help.ubuntu.ru/wiki/%D1%81%D0%B5%D0%BC%D0%B5%D0%B9%D1%81%D1%82%D0%B2%D0%BE_ubuntu" title="Документация по дистрибутивам, входящим в семейство Ubuntu">Семейство Ubuntu</a></li>
+		<li><a href="https://help.ubuntu.ru/wiki/%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%B0" title="Различные материалы по Ubuntu, доступные для загрузки">Материалы для загрузки</a></li>
+		<li><a href="https://help.ubuntu.ru/wiki/%D1%81%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C" title="Раздел, посвящённый совместимости Ubuntu с оборудованием, в первую очередь - с ноутбуками">Совместимость с оборудованием</a></li>
+		<li><a href="https://help.ubuntu.ru/feed.php" title="Позволяет подписаться на обновления посредством RSS" class="rss-feed">RSS лента</a></li>
+	</ul>
+	<ul>
+		<li><a href="https://team.ubuntu.ru/" title="Материалы, касающиеся работы русскоязычного сообщества и русскоязычной LoCo команды Ubuntu">Сообщество</a></li>
+		<li><a href="https://team.ubuntu.ru/projects" title="Проекты русскоязычного сообщества Ubuntu">Наши проекты</a></li>
+		<li><a href="https://team.ubuntu.ru/loco" title="Раздел, посвящённый местным сообществам Ubuntu (LoCo) в различных городах и областях">Местные сообщества</a></li>
+		<li><a href="https://team.ubuntu.ru/translate" title="Раздел, посвящённый переводу Ubuntu на русский язык">Перевод Ubuntu</a></li>
+		<li><a href="https://team.ubuntu.ru/qa" title="Тестирование новых версий Ubuntu">Тестирование</a></li>
+		<li><a href="https://team.ubuntu.ru/feed.php" title="Позволяет подписаться на обновления посредством RSS" class="rss-feed">RSS лента</a></li>
+	</ul>
+	<p>
+		© 2012 Ubuntu-ru — Русскоязычное сообщество Ubuntu Linux.<br>
+		© 2012 Canonical Ltd. Ubuntu и Canonical являются зарегистрированными торговыми знаками Canonical Ltd.
+	</p>
+	<a href="https://ubuntu.ru/" title="На главную страницу сайта">
+		<img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/footer_logo_ru.png" alt="">
+	</a>
+	<div class="clearer"></div>
+</div>
+		<!-- /Footer -->
+	</div>
+	<div class="no"><img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/indexer.php" width="2" height="1" alt=""></div>
+	<!-- /Page -->
+</div>
+<!-- /Document -->
+<!-- Control -->
+	<div id="__control" class="pinned-down">
+		<ul>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=edit" class="action source" accesskey="v" rel="nofollow" title="Показать исходный текст [V]">Показать исходный текст</a></li>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=revisions" class="action revs" accesskey="o" rel="nofollow" title="История страницы [O]">История страницы</a></li>
+			<li></li>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=backlink" class="action backlink" rel="nofollow" title="Ссылки сюда">Ссылки сюда</a></li>
+		</ul>
+		<ul>
+			<li id="__control_toggle">
+							<a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0" title="Закрепить панель">
+					<img src="./Командная строка _ Русскоязычная документация по Ubuntu_files/remmina-pin-up.png" alt="Закрепить панель">
+				</a>
+						</li>
+			<li></li>
+			<li></li>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=media&amp;ns=wiki" class="action media" rel="nofollow" title="Управление медиафайлами">Управление медиафайлами</a></li>
+			<li></li>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=index" class="action index" accesskey="x" rel="nofollow" title="Все страницы [X]">Все страницы</a></li>
+			<li><a href="https://help.ubuntu.ru/wiki/%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B0?do=recent" class="action recent" accesskey="r" rel="nofollow" title="Недавние изменения [R]">Недавние изменения</a></li>
+		</ul>
+		<div class="clearer"></div>
+	</div>
+<!-- /Control -->
+</div>
+
+
+
+</body></html>

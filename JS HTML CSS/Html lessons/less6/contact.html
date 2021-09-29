@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>Document</title>
+   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+   <script>
+      document.documentElement.className += ' js';
+
+      var loadinggif = "<div class=\"spinner center\"><i class=\"fas fa-circle-notch fa-spin\"><\/i><\/div>";
+      var dateformat = {
+         relative: true,
+         dates: "Y-m-d",
+         times: "H:i",
+         long: "Y-m-d, H:i",
+      };
+
+      (function (i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+      ga('create', 'UA-46440602-1', 'www.speedrun.com');
+      ga('send', 'pageview');
+
+      var bgscroll = 0;
+      var fgscroll = 0;
+   </script>
+</head>
+
+<body>
+   <div class="main_box">
+      <div class="top_navs">
+         <img src="resources/home_ico.svg" alt="home" class="link_ico">
+         <img src="resources/contact_ico.svg" alt="contact" class="link_ico">
+      </div>
+   </div>
+
+   <div class="top_header">
+      <div class="main_box">
+         <div class="header_text">
+            Contact Us
+         </div>
+
+         <p class="header_minor_text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error laboriosam, laborum quam et hic expedita,
+            iusto dolore repellendus veniam nisi tenetur aut
+            minima ea excepturi magnam consequuntur id eaque dolores.
+         </p>
+      </div>
+   </div>
+
+   <div class="main_box">
+      <div class="contact_data_box">
+         <div class="contact">
+            <img src="resources/group.svg" alt="group">
+            <p class="text major_text">
+               ADDRESS
+            </p>
+            <p class="text minor_text">
+               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, quis?
+            </p>
+            <p class="text major_text">
+               PHONE
+            </p>
+            <div class="ico_box">
+               <img src="resources/phone.svg" alt="phone" class="ico">
+               <span class="text minor_text">+8-(345)-6789</span>
+            </div>
+
+            <div class="ico_box">
+               <img src="resources/phone.svg" alt="phone" class="ico">
+               <span class="text minor_text">+8-(345)-6789</span>
+            </div>
+            <p class="text major_text">
+               ONLINE SERVICES
+            </p>
+            <div class="ico_box">
+               <img src="resources/globe.svg" alt="phone" class="ico">
+               <span class="text minor_text">www.example.com</span>
+            </div>
+            <div class="ico_box">
+               <img src="resources/post.svg" alt="phone" class="ico">
+               <span class="text minor_text">employee.company@mail.com</span>
+            </div>
+         </div>
+
+         <form action="${msg_bean.send()}" method="post">
+            <div class="message">
+
+               <p class="text major_text adopt">SEND US MESSAGE</p>
+               <span class="text minor_text adopt">Name</span> <input type="text" class="input" placeholder="Your name">
+               <span class="text minor_text adopt">Email</span> <input type="email" class="input"
+                  placeholder="Your email">
+               <span class="text minor_text adopt">Message</span> <textarea class="msg_text" name="message"
+                  id="msg_t_area" cols="30" rows="10" placeholder="Your message" style="max-width: 100%;"></textarea>
+               <button class="button"><span class="text button_text">SUBMIT</span></button>
+
+            </div>
+         </form>
+
+      </div>
+      <iframe class="map"
+         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20472.878123102353!2d14.39729405!3d50.1029524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2scz!4v1594814958360!5m2!1sru!2scz"
+         width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+         tabindex="0">
+      </iframe>
+   </div>
+
+   <footer>
+      <div class="footer_container">
+         <div class="footer_top">
+            <div>
+               <h3 class="footer_text">
+                  Interested to work with us?
+               </h3>
+               <p class="footer_text_m">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ullam nostrum
+                  beatae enim, aliquid
+                  natus veniam? Aspernatur sunt sit culpa.
+               </p>
+            </div>
+            <a class="button footer_btn" href="http://">Let's talk
+            </a>
+         </div>
+      </div>
+      <hr style="opacity: 0.4;">
+      <div class="footer_container">
+         <div class="bottom_footer">
+            <ul class="footer_info">
+               <li class="footer_list">Lorem ipsum dolor sit amet.</li>
+               <li class="footer_list">email@email.com
+               </li>
+               <li class="footer_list">+9-(789)-45678
+               </li>
+            </ul>
+         </div>
+         <div class="copy">
+            <p class="copy_t">All rights reserver &copy;</p>
+         </div>
+      </div>
+
+   </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+.container {
+   margin: 0 auto;
+}
+
+.content {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.block {
+   width: 100px;
+   height: 100px;
+   border: 1px solid #000;
+}

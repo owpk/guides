@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	alert ("Программа расчитывает сумму вклада для типа банковский депозит и для типа инвестиционный счет\n Банковский депозит - процент начисления зависит от первоначальной суммы вклада\n Ивестиционный счет - процент начисляется на текущую сумму вклада");
+	alert("Введите данные для расчета инвестиционного счета");
+	do {
+	var userDep = +prompt ("Сумма вклада:");
+	var userPerc = +prompt("Ставка%:");
+	var userY =+prompt("Срок(лет):");
+	}while (isNaN(userPerc)|| userPerc<0||isNaN(userDep)||userDep<0||isNaN(userY)||userY<0); 
+document.write("Вклад типа инвестиционный счет <br>");
+		for (var i=1; i<=userY; i++) {
+			userDep = userDep + ((userDep*userPerc)/100);
+			document.write(i+" год  "+(userDep)+" руб.<br>");
+	}
+	
+document.write("Вклад типа банковский депозит <br>");
+alert ("Введите данные для расчета банковского депозита");
+do {
+	var userDep1 = +prompt ("Сумма вклада:");
+	var userPerc1 = +prompt("Ставка%:");
+	var userY1 =+prompt("Срок(лет):");
+	}while (isNaN(userPerc1)|| userPerc1<0||isNaN(userDep1)||userDep1<0||isNaN(userY1)||userY1<0); 
+	var sum1=userDep1;
+		for (var i=1; i<=userY1; i++) {
+			sum1 = sum1+((userDep1*userPerc1)/100);//6300
+			document.write(i+" год  "+(sum1)+" руб.<br>");
+	}
+</script>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset = "utf-8">
+	<title>Угадайка</title>
+	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript">
+
+		var answer = parseInt(Math.random()*100);
+		var counter = 0;
+		var nameArr = [];
+		var nameCounter=1;
+		var i=1;
+		var playersCounter = 0; //здесь задается количество игроков
+		var fin=0;//если удалить переменную, то будет бесконечное число повторений, пока не ответят верно.
+	function show (id) {
+		document.getElementById(id).style.display = "block";
+	}
+	function hide (id) {
+		document.getElementById(id).style.display = "none";
+	}
+
+	function readName() { //Пушим имена в массив, скрываем меню ввода имен после завершения ввода имен, добавляем имена на html страницу 
+		nameCounter++;
+		playersCounter=readInt("setPlayers");
+
+		if (playersCounter>0){
+			hide ("setPlayers");
+			hide ("checkSetPlayers");
+			write ("players","Игроков: "+playersCounter);
+		} else {
+			alert ("сначала задайте количество игроков");
+			location.reload();
+		}
+		if (nameCounter==(playersCounter+1)){
+			hide ("CheckName");
+			hide ("userName");
+			hide ("info1");
+		} 
+
+		var name  = document.getElementById("userName").value;
+		document.getElementById("info1").innerHTML="Игрок " +nameCounter +" введите свое имя";
+		nameArr.push(name+"<br>");
+		write("player1",nameArr);
+	}
+
+	function readInt(id) {
+		hide ("setPlayers");
+		hide ("checkSetPlayers");
+		write ("players", "Введите имена игроков");
+		var number = document.getElementById(id).value;
+		return parseInt(number);
+		//return +document.getElementById("userAnswer").value;
+	}
+	function nextPlayer (id,text) {//двигаем массив для очередности участия игроков
+		fin++;
+		counter = 0;
+		i++;
+		if (i==nameArr.length) {
+		i=0;
+		} 
+		document.getElementById(id).innerHTML=text;
+	}
+
+	function write (id,text){
+		document.getElementById(id).innerHTML=text;
+	}
+
+	function guess (tryCount/*--Это количество попыто. Можно доработать функцию вставив сюда переменную записывающая количество раундов и сравнивать ее с fin, таким образом можно задавать количество раундов*/) {//основная функция сравнения ответов
+			counter++;
+			if (fin>=playersCounter){
+				hide ("Check");
+				alert ("Никто не угадал. Начините заново");
+			}
+		 	if (counter<=tryCount&&nameArr.length==playersCounter) {
+			var userAnswer = document.getElementById("userAnswer").value;
+			if (counter == tryCount&&userAnswer!=answer) {
+			nextPlayer("info2","<br>Игрок "+nameArr[i]+"Ваша очередь");
+			write ("info","Не верно");
+			} 
+			else if (counter == (tryCount-1)) {
+			write ("info","Осталась одна попытка");
+			}
+			else if (userAnswer==answer) {
+			write("Поздравляю, вы угадали!");
+			counter=tryCount;
+			hide("Check");
+			} 
+			else if (userAnswer<answer) {
+			write ("info","введите число побольше<br>Осталась попыток - "+(tryCount-counter));	
+			}
+			else if (userAnswer>answer){
+			write ("info","введите число поменьше<br>Осталась попыток - "+(tryCount-counter));		
+			}
+		}else {
+			alert ("Сначала введите имена всех игроков"); 
+	}
+
+}
+	
+</script>
+</head>
+<body>
+
+<div class="content">
+<?php
+	include "menu.php";
+?>
+<div class = "contentWrap">
+	<div class ="content">
+		<div class = "center">
+
+			<h1>Угадайка</h1>
+			<div class="box_text">
+				<h3 id="players">Задайте количество игроков </h3>
+				<input type="text" id="setPlayers">
+				<a id = "checkSetPlayers" href = "#" onclick="readInt();">Принять</a>
+				<p><br>
+				<p id ="player1"></p>
+				</p>
+			</div>
+
+
+		
+			<div class ="box">
+				<p id ="info1">Игрок 1 введите имя</p>
+				<input type="text" id="userName">
+				<br>
+				<a id = "CheckName" href = "#" onclick="readName();">
+				Принять</a>
+				<br>
+				<br>
+			
+			<div class ="box">
+				<p id ="info2">Игрок 1 введите число</p>
+				<p id ="info">Угадайте число от 0 до 100</p>
+				<input type="text" id="userAnswer">
+				<br>
+				<a id = "Check" href = "#" onclick="guess(5);"> 
+				Проверить</a>
+				<a id = "Retry" href = "Game.php" onclick >Начать заново</a>
+				
+		</div>
+	</div>
+</div>
+	
+	<div class="footer">
+	Copyright &copy; VZ
+	</div> 
+</body>
+</html>

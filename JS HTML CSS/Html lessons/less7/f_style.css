@@ -1,0 +1,24 @@
+/*footer*/
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.tpp {
+   flex-grow: 1;
+}
+
+.content {
+   min-height: 100vh;
+}
+
+.footer {
+   height: 80px;
+   background-color: gray;
+}

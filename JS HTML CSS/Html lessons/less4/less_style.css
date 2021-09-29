@@ -1,0 +1,88 @@
+.footer_main {
+   background-image: url();
+}
+
+.main_view {
+   width:900px; margin:0 auto;  
+   border: 1px solid rgba(233, 171, 171, 0.733);
+   color: white;
+   margin-bottom: 10px;
+}
+
+.header {
+   height: 500px;
+   background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+
+.content {
+   color: teal;
+   text-align: center;
+}
+
+.row {
+   text-align: center;
+   color: teal;
+   display: table;
+   width: 100%; 
+   table-layout: fixed;
+   border-spacing: 10px;
+}
+
+.column {
+   border: 1px solid #000;
+   display: table-cell;
+}
+.col_img {
+   height: 100px;
+}
+.col1_img {
+   background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+.col2_img{
+background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+.col3_img{
+background-image: url(https://pbs.twimg.com/media/EcGwl5LWoAcsjVN?format=jpg&name=large);
+}
+
+.tool_bar {
+   text-align: center;
+   margin: 0%;
+   margin-top: 5px;
+   border: 1px solid rgba(233, 171, 171, 0.733);
+}
+
+.text_field {
+   margin-top: 100px;
+   margin-right: 500px;
+   margin-left: 15px;
+   border: 1px solid rgba(233, 171, 171, 0.733);
+   width: 200px;
+}
+
+body {
+   margin: 0%;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+footer {
+   margin: 0%;
+   background-color: cadetblue;
+}
+
+table {
+   text-align: center;
+   width: 100%;
+}
+.t_col {
+   color: rgba(240, 255, 255, 0.699);
+}
+
+header:hover a {
+   text-decoration: none;
+   color: chocolate;
+}
+
+.form {
+   
+}

@@ -1,0 +1,29 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+var maxTryCount = 7;
+alert("НУ ШО ЕБАТЬ ЗДАРОВА БЫДЛАН УГАДАЙ ЧИСЛО ОТ 1 ДО 100 ЕСЛИ НЕ УГОДАЕЖ ТО ТЫ ЧМО И ДИШОВ ОЧКА кста у тебя "+maxTryCount+" попыток" );
+var answer = parseInt(Math.random()*100);
+var altCount = 6;
+for (var tryCount=0; tryCount<=maxTryCount; tryCount++){
+	var userAnswer = +prompt("Введите свое ебаное число");
+	if (userAnswer==answer) {
+			alert("Реальна красава угодал))");
+			alert ("ну все пиздуй бараздуй а я пашол преисполняца))");
+			break;}
+		else if (tryCount==altCount && answer>userAnswer) {
+			alert ("ну шо допрыгалась зайка осталось "+(maxTryCount-altCount)+" попытки)) кста слишком мала ввел малеха побольше надо");
+		}
+		else if (tryCount==altCount && answer<userAnswer) {
+			alert ("ну шо допрыгалась зайка осталось "+(maxTryCount-altCount)+" попытки))кста слишком многа ввел малеха поменьше нада))");
+		}
+		else if (answer<userAnswer) {
+			alert("Неа слишком многа))");
+		}
+		else if (answer>userAnswer) {
+			alert("Неа слишком мала хдд))");
+		}
+		if (maxTryCount==tryCount)  {
+			alert("САСИ ЛОХ");	
+		}
+	}		
+</script>

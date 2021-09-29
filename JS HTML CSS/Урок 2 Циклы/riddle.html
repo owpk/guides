@@ -1,0 +1,91 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var res = 0;
+	var question0 = prompt("Отгадайте загадку -\n  Белые шапки надели дома,\n  Холодно им - наступила ...");
+	var maxTryCount = 2;
+
+	for(var tryCount = 1; tryCount <= maxTryCount; tryCount++){
+		if(question0 == "Зима" || question0 == "зима"){
+			alert("Поздравляю, вы угадали!");
+		res++;
+		break;
+		} 
+		else {
+			alert("Вы не угадали, попробуйте ещё раз. У вас осталось " + (maxTryCount - tryCount) + " попытка");	
+		} 
+		
+		question0 = prompt(" Белые шапки надели дома,\n  Холодно им - наступила ...");  
+			
+	}		
+	
+	alert("Правильный ответ - зима");
+
+
+
+	var question1 = prompt("Ещё одна загадка -\n  Кто под проливным дождем\n  не намочит волосы ...");
+	var maxTryCount = 2;
+		
+	for(var tryCount = 1; tryCount <= maxTryCount; tryCount++){
+		if(question1 == "Лысый" || question1 == "лысый"){
+			alert("Поздравляю, вы угадали!");
+		res++;
+		break;
+		}
+		else {
+			alert("Вы не угадали, попробуйте ещё раз. У вас осталось " + (maxTryCount - tryCount) + " попытка");	
+		} 
+			
+		question1 = prompt(" Кто под проливным дождем\n  не намочит волосы ...");  
+				
+		
+	}
+			
+	alert("Правильный ответ - лысый");
+
+
+
+	var question2 = prompt("Ещё одна загадка -\n  Как называется боязнь прихода Санта-Клауса? ...");
+	var maxTryCount = 2;
+
+	for(var tryCount = 1; tryCount <= maxTryCount; tryCount++) {
+		if(question2 == "клаустрофобия" || question2 == "Клаустрофобия") {
+			alert("Поздравляю, вы угадали!");
+		res++;
+		break;
+		} 
+		else {
+			alert("Вы не угадали, попробуйте ещё раз. У вас осталось " + (maxTryCount - tryCount) + " попытка");	
+		} 
+		
+		question2 = prompt(" Как называется боязнь прихода Санта-Клауса? ...");  
+				
+				
+	}
+	
+	alert("Правильный ответ - клаустрофобия");
+
+
+	var question3 = prompt("И последняя загадка -\n  Как написать слово «мышеловка» пятью буквами? ...");
+	var maxTryCount = 2;
+
+	for(var tryCount = 1; tryCount <= maxTryCount; tryCount++) {
+		if(question3 == "кошка" || question3 == "Кошка") {
+			alert("Поздравляю, вы угадали!");
+		res++;
+		break;
+		} 
+		else {
+			alert("Вы не угадали, попробуйте ещё раз. У вас осталось " + (maxTryCount - tryCount) + " попытка");	
+		} 
+		
+		question3 = prompt(" Как написать слово «мышеловка» пятью буквами? ...");  
+				
+	}
+	
+	alert("Правильный ответ " + "кошка");
+
+	alert(" Вы угадали " +res + " раз(а).");
+
+
+</script>

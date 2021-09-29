@@ -1,0 +1,89 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function serialNumbers(n){ //задаем n числовой одномерный массив из последовательных чисел
+		var arr = [];
+		for (var i=1;i<=n;i++) {
+		arr.push(i);
+		}
+		return arr;
+	}
+
+	function numbers(n){ //задаем n числовой одномерный массив из случайных чисел
+		var arr = [];
+		for (var i=1;i<=n;i++) {
+		var b = Math.round(Math.random()*100); 
+		arr.push(b);
+		}
+		return arr;
+	}
+
+
+	function sumNumbers(n,x) { //суммируем цифры в новом массиве 
+		
+		var sum = 0;
+		for (var i=0;i<n;i++) {
+		sum = sum + x[i];
+			}
+			alert("Заданы числа: "+(x)+"\nСумма всех чисел: "+sum);
+		return sum;
+	}
+
+	function maxNum (n,x) { //поиск максимального значения в новом массиве
+			//1 2 3 4 
+			var max = x[0];
+			for (var i=1; i<n; i++) 
+			if (max<x[i]) {
+				max = x[i]	
+			}
+	alert("Заданы числа: "+(x)+"\nМаксимальное число: "+max);
+	return max;
+	}
+
+	function minNum (n,x) { //поиск минимального значения в новом массиве
+		// 1 2 3 4 5
+			var min = x[0];
+			for (var i=1; i<n; i++) {
+			if (min>x[i]) {
+				min = x[i]	
+			}
+		}
+	alert("Заданы числа: "+(x)+"\nМиниимальное число: "+min);
+	return min;
+	}
+
+
+	function parityNum (n,x) { //поиск четного числа
+			
+			var par = [];
+			for (var i=0; i<=n-1; i++) {
+			if (x[i]%2==0) {
+				par.push(x[i]);
+		}
+	}
+	if (par.length==0){
+		par.push ("Нет четных чисел");
+	}
+	alert("Заданы числа: "+(x)+"\nЧетные числа: "+par);
+	return par;
+	}
+
+var userArr = []; 
+var userData = +prompt("Всего чисел в массиве будет:");
+
+//do {
+	var userChoise = +prompt("Xотите набор случанйных чисел или последовательных?\n\nПоследовательные числа - нажмите 1\nСлучайные числа - нажмите 2");
+//	} while (userChoise!="1"||userChoise!="2");
+
+if (userChoise == "1") {
+	alert ("Вы задали количество чисел: "+userData+"\nВот список последовательных: "+ (userArr = serialNumbers(userData)));
+	
+	}
+if (userChoise == "2") {
+	alert ("Вы задали количество чисел: "+userData+"\nВот список случайных: "+ (userArr = numbers(userData)));
+}
+sumNumbers(userData,userArr);
+maxNum(userData,userArr);
+minNum(userData,userArr);
+parityNum(userData,userArr);
+
+</script>

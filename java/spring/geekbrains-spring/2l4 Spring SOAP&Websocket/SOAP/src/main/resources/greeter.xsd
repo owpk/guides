@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://example.com/api/greeting"
+           targetNamespace="http://example.com/api/greeting"
+           elementFormDefault="qualified">
+
+<!--    (2)-->
+<!--    Метод и параметры запроса.-->
+    <xs:element name="getGreetingRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    (3)-->
+<!--    Формат ответа.-->
+    <xs:element name="getGreetingResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="greeting" type="tns:greeting"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+<!--    (1)-->
+<!--    Пользовательский (сложный) тип данных — в данном случае объект, состоящий из строки и-->
+<!--    даты.-->
+    <xs:complexType name="greeting">
+        <xs:sequence>
+            <xs:element name="text" type="xs:string"/>
+            <xs:element name="date" type="xs:date"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

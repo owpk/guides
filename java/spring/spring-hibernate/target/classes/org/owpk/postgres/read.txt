@@ -1,0 +1,51 @@
+- CascadeType.ALL — каскадирование будет применяться ко всем операциям;
+- CascadeType.REMOVE — только к методу удаления;
+- CascadeType.PERSIST — только к методу сохранения;
+- CascadeType.MERGE — к методу обновления;
+- CascadeType.REFRESH — к методу синхронизации с БД;
+- CascadeType.DETACH — каскадирование применяется к методу удаления сущности из 
+контекста постоянства (но не из БД).
+
+Если необходимо применить определенный критерий поиска, то запрос будет выглядеть так:
+SELECT a FROM Article a WHERE a.id = 2
+
+В данном случае псевдоним a используется для доступа к атрибутам класса. 
+Возвращать можно не только объекты, но и атрибуты класса. Запрос, возвращающий атрибуты объекта, может выглядеть следующим образом:
+SELECT a.firstname, a.lastname FROM Author a
+
+Если используется привязка параметров, запрос может быть таким:
+SELECT a.firstname, a.lastname FROM Author a WHERE a.id = ?1
+
+В случае именованных параметров:
+SELECT a.firstname, a.lastname FROM Author a WHERE a.id = :id
+
+Можно указать поставщику постоянства, что необходимо создать объекты из возвращаемых из БД значений. Например:
+SELECT NEW com.geekbrains.Person(a.firstname, a.lastname) FROM Author a
+Класс Person не обязан являться сущностью, но должен содержать конструктор с указанной в запросе сигнатурой.
+
+Именованные запросы
+Именованные запросы более производительны, чем динамические. Это связано с тем, что преобразование JPQL-запроса в SQL происходит сразу после запуска приложения. Чтобы выполнить именованный запрос, в классе, к которому он будет осуществляться, необходимо объявить аннотацию @NamedQuery, содержащую следующие атрибуты:
+name — название именованного запроса;
+query — JPQL-строка запроса.
+Можно объявлять несколько именованных запросов с помощью множественной аннотации @NamedQueries.
+Объявление именованных запросов:
+@Entity
+@Table(name="author")
+@NamedQueries({
+  @NamedQuery(name = "Author.findAll", query = "SELECT a FROM Author a"),
+  @NamedQuery(name = "Author.findById", query = "SELECT a FROM Author a WHERE a.id = :id")
+})
+
+public class Author{
+  // Fields, getter and setters
+}
+
+В данном листинге показан пример объявления двух именованных запросов: 
+Author.findAll для получения всех авторов;
+Author.findById (аналог метода find класса EntityManager), использующий именованные параметры.
+
+Заметьте, что формат названий именованных запросов рекомендует употреблять имя класса в качестве префикса, а само название отражает операцию и критерий. 
+
+В коде использование именованных запросов будет выглядеть так:
+List<Author> authors = em.createNamedQuery("Author.findAll", Author.class).getResultList();
+Author author = em.createNamedQuery("Author.findById", Author.class).setParameter("id", 1).getSingleResult();

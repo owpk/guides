@@ -1,0 +1,113 @@
+$(document).ready(function() {
+	var currentVersion = $(".version-selector-button span").text().replace(/\./g, "-");
+
+
+	if($(".category-title").text().length == 0) {
+		$(".category-title").text($($(".item a")[0]).text());
+	}
+
+	$('pre code').each(function(i, e) {
+		hljs.highlightBlock(e);
+	});
+
+	$("a.search").click(function(e){
+		$(".search-container").toggleClass("js-show");
+		$(this).toggleClass("js-show");
+	});
+
+	$(".content, .footer").click(function(e){
+		if($(".search-container").hasClass("js-show")){
+		 	$("a.search").trigger("click");
+		}
+	});
+
+	$(".post-list .download-container .header .slider .item").click(function(e){
+		if (!$(this).hasClass("active")) {
+			$(".post-list .download-container .header .slider .item.active").toggleClass("active");
+			$(this).toggleClass("active");
+			var slider = $(".post-list .download-container .header .slider .item-slider");
+			if(slider.css("margin-left") !== "64px"){
+				slider.css("margin-left", "64px");
+			} else {
+				slider.css("margin-left", 0);
+			}
+		}
+		if(this.innerText === "GRADLE"){
+			$("pre.gradle.ver" + currentVersion).css("display", "block");
+			$("pre.maven").css("display", "none");
+		} else {
+			$("pre.maven.ver" + currentVersion).css("display", "block");
+			$("pre.gradle").css("display", "none");
+		}
+		return false;
+	});
+
+	$(".copy-button").tooltip({
+		position: {
+			my: "center top+47",
+			at: "center top",
+			using: function(position, feedback) {
+				$(this).css(position);
+				$("<div>")
+				.addClass("arrow")
+				.addClass(feedback.vertical)
+				.addClass(feedback.horizontal)
+				.appendTo(this);
+			}
+		}
+	});
+
+	$(".copy-button").click(function(e){
+		// if(JSON.parse(JSON.stringify(bowser)).chrome){
+		// 	copy($(this).parent().find("pre").text());
+		// }
+		// if(JSON.parse(JSON.stringify(bowser)).gecko){
+		// }
+		// window.clipboardData.setData("Text", $(this).parent().find("pre").text());
+	});
+
+	$(".mobile-menu-button").click(function(e){
+		$("body, .mobile-navbar, .wrapper, footer").toggleClass("open");
+	});
+
+	$(".search-btn").click(function(e){
+        window.location.href="/search?searchid=2154827&text=" + escape($(".query-field").val()) + "&web=0";
+    });
+
+    $(".mobile-search-container button").click(function(e){
+        window.location.href="/search?searchid=2154827&text=" + escape($(".mobile-search-container input").val()) + "&web=0";
+    });
+
+    $(".version-selector-button").click(function(e){
+		$(this).toggleClass("active");
+		$(".version-selector .menu-version").toggleClass("open");
+		$(document).bind('click.myEvent', function(event) {
+			//если клик был не по менюшке
+			if($(event.target).closest(".version-selector").length === 0){
+				$(".version-selector-button").trigger("click");
+			}
+		});
+	});
+
+	$(".version-selector .menu-version li").click(function(e){
+		currentVersion = $(this).text().replace(/\./g, "-");
+		$(".version-selector .menu-version li").removeClass("selected");
+		$(this).toggleClass("selected");
+		$(".version-selector-button span").text($(this).text());
+        $(".version-selector-button").trigger("click");
+        if($(".download-container .slider .item.active").text() === "Maven"){
+        	$(".download-container").find("pre.maven").css("display", "none");
+        	$(".download-container").find("pre.maven.ver" + currentVersion).css("display", "block");
+        }
+        if($(".download-container .slider .item.active").text() === "Gradle"){
+        	$(".download-container").find("pre.gradle").css("display", "none");
+        	$(".download-container").find("pre.gradle.ver" + currentVersion).css("display", "block");
+        }
+    });
+
+    $(".right-panel .get-code .btn-group .btn").click(function(e){
+        $(".right-panel .get-code .btn-group .btn").removeClass("toggled");
+        $(this).toggleClass("toggled");
+        $(".right-panel .get-code .clone-url input").val($(this).attr("data"));
+    });
+});

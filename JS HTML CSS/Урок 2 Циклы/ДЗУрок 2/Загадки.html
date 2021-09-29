@@ -1,0 +1,79 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	var counter=3;
+	alert ("У вас есть "+ (counter) +" попытки, чтобы разгадать каждую из загадок\nВсего будет три загадки, в конце будет подсчтано количество правильных ответов");
+	alert("Не отыскать её корней,\nВерхушка выше тополей.\nВсё круче вверх она идёт-\nА не растёт.");
+	var answer1=("Гора");
+	var answer2=("гора");
+	var answer3=("Скала");
+	var answer4=("скала");
+	var answer5=("Зубы");
+	var answer6=("зубы");
+	var answer7=("Ветер");
+	var answer8=("ветер");
+	var correctAnswer=0;
+	var correctAnswer2=0;
+	for (var i=1; i<=counter; i++) {
+	var userAnswer = prompt("Ответ:");	
+		if (userAnswer==answer1||userAnswer==answer2||userAnswer==answer3||userAnswer==answer4) {
+			alert ("Верно");
+			correctAnswer++;
+			break;
+		}
+		else if  (i==counter&&(userAnswer!=answer1||userAnswer!=answer2||userAnswer!=answer3||userAnswer!=answer4)) {
+			alert ("Не верно. Следующая загадка");
+		}
+		else if (userAnswer!=answer1||userAnswer!=answer2||userAnswer!=answer3||userAnswer!=answer4){
+			alert ("Не верно, попробуйте еще раз");
+		}
+	}
+	if (correctAnswer==1) {
+		alert ("Следующая загадка");
+	}
+	alert ("Тридцать белых коней\nНа двух красных холмах -\nРазбегутся, сшибутся\nИ снова затихнут впотьмах.");
+	for (var i=1; i<=counter; i++) {
+	var userAnswer = prompt("Ответ:");	
+		if (userAnswer==answer5||userAnswer==answer6) {
+			alert ("Верно");
+			correctAnswer2++;
+			correctAnswer++;
+			break;
+		}
+		else if  (i==counter&&(userAnswer!=answer5||userAnswer!=answer6)) {
+			alert ("Не верно. Следующая загадка");
+		}
+		else if (userAnswer!=answer5||userAnswer!=answer6){
+			alert ("Не верно, попробуйте еще раз");
+		}
+	}
+	if (correctAnswer2==1) {
+		alert ("Следующая загадка");
+	}
+	alert ("Без голоса кричит,\nБез крыльев - а летает,\nИ безо рта свистит,\nИ без зубов кусает.");
+	for (var i=1; i<=counter; i++) {
+	var userAnswer = prompt("Ответ:");	
+		if (userAnswer==answer7||userAnswer==answer8) {
+			alert ("Верно");
+			correctAnswer++;
+			break;
+		}
+		else if  (i==counter&&(userAnswer!=answer7||userAnswer!=answer8)) {
+			alert ("Не верно");
+		}
+		else if (userAnswer!=answer7||userAnswer!=answer8){
+			alert ("Не верно, попробуйте еще раз");
+		}
+	}
+	if (correctAnswer<1) {
+	alert ("вы не отгадали ни одной загадки")
+}
+	if (correctAnswer==1) {
+	alert ("Вы ответили правильно на одну загадку")
+}
+	if (correctAnswer>1) {
+	alert ("Вы ответили правильно на "+correctAnswer+" загадки")
+}
+if (correctAnswer>10) {
+	alert ("Вы ответили правильно на "+correctAnswer+" загадок")
+}
+</script>

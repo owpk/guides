@@ -1,0 +1,36 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function Обычныйfactorial (g) { //это обычный факториал
+		var res = 1;
+	for (var i=1; i<=g; i++) {
+		res = res * i;
+		document.write(" "+ res);
+		}
+		return res;
+	}
+
+	function factorail(n) { //Это рекурсивный факториал
+		if (n==0)
+			return 1;
+		else 
+			return factorail(n-1)*n;
+		return n;
+	//factorail (5) = factorial (4)*5;
+	//factorail (4) = factorial (3)*4;
+	//factorail (3) = factorial (2)*3;
+	//factorail (2) = factorial (1)*2;
+	//factorail (1) = factorial (0)*1;
+	//factorail (0) = 1;
+	//factorail (1) = 1*1;
+	//factroial (2) = 1*2;
+	//factorial (3) = 2*3;
+	//factorail (4) = 6*4;
+	//factorail (5) = 24*5;
+	}
+	var userData = prompt ("Факториал числа");
+factorial (userData);
+
+
+
+	//var rf = recurciveFactorial (4);
+</script> 

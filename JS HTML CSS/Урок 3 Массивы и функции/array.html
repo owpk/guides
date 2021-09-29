@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	function getRandomNumber (max) {
+		var y = Math.round(Math.random()*max);
+		return y;
+		//или такая же сокращенная запись той же функции сверху 
+		//return = Math.round(Math.random()*max);
+	}
+var numbers = [];
+
+for (var i=0;i<=3+getRandomNumber(10);i++) {
+	var random = getRandomNumber(100);
+	numbers.push(random);
+}
+numbers.push(22);
+numbers.push(16);
+numbers.push(54);
+numbers.pop();
+var m = numbers.pop();
+alert("запомни числа, быдло");
+alert (numbers);
+var usAnsw = +prompt("назови 1 число");
+if (usAnsw==numbers[0]) {
+	alert ("da");
+	} else {
+	alert ("net, правильно будет "+numbers[0]);
+}
+usAnsw = +prompt("а последнее?");
+alert ("всего чисел было " + numbers.length);
+alert ("вот "+numbers[numbers.length-1]+" это верно");
+if (usAnsw==numbers[numbers.length-1]) {
+	alert ("так что и ты ответил тоже verno");
+	} else {
+	alert ("так что ты ответил ne verno");
+}
+var n = parseInt(Math.random()*numbers.length);
+alert ("a помнишь "+(n+1)+" число?");
+do {
+		usAnsw = +prompt("назови число");
+	if (usAnsw==(numbers[n+1])) {
+		alert ("verno");
+		alert ("ты виграл");
+		break;
+	} else {
+		alert ("ne verno");
+		//break;
+	}
+}
+while (usAnsw!=(numbers[n+1]));
+</script>

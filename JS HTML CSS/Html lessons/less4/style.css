@@ -1,0 +1,81 @@
+.main_content {
+   border: 1px solid #000;
+   width: 900px;
+   margin-left: 50px;
+   margin-top: 20px;
+   padding-bottom: 100px;
+   padding: 20px;
+   box-sizing: border-box;   
+}
+
+.main_description {
+   font-size: 150%;
+   margin: 0%;
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.div_to_float {
+   float: left;
+   overflow: hidden;
+   height: 100px;
+   width: 100px;
+   margin-top: 20px;
+   border: 1px solid #000;
+}
+
+.footer {
+   padding: 10px;
+   clear: both;
+   background-color: aquamarine;
+
+}
+
+.text {
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   padding: 50px;
+   margin-left: 50px;
+   margin-top: 50px;
+}
+
+.go_top:hover {
+   color: brown;
+}
+
+.menu_item {
+   list-style-type: none;
+   border: 1px solid #000;
+   width: 200px;
+   height: 35px;
+   line-height: 35px;
+   text-align: center;
+}
+
+.menu_item::before {
+   content: '-';
+   color: orange;
+}
+
+.menu_item:hover::after {
+   content: '<<';
+}
+
+.menu_item:nth-child(3)::after {
+   content: ' text';
+   color: palevioletred;
+}
+
+.menu_item:first-child {
+   border-top-left-radius: 10px;
+   border-top-right-radius: 10px;
+}
+
+.menu_item:last-child {
+   border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+
+.menu_item:hover .menu_link {
+   color: crimson;
+   text-decoration: none;
+}
+
