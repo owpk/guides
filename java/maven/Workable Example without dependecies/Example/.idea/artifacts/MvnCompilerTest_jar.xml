@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="MvnCompilerTest:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/MvnCompilerTest_jar</output-path>
-    <root id="archive" name="MvnCompilerTest.jar">
-      <element id="module-output" name="MvnCompilerTest" />
-    </root>
-  </artifact>
-</component>
