@@ -49,3 +49,8 @@ docker container stop $(docker container ls –aq) && docker system prune –af 
 
 -удалить образы
 docker image rm $(docker image ls -q)
+
+[ docker compose ]
+-пересобрать образ
+docker-compose build --no-cache <service_name>
+

@@ -1,0 +1,37 @@
+2021-10-01 05:11:53,266 INFO org.springframework.boot.StartupInfoLogger [main] Starting DemoApplication using Java 11.0.11 on owpk with PID 1757493 (/home/owpk/guides/java/spring/springboot-logging/build/classes/java/main started by owpk in /home/owpk/guides/java/spring/springboot-logging)
+2021-10-01 05:11:53,268 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-10-01 05:11:53,782 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8185 (http)
+2021-10-01 05:11:53,787 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8185"]
+2021-10-01 05:11:53,788 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-10-01 05:11:53,788 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-01 05:11:53,824 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-10-01 05:11:53,824 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 522 ms
+2021-10-01 05:11:53,996 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8185"]
+2021-10-01 05:11:54,004 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8185 (http) with context path ''
+2021-10-01 05:11:54,011 INFO org.springframework.boot.StartupInfoLogger [main] Started DemoApplication in 1.062 seconds (JVM running for 1.289)
+2021-10-01 05:11:54,012 ERROR com.example.demo.DemoApplication [main] ER ABOBA
+2021-10-01 05:11:54,012 WARN com.example.demo.DemoApplication [main] WA ABOBA
+2021-10-01 05:11:54,012 INFO com.example.demo.DemoApplication [main] IN ABOBA
+2021-10-01 05:12:17,019 INFO org.springframework.boot.StartupInfoLogger [main] Starting DemoApplication using Java 11.0.11 on owpk with PID 1758498 (/home/owpk/guides/java/spring/springboot-logging/build/classes/java/main started by owpk in /home/owpk/guides/java/spring/springboot-logging)
+2021-10-01 05:12:17,021 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-10-01 05:12:17,502 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8185 (http)
+2021-10-01 05:12:17,508 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8185"]
+2021-10-01 05:12:17,508 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-10-01 05:12:17,508 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.53]
+2021-10-01 05:12:17,540 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2021-10-01 05:12:17,540 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 493 ms
+2021-10-01 05:12:17,706 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8185"]
+2021-10-01 05:12:17,715 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8185 (http) with context path ''
+2021-10-01 05:12:17,721 INFO org.springframework.boot.StartupInfoLogger [main] Started DemoApplication in 0.984 seconds (JVM running for 1.183)
+2021-10-01 05:12:17,722 ERROR com.example.demo.DemoApplication [main] ER ABOBA
+2021-10-01 05:12:17,722 WARN com.example.demo.DemoApplication [main] WA ABOBA
+2021-10-01 05:12:17,722 INFO com.example.demo.DemoApplication [main] IN ABOBA
+2021-10-01 05:17:04,174 INFO org.springframework.boot.StartupInfoLogger [Test worker] Starting DemoApplicationTests using Java 11.0.11 on owpk with PID 1770415 (started by owpk in /home/owpk/guides/java/spring/springboot-logging)
+2021-10-01 05:17:04,177 INFO org.springframework.boot.SpringApplication [Test worker] No active profile set, falling back to default profiles: default
+2021-10-01 05:17:05,087 INFO org.springframework.boot.StartupInfoLogger [Test worker] Started DemoApplicationTests in 1.222 seconds (JVM running for 1.831)
+2021-10-01 05:17:05,088 ERROR com.example.demo.DemoApplication [Test worker] ER ABOBA
+2021-10-01 05:17:05,089 WARN com.example.demo.DemoApplication [Test worker] WA ABOBA
+2021-10-01 05:17:05,089 INFO com.example.demo.DemoApplication [Test worker] IN ABOBA
+2021-10-01 05:18:38,472 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8185-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-10-01 05:18:38,473 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8185-exec-1] Initializing Servlet 'dispatcherServlet'
+2021-10-01 05:18:38,474 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8185-exec-1] Completed initialization in 1 ms
