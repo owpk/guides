@@ -1,12 +1,16 @@
 #!groovy
 
 // [ identifiers ]
+println '[ identifiers ]'
+
 def map = [:] // map
 map."some identifier" = "ALLOWED"
 map.'some-identifier' = "ALLOWED"
 println map
 
 // [ arrays ]
+println '[ arrays ]'
+
 // all arrays are List implementations
 arr = 1..10  // IntRange
 arr2 = [1, 2, 3] // ArrayList
@@ -23,6 +27,8 @@ arr3 << 4
 println arr3
 
 // [ strings ]
+println '[ strings ]'
+
 s = """
 A
 B
@@ -42,6 +48,8 @@ string = "a"
 println string.class
 
 // [ closure ]
+println '[ closure ]'
+
 // closure may have 'owner' and delegate
 def clousre0 = { String x, int y -> println "some valid closure ${x} : ${y}" }
 clousre0 "aboba", 3
@@ -116,6 +124,8 @@ def clApp = {
 println clApp(2)
 
 // [ gradle build example ]
+println '[ gradle build example ]'
+
 public class MyClass {
    void doSomething(String a, x, Closure cl) {
       println 3 + x
@@ -135,4 +145,17 @@ def cl = new MyClass()
 cl.doSomething("A", 3, {
    println "Hello world"
 })
+
+// [ dynamic invocation ]
+println '[ dynamic invocation ]'
+
+def opts
+opts = [
+   aboba: 3,
+   bebra: 'gstring',
+   de_la: { x -> x.take opts['aboba'] }
+]
+
+def val = opts['de_la'] 'STRING'
+println val
 
