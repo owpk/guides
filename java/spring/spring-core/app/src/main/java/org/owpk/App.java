@@ -10,6 +10,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Import;
 import org.owpk.profile.mock.ConfigB;
 
+import org.owpk.configuration.MainConfiguration;
+import org.owpk.configuration.AnotherConfig;
+
 import java.io.IOException;
 import java.nio.file.Files;
 
