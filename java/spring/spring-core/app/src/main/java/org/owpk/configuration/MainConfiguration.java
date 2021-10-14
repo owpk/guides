@@ -1,4 +1,4 @@
-package org.owpk;
+package org.owpk.configuration;
 
 import org.owpk.weaving.MyLoadTimeWeaverImpl;
 import org.springframework.beans.factory.annotation.Autowired;

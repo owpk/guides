@@ -1,4 +1,4 @@
-package org.owpk;
+package org.owpk.configuration;
 
 import org.owpk.profile.mock.ConfigA;
 import org.owpk.profile.mock.ConfigB;
