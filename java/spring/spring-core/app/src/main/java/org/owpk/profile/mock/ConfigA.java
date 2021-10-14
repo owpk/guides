@@ -2,6 +2,8 @@ package org.owpk.profile.mock;
 
 import org.springframework.beans.factory.annotation.Value;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class ConfigA implements Config {
@@ -28,7 +30,12 @@ public class ConfigA implements Config {
     }
 
     private String generateUniqueString(int length) {
-        var rand = new Random();
+        SecureRandom rand = null;
+        try {
+            rand = SecureRandom.getInstance("NativePRNG");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         var builder = new StringBuilder();
         for (int i = 0; i < length; i++) {
             builder.append(arr[rand.nextInt(arr.length)]);

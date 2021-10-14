@@ -9,6 +9,9 @@ public class MockPerson {
         this.email = email;
     }
 
+    public MockPerson() {
+    }
+
     public String getName() {
         return name;
     }
@@ -23,5 +26,13 @@ public class MockPerson {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "MockPerson{" +
+                "name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
