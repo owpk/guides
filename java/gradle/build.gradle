@@ -1,0 +1,39 @@
+tasks.register('hello') {
+
+   doLast {
+      println 'Hello world!'
+   }
+}
+
+// depends
+tasks.register('intro') {
+   dependsOn tasks.hello
+      doLast {
+         println 'Aboba'
+      }
+}
+
+// lazy depends
+tasks.register('taskX') {
+   dependsOn tasks.taskY
+      doLast {
+         println taskX
+      }
+}
+
+tasks.register('taskY') {
+   doLast {
+      println 'taskY'
+   }
+}
+
+// counter
+4.times { counter ->
+    tasks.register("task$counter") {
+        doLast {
+            println "I'm task number $counter"
+        }
+    }
+}
+
+tasks.named('task0') { dependsOn task1, task2 }
