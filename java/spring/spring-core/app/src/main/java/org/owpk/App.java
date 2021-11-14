@@ -2,12 +2,15 @@ package org.owpk;
 
 import ansi.ANSIJava;
 import ansi.Color;
+import org.owpk.aop.SomeClass;
+import org.owpk.aop.User;
 import org.owpk.configuration.MainConfiguration;
 import org.owpk.event.publisher.Publisher;
 import org.owpk.profile.mock.ConfigA;
 import org.owpk.profile.mock.ConfigB;
 import org.owpk.resource.Mock;
 import org.owpk.resource.ResourceLoaderDemo;
+import org.owpk.spel.SpelExample;
 import org.owpk.validating.MockPerson;
 import org.owpk.validating.PersonValidator;
 import org.springframework.beans.BeansException;
@@ -30,7 +33,7 @@ public class App implements BeanPostProcessor {
         ctx.refresh();
 
         // profile
-        createHeader("[ PROFILE ]");
+        createHeader("profile");
         var cfg1= ctx.getBean(ConfigB.class);
         System.out.println(cfg1.configure());
         var props = ctx.getBean(ConfigA.class);
@@ -38,12 +41,12 @@ public class App implements BeanPostProcessor {
         System.out.println(props.getName());
 
         //event
-        createHeader("[ EVENT ]");
+        createHeader("event");
         var publisher = ctx.getBean(Publisher.class);
         publisher.sendMsg("Msg sent: some msg");
 
         // resource
-        createHeader("[ RESOURCE ]");
+        createHeader("resource");
         var res = ctx.getBean(ResourceLoaderDemo.class).loadResource("classpath:/file.txt");
         System.out.println(res);
         System.out.println("exists: " + res.exists());
@@ -53,7 +56,7 @@ public class App implements BeanPostProcessor {
         resMockBean.getContent();
 
         // validating
-        createHeader("[ VALIDATING ]");
+        createHeader("validating");
         var personValidator = ctx.getBean(PersonValidator.class);
         personValidator.supports(MockPerson.class);
         var mapBindingsResult = new MapBindingResult(Collections.emptyMap(), "org.owpk.validating.MockPerson");
@@ -61,7 +64,23 @@ public class App implements BeanPostProcessor {
         mapBindingsResult.getAllErrors().forEach(System.out::println);
 
         // spel
-        createHeader("[ SPEL (SPRING EXPRESSION LANGUAGE) ]");
+        createHeader("spel (spring expression language)");
+        var spelExampleBean = ctx.getBean(SpelExample.class);
+        spelExampleBean.parseExpression();
+        spelExampleBean.printDefaultSystemArch();
+
+        // aop
+        createHeader("aop");
+        var someClass = ctx.getBean(SomeClass.class);
+        someClass.transfer("Hello");
+        someClass.hello("Aboba", new User("Username"));
+        var user = new User("");
+        someClass.hello("NullUser", user);
+        System.out.println(user);
+
+        // buffers
+        createHeader("buffers");
+
     }
 
     @Override
@@ -71,6 +90,6 @@ public class App implements BeanPostProcessor {
     }
 
     private static void createHeader(String name) {
-        System.out.printf("%n%s%n", ANSIJava.colorize(name, Color.BLUE));
+        System.out.println(ANSIJava.colorize(name, Color.BLUE, "%n[ %S ]"));
     }
 }
