@@ -1,5 +1,6 @@
 package org.owpk;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
@@ -14,10 +15,11 @@ import static org.springframework.security.oauth2.client.web.reactive.function.c
 @RestController
 public class ArticlesController {
 
+    @Autowired
     private WebClient webClient;
 
     @GetMapping(value = "/articles")
-    public String[] getArticles(@RegisteredOAuth2AuthorizedClient("articles-client")
+    public String[] getArticles(  @RegisteredOAuth2AuthorizedClient("articles-client-authorization-code")
                                             OAuth2AuthorizedClient authorizedClient) {
         return this.webClient
                 .get()

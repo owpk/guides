@@ -29,7 +29,7 @@ import java.security.interfaces.RSAPublicKey;
 import java.util.UUID;
 
 @Configuration
-@Import(OAuth2AuthorizationServerConfiguration.class)
+//@Import(OAuth2AuthorizationServerConfiguration.class)
 public class AuthServerConfiguration {
 
     @Bean
