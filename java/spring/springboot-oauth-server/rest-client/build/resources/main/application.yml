@@ -11,7 +11,7 @@ spring:
             client-id: articles-client
             client-secret: secret
             authorization-grant-type: authorization_code
-            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/articles-client-oidc"
+            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
             scope: openid
             client-name: articles-client-oidc
           articles-client-authorization-code:

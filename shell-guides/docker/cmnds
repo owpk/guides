@@ -26,6 +26,9 @@ docker run -it (interactive with pseudo tty)
 docker stop 'container_name'
 docker rmi  -f
 
+-посмотреть логи контейнера
+docker logs [OPTS] <container id>
+
 -- монитирование локальной папки в образ докера
 docker run (args...) -v 'physical_local_path:docker_image_path' 'image_name'
 docker run --name web -p 8085:8080 --rm -d -v $(pwd)/resources:/usr/src/app/resources py_web
