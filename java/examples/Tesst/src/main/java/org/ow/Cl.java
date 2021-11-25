@@ -8,5 +8,9 @@ public class Cl extends Player {
         System.out.println(a);
     }
 
+    public void meth() throws MyException {
+
+    }
+
 
 }
