@@ -7,11 +7,19 @@
 
     <servlet>
         <servlet-name>servlet</servlet-name>
-        <servlet-class>owpk.servlet.Servlet</servlet-class>
+        <servlet-class>owpk.servlet.ServletWebXml</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>servlet_jms</servlet-name>
+        <servlet-class>owpk.servlet.ServletAnnotation</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servlet</servlet-name>
         <url-pattern>/servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servlet_jms</servlet-name>
+        <url-pattern>/jms</url-pattern>
     </servlet-mapping>
 
 </web-app>
