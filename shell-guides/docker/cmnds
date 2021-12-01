@@ -26,6 +26,9 @@ docker run -it (interactive with pseudo tty)
 docker stop 'container_name'
 docker rmi  -f
 
+-посмотреть логи контейнера
+docker logs [OPTS] <container id>
+
 -- монитирование локальной папки в образ докера
 docker run (args...) -v 'physical_local_path:docker_image_path' 'image_name'
 docker run --name web -p 8085:8080 --rm -d -v $(pwd)/resources:/usr/src/app/resources py_web
@@ -49,6 +52,9 @@ docker container stop $(docker container ls –aq) && docker system prune –af 
 
 -удалить образы
 docker image rm $(docker image ls -q)
+
+-ip контейнера
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' <container id>
 
 [ docker compose ]
 -пересобрать образ

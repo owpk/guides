@@ -1,19 +1,22 @@
 package org.owpk;
 
+import ansi.ANSIJava;
+import ansi.Color;
+import org.owpk.aop.SomeClass;
+import org.owpk.aop.User;
+import org.owpk.configuration.MainConfiguration;
 import org.owpk.event.publisher.Publisher;
 import org.owpk.profile.mock.ConfigA;
+import org.owpk.profile.mock.ConfigB;
 import org.owpk.resource.Mock;
 import org.owpk.resource.ResourceLoaderDemo;
+import org.owpk.spel.SpelExample;
 import org.owpk.validating.MockPerson;
 import org.owpk.validating.PersonValidator;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Import;
-import org.owpk.profile.mock.ConfigB;
-
-import org.owpk.configuration.MainConfiguration;
-import org.springframework.validation.BindException;
 import org.springframework.validation.MapBindingResult;
 
 import java.io.IOException;
@@ -30,7 +33,7 @@ public class App implements BeanPostProcessor {
         ctx.refresh();
 
         // profile
-        System.out.println("\n[ PROFILE ]");
+        createHeader("profile");
         var cfg1= ctx.getBean(ConfigB.class);
         System.out.println(cfg1.configure());
         var props = ctx.getBean(ConfigA.class);
@@ -38,12 +41,12 @@ public class App implements BeanPostProcessor {
         System.out.println(props.getName());
 
         //event
-        System.out.println("\n[ EVENT ]");
+        createHeader("event");
         var publisher = ctx.getBean(Publisher.class);
         publisher.sendMsg("Msg sent: some msg");
 
         // resource
-        System.out.println("\n[ RESOURCE ]");
+        createHeader("resource");
         var res = ctx.getBean(ResourceLoaderDemo.class).loadResource("classpath:/file.txt");
         System.out.println(res);
         System.out.println("exists: " + res.exists());
@@ -53,7 +56,7 @@ public class App implements BeanPostProcessor {
         resMockBean.getContent();
 
         // validating
-        System.out.println("\n[ VALIDATING ]");
+        createHeader("validating");
         var personValidator = ctx.getBean(PersonValidator.class);
         personValidator.supports(MockPerson.class);
         var mapBindingsResult = new MapBindingResult(Collections.emptyMap(), "org.owpk.validating.MockPerson");
@@ -61,12 +64,32 @@ public class App implements BeanPostProcessor {
         mapBindingsResult.getAllErrors().forEach(System.out::println);
 
         // spel
-        System.out.println("\n[ SPEL (SPRING EXPRESSION LANGUAGE) ]");
+        createHeader("spel (spring expression language)");
+        var spelExampleBean = ctx.getBean(SpelExample.class);
+        spelExampleBean.parseExpression();
+        spelExampleBean.printDefaultSystemArch();
+
+        // aop
+        createHeader("aop");
+        var someClass = ctx.getBean(SomeClass.class);
+        someClass.transfer("Hello");
+        someClass.hello("Aboba", new User("Username"));
+        var user = new User("");
+        someClass.hello("NullUser", user);
+        System.out.println(user);
+
+        // buffers
+        createHeader("buffers");
+
     }
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         System.out.println("initializing bean: " + beanName);
         return bean;
+    }
+
+    private static void createHeader(String name) {
+        System.out.println(ANSIJava.colorize(name, Color.BLUE, "%n[ %S ]"));
     }
 }
