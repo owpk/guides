@@ -22,6 +22,7 @@ final class SecuredUsersController {
 
   @GetMapping("/current")
   User getCurrent(@AuthenticationPrincipal final User user) {
+    System.out.println(user);
     return user;
   }
 
