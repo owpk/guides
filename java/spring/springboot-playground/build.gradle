@@ -1,0 +1,44 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+def utl = "jdbc://${System.env.JDBC}"
+println utl
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+compileJava {
+	options.compilerArgs += [
+			'--add-exports', 'java.base/sun.reflect.generics.reflectiveObjects=ALL-UNNAMED'
+	]
+}
+
+dependencies {
+	implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.0'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	implementation "org.springframework.boot:spring-boot-starter-cache"
+	implementation "org.springframework.boot:spring-boot-starter-data-redis"
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	// https://mvnrepository.com/artifact/com.google.guava/guava
+	implementation group: 'com.google.guava', name: 'guava', version: '31.0.1-jre'
+}
+
+test {
+	useJUnitPlatform()
+}
