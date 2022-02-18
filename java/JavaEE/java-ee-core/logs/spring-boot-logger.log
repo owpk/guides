@@ -1,0 +1,7 @@
+2021-12-01 15:51:38,970 INFO org.springframework.boot.StartupInfoLogger [main] Starting DemoApplication using Java 11.0.11 on owpk with PID 202247 (/home/owpk/gh/apache-tomcat-9.0.53/webapps/demo/WEB-INF/classes started by owpk in /home/owpk/guides/java/JavaEE/java-ee-core)
+2021-12-01 15:51:38,973 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-12-01 15:51:39,266 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 277 ms
+2021-12-01 15:51:39,539 INFO org.springframework.boot.StartupInfoLogger [main] Started DemoApplication in 0.775 seconds (JVM running for 3.893)
+2021-12-01 15:51:39,540 ERROR com.example.demo.DemoApplication [main] ER ABOBA
+2021-12-01 15:51:39,540 WARN com.example.demo.DemoApplication [main] WA ABOBA
+2021-12-01 15:51:39,540 INFO com.example.demo.DemoApplication [main] IN ABOBA
