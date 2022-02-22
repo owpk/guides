@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {ITransformedLogs} from "./types/types";
 import axios from "axios";
-import LogMsgList from "./components/LogMsgList";
 import LogMsgTable from "./components/LogMsgTable";
 
 function App() {
@@ -18,6 +17,7 @@ function App() {
             .then(response => setLogs(response.data))
             .catch(e => console.log(e))
     }
+
 
     return (
         <div>
