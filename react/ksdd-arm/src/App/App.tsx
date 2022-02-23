@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import {ITransformedLogs} from "./types/types";
+import React, { useEffect, useState } from 'react';
+import { ITransformedLogs } from "types/index";
 import axios from "axios";
-import LogMsgTable from "./components/LogMsgTable";
+import LogMsgTable from "components/LogMsgTable/index";
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
 
     return (
         <div>
-            <LogMsgTable logs={t_logs}/>
+            <LogMsgTable logs={t_logs} total={10}/>
         </div>
     )
 }

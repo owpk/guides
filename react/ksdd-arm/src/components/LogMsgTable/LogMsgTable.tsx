@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from "react";
-import {LogMsgProps} from "../types/types";
+import React, {FC} from "react";
+import {LogMsgProps} from "types/index";
 import MaterialTable from "material-table";
 
 const columns = [
@@ -18,7 +18,7 @@ const columns = [
     }
 ];
 
-const LogMsgTable: FunctionComponent<LogMsgProps> = ({logs}) => {
+const LogMsgTable: FC<LogMsgProps> = ({logs, total}) => {
     return (
         <div>
             <MaterialTable columns={columns} data={logs}/>

@@ -6,5 +6,5 @@ export interface ITransformedLogs {
 
 export interface LogMsgProps {
     readonly logs: ITransformedLogs[]
-    readonly pages?: number
+    readonly total: number
 }
