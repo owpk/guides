@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { ITransformedLogs } from "types/index";
 import axios from "axios";
-import LogMsgTable from "components/LogMsgTable/index";
+import {LogMsgTable, LogMsgTableCustom} from "components/LogMsgTable/index";
 
 function App() {
 
     const [t_logs, setLogs] = useState<ITransformedLogs[]>([])
 
     useEffect(() => {
-        fetchLogs()
+        // fetchLogs()
+        setLogs(createLogs)
     }, [])
 
     async function fetchLogs() {
@@ -18,10 +19,20 @@ function App() {
             .catch(e => console.log(e))
     }
 
+    const createLogs = () : ITransformedLogs[] => {
+      return [
+          {objId: '1', content: "ads", transformed: true},
+          {objId: '1', content: "ads", transformed: true},
+          {objId: '1', content: "ads", transformed: true},
+          {objId: '1', content: "ads", transformed: true},
+          {objId: '1', content: "ads", transformed: true}
+      ]
+    }
 
     return (
         <div>
             <LogMsgTable logs={t_logs} total={10}/>
+            <LogMsgTableCustom logs={t_logs} total={10}/>
         </div>
     )
 }

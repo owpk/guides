@@ -1,7 +1,13 @@
-import TableProps from './Table.types';
+import React, { FC } from "react";
+import { LogMsgProps } from "types/index";
 
-const LogMsgTableCustom = ({ data = [] }: TableProps) => {
-  const titles = Object.keys(data[0] || {});
+const titles: string[] = [
+  'Object id',
+  'Content',
+  'Is transformed'
+]
+
+export const LogMsgTableCustom: FC<LogMsgProps> = ({ logs }) => {
 
   return (
     <table className="table-primary">
@@ -13,16 +19,14 @@ const LogMsgTableCustom = ({ data = [] }: TableProps) => {
         </tr>
       </thead>
       <tbody>
-        {data.map((item) => (
-          <tr key={item.char_id}>
-            {Object.values(item).map((value, idx) => (
-              <td key={Number(item.char_id + idx)}>{value}</td>
-            ))}
+        {logs.map((item) => (
+          <tr>
+            <td>{item.objId}</td>
+            <td>{item.content}</td>
+            <td>{item.transformed ? 'yes' : 'no'}</td>
           </tr>
         ))}
       </tbody>
     </table>
-  );
-};
-
-export default LogMsgTableCustom;
+  )
+}
