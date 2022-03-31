@@ -9,4 +9,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Empty {
+
+    public static void em() {
+
+    }
+
+    public void em(String q) {
+
+    }
 }

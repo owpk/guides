@@ -1,0 +1,35 @@
+2022-03-15 00:12:40,286 | INFO  | Refreshing org.apache.activemq.xbean.XBeanBrokerFactory$1@661972b0: startup date [Tue Mar 15 00:12:40 IRKT 2022]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2022-03-15 00:12:41,415 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[/home/owpk/gh/apache-activemq-5.16.4/data/kahadb] | org.apache.activemq.broker.BrokerService | main
+2022-03-15 00:12:41,525 | INFO  | PListStore:[/home/owpk/gh/apache-activemq-5.16.4/data/localhost/tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-03-15 00:12:41,662 | INFO  | Apache ActiveMQ 5.16.4 (localhost, ID:owpk-40613-1647274361536-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2022-03-15 00:12:41,680 | INFO  | Listening for connections at: tcp://owpk:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-03-15 00:12:41,682 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2022-03-15 00:12:41,686 | INFO  | Listening for connections at: amqp://owpk:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-03-15 00:12:41,687 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2022-03-15 00:12:41,692 | INFO  | Listening for connections at: stomp://owpk:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-03-15 00:12:41,693 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2022-03-15 00:12:41,699 | INFO  | Listening for connections at: mqtt://owpk:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-03-15 00:12:41,700 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2022-03-15 00:12:41,710 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2022-03-15 00:12:41,780 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2022-03-15 00:12:41,945 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@5e39850{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2022-03-15 00:12:42,005 | INFO  | Listening for connections at ws://owpk:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2022-03-15 00:12:42,006 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2022-03-15 00:12:42,007 | INFO  | Apache ActiveMQ 5.16.4 (localhost, ID:owpk-40613-1647274361536-0:1) started | org.apache.activemq.broker.BrokerService | main
+2022-03-15 00:12:42,008 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2022-03-15 00:12:42,009 | WARN  | Store limit is 102400 mb (current store usage is 0 mb). The data directory: /home/owpk/gh/apache-activemq-5.16.4/data/kahadb only has 87702 mb of usable space. - resetting to maximum available disk space: 87702 mb | org.apache.activemq.broker.BrokerService | main
+2022-03-15 00:12:42,840 | INFO  | ActiveMQ WebConsole available at http://127.0.0.1:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2022-03-15 00:12:42,841 | INFO  | ActiveMQ Jolokia REST API available at http://127.0.0.1:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2022-03-15 00:14:15,615 | INFO  | Apache ActiveMQ 5.16.4 (localhost, ID:owpk-40613-1647274361536-0:1) is shutting down | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,625 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,627 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,628 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,630 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,639 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,645 | INFO  | PListStore:[/home/owpk/gh/apache-activemq-5.16.4/data/localhost/tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,646 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,647 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,649 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,695 | INFO  | Apache ActiveMQ 5.16.4 (localhost, ID:owpk-40613-1647274361536-0:1) uptime 1 minute | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,696 | INFO  | Apache ActiveMQ 5.16.4 (localhost, ID:owpk-40613-1647274361536-0:1) is shutdown | org.apache.activemq.broker.BrokerService | ActiveMQ ShutdownHook
+2022-03-15 00:14:15,697 | INFO  | Closing org.apache.activemq.xbean.XBeanBrokerFactory$1@661972b0: startup date [Tue Mar 15 00:12:40 IRKT 2022]; root of context hierarchy | org.apache.activemq.xbean.XBeanBrokerFactory$1 | ActiveMQ ShutdownHook

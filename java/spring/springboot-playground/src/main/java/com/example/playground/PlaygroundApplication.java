@@ -1,45 +1,34 @@
 package com.example.playground;
 
+import com.example.playground.beans.SecondBean;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.context.support.GenericApplicationContext;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
-import javax.validation.constraints.Pattern;
-
+@SpringBootApplication
+@RequiredArgsConstructor
 public class PlaygroundApplication implements CommandLineRunner {
+
     private static final ObjectMapper objectMapper = new ObjectMapper();
+
+    private final GenericApplicationContext ctx;
 
     static {
         objectMapper.disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
     }
 
-    public static void main(String[] args) throws Exception {
-        PlaygroundApplication p = new PlaygroundApplication();
-        p.run(args);
+    public static void main(String[] args) {
+        SpringApplication.run(PlaygroundApplication.class, args);
     }
 
     @Override
-    public void run(String... args) throws Exception {
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        Validator validator = factory.getValidator();
-
-        Obj o = new Obj();
-        o.a = "aasdA_-";
-
-
-        var err = validator.validate(o);
-        System.out.println(err);
-
-    }
-
-    public static class Obj {
-        @Pattern(regexp = "[a-zA-Z\\-_]+")
-        String a;
+    public void run(String... args) {
+        var bean = ctx.getBean(SecondBean.class);
+        bean.foo();
     }
 
 }
