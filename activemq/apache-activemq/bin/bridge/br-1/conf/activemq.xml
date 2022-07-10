@@ -57,7 +57,30 @@
         -->
         <persistenceAdapter>
             <kahaDB directory="${activemq.data}/kahadb"/>
+
+    <jdbcPersistenceAdapter dataDirectory="activemq-data" dataSource="#postgres-ds" createTablesOnStartup="false" lockKeepAlivePeriod="5000">
+        <locker>
+            <lease-database-locker leaseHolderId="i-12890abcdead81" lockAcquireSleepInterval="10000"/>
+        </locker>
+    </jdbcPersistenceAdapter>
         </persistenceAdapter>
+
+
+
+<bean id="postgres-ds" class="org.apache.commons.dbcp2.BasicDataSource">
+    <property name="driverClassName" value="org.postgresql.Driver" />
+    <property name="url" value="jdbc:postgresql://server:5432:5432/activemq" />
+    <property name="connectionProperties" value="[targetServerType=master,readOnly=false]"/>
+    <property name="username" value="activemq"/>
+    <property name="password" value="activemq"/>
+    <property name="initialSize" value="5" />
+    <property name="maxTotal" value="20" />
+    <property name="maxIdle" value="5" />
+    <property name="validationQuery" value="select 1" />
+    <property name="testWhileIdle" value="true" />
+    <property name="timeBetweenEvictionRunsMillis" value="3000" />
+  </bean>
+
 
 
           <!--
