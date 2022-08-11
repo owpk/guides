@@ -1,4 +1,7 @@
 build
+target
 .idea
 .gradle
 node_modules/
+*.log
+*.tar

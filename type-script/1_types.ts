@@ -23,4 +23,3 @@ const login: Login = 'Week'
 type ID = number | string
 const id1: ID = 'adsad'
 const id2: ID = 123
-
