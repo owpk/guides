@@ -15,9 +15,10 @@
     </modules>
 
     <properties>
+        <java.ver>1.8</java.ver>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>${java.ver}</maven.compiler.target>
+        <maven.compiler.source>${java.ver}</maven.compiler.source>
     </properties>
 
     <dependencyManagement>

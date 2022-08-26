@@ -2,9 +2,7 @@ package com.example.service;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
-import javax.jms.ConnectionFactory;
-import javax.jms.JMSException;
-import javax.jms.Queue;
+import javax.jms.*;
 
 @Stateless(name = "exampleService")
 public class ExampleService {
@@ -15,7 +13,6 @@ public class ExampleService {
     @Resource(name = "java:/jms/system/request")
     private Queue requestQueue;
 
-
     public String sendMsg(String messageTxt) throws JMSException {
         System.out.println("-------------------------------");
         System.out.println("-------------------------------");
@@ -23,10 +20,10 @@ public class ExampleService {
         System.out.println("QUEUE: " + requestQueue);
         System.out.println("-------------------------------");
         System.out.println("-------------------------------");
-        var connection = cf.createConnection();
-        var session = connection.createSession();
-        var prod = session.createProducer(requestQueue);
-        var msg = session.createTextMessage();
+        Connection connection = cf.createConnection();
+        Session session = connection.createSession();
+        MessageProducer prod = session.createProducer(requestQueue);
+        TextMessage msg = session.createTextMessage();
         msg.setText(messageTxt);
         prod.send(msg);
         return "OK";

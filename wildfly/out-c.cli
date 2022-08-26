@@ -1,0 +1,26 @@
+/subsystem=naming/binding=java\:\/routerProcessingQueue:add(binding-type=simple, type=java.lang.String, value="example.queue")
+
+/subsystem=naming/binding=java\:\/sourceSystem:add(binding-type=simple, type=java.lang.String, value="A")
+
+/subsystem=naming/binding=java\:\/headerSupported:add(binding-type=simple, type=java.lang.Boolean, value="true")
+
+/subsystem=naming/binding=java\:\/workingMode:add(binding-type=simple, type=java.lang.String, value="a")
+
+/subsystem=naming/binding=java\:\/timeout:add(binding-type=simple, type=java.lang.Integer, value="100:wr")
+
+/subsystem=messaging-activemq/server=default/connection-factory=factory-router-agent:add(entries=[java:/jms/agent/connectionFactory],connectors=[in-vm])
+
+jms-queue add --queue-address=A.control  --entries=[java:/jms/connector/control]
+jms-queue add --queue-address=A.router.request	--entries=[java:/jms/router/request]
+
+
+
+
+
+/subsystem=naming/binding=java\:\/batchSize:add(binding-type=simple, type=java.lang.Integer, value="60")
+/subsystem=naming/binding=java\:\/batchVolume:add(binding-type=simple, type=java.lang.Integer, value="120")
+/subsystem=naming/binding=java\:\/msgPriority:add(binding-type=simple, type=java.lang.Integer, value="1")
+
+/subsystem=messaging-activemq/server=default/connection-factory=factory-out-queue:add(entries=[java:/jms/system/connectionFactory],connectors=[in-vm])
+
+jms-queue add --queue-address=A.request --entries=[java:/jms/system/request]

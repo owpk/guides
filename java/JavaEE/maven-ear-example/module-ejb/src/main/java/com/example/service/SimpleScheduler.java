@@ -17,8 +17,8 @@ public class SimpleScheduler {
 //    @PostConstruct
     public void start() {
         System.out.println("START SCHEDULING");
-        var timerConfig = new TimerConfig("TIMER", false);
-        var timer = timerService.createIntervalTimer(0, 10, timerConfig);
+        TimerConfig timerConfig = new TimerConfig("TIMER", false);
+        Timer timer = timerService.createIntervalTimer(0, 10, timerConfig);
         System.out.println(timer);
     }
 
