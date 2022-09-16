@@ -80,7 +80,6 @@ public class App implements BeanPostProcessor {
 
         // buffers
         createHeader("buffers");
-
     }
 
     @Override

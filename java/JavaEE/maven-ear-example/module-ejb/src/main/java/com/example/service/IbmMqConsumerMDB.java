@@ -8,6 +8,7 @@ import javax.jms.MessageListener;
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(propertyName = "destinationType", propertyValue = "javax.jms.Queue"),
         @ActivationConfigProperty(propertyName = "useJNDI", propertyValue = "false"),
+        @ActivationConfigProperty(propertyName = "connectionFactoryLookup", propertyValue = "java:/jboss/IbmMqConnectionFactory"),
         @ActivationConfigProperty(propertyName = "destination", propertyValue = "java:/jboss/test"),
         @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class IbmMqConsumerMDB implements MessageListener {
