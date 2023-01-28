@@ -50,7 +50,6 @@ alter table "unique_test" add UNIQUE ("name");
 alter table "unique_test" add UNIQUE ("val");
 
 ALTER TABLE "records" ADD CONSTRAINT "fk_31" FOREIGN KEY ("innerRecordId") REFERENCES "inner_records" ("id");
---ALTER TABLE "inner_records" ADD CONSTRAINT "fk_31" FOREIGN KEY ("innerInnerRecordId") REFERENCES "inner_inner_records" ("id");
 
 alter table "users" add CONSTRAINT "fk_4" FOREIGN KEY ("phoneId") REFERENCES "phones" ("id") ON delete CASCADE;
 alter table "role_user" add CONSTRAINT "fk_5" FOREIGN KEY ("userId") REFERENCES "users" ("id") ON delete CASCADE;
